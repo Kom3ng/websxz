@@ -6,19 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "genapi": "npx @openapitools/openapi-generator-cli generate -i https://gp.astrack.me/zyapi/dist.json -g typescript-axios -o src/utils/api/zykj/"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.19.1",
+    "@ant-design/nextjs-registry": "^1.0.0",
+    "@reduxjs/toolkit": "^2.2.3",
+    "antd": "^5.16.0",
+    "axios": "^1.6.8",
+    "immer": "^10.0.4",
+    "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.4"
+    "react-redux": "^9.1.0",
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0",
+    "use-immer": "^0.9.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@openapitools/openapi-generator-cli": "^2.13.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.1.4"
+    "eslint-config-next": "14.1.4",
+    "typescript": "^5"
   }
 }
