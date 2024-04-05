@@ -1,14 +1,26 @@
 'use client'
-import { ConfigProvider, theme } from "antd";
+import { useStoreDispatch, useStoreSelector } from "@/store";
+import { appearenceSettingsSlece } from "@/store/settings";
+import { ThemeProvider } from 'antd-style';
 
 export default function ThemeConfigProvider({
     children,
   }: Readonly<{
     children: React.ReactNode;
   }>) {
+    let themeMode = useStoreSelector(state => state.appearenceSettings.themeMode);
+    const dispatch = useStoreDispatch();
+
     return (
-        <ConfigProvider theme={theme.defaultConfig}>
+        <ThemeProvider 
+          defaultThemeMode={'auto'}
+          onThemeModeChange={(mode) => {
+            themeMode = mode
+            dispatch(appearenceSettingsSlece.actions.setThemeMode(mode))
+          }}
+          themeMode={themeMode}
+        >
             {children}
-        </ConfigProvider>
+        </ThemeProvider>
     )
   }

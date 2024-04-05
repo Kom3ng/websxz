@@ -1,20 +1,17 @@
+import { Body } from "@/components/Body";
 import ClientInitlizer from "@/components/ClientInitlizer";
+import FloatButtons from "@/components/FloatButtons";
+import LayoutX from "@/components/LayoutX";
 import StoreProvider from "@/components/StoreProvider";
+import StyleRegistry from "@/components/StyleRegistry";
 import ThemeConfigProvider from "@/components/ThemeConfigProvider";
-import { store } from "@/store";
-import { loginStatusSlice, userInfoSlice } from "@/store/userInfo";
-import { api } from "@/utils/api/zykj/apiInstance";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import axios from "axios";
+import { Layout } from "antd";
+import { StyleProvider, createStyles, extractStaticStyle } from "antd-style";
+import { Header } from "antd/es/layout/layout";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
-import { useRouter } from "next/navigation";
 
-const ConfigProvider = dynamic(
-  () => import("antd").then((antd) => antd.ConfigProvider),
-  { ssr: false }
-);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +19,7 @@ export const metadata: Metadata = {
   title: "Web Sxz",
   description: "Web apps for sxz",
 };
+
 
 export default function RootLayout({
   children,
@@ -33,11 +31,15 @@ export default function RootLayout({
       <body>
         <AntdRegistry>
           <StoreProvider>
-            <ClientInitlizer>
-              <ThemeConfigProvider>
-                {children}
-              </ThemeConfigProvider>
-            </ClientInitlizer>
+            <ClientInitlizer />
+            <ThemeConfigProvider>
+              <StyleRegistry>
+                <Body>
+                  <FloatButtons />
+                  {children}
+                </Body>
+              </StyleRegistry>
+            </ThemeConfigProvider>
           </StoreProvider>
         </AntdRegistry>
       </body>

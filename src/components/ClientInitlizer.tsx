@@ -1,14 +1,12 @@
 "use client"
 import { store, useStoreSelector } from "@/store";
-import { loginStatusSlice, userInfoSlice } from "@/store/userInfo";
+import { loginInfoSlice, userInfoSlice } from "@/store/userInfo";
 import { api } from "@/utils/api/zykj/apiInstance";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { ReactNode } from "react";
 
-export default function ClientInitlizer({ children }: { children: ReactNode }) {
+export default function ClientInitlizer() {
     const token = useStoreSelector(state => state.userInfo.accessToken);
-
     if (token) {
         api.updateToken(token);
     }
@@ -46,7 +44,7 @@ export default function ClientInitlizer({ children }: { children: ReactNode }) {
                         refreshToken: resp.data.result.refreshToken,
                         refreshTokenExpireInSeconds: resp.data.result.refreshExpireInSeconds
                     }));
-                    store.dispatch(loginStatusSlice.actions.login());
+                    store.dispatch(loginInfoSlice.actions.login());
                     api.updateToken(resp.data.result.accessToken || '');
 
                     return axios.request(error.config);
@@ -59,9 +57,5 @@ export default function ClientInitlizer({ children }: { children: ReactNode }) {
             return Promise.reject(error);
         }
     )
-    return (
-        <>
-            {children}
-        </>
-    )
+    return (<></>)
 }
