@@ -2658,10 +2658,10 @@ export interface QstFlow {
     'qstType'?: number;
     /**
      * 
-     * @type {object}
+     * @type {Array<string>}
      * @memberof QstFlow
      */
-    'options'?: object;
+    'options'?: Array<string>;
     /**
      * 
      * @type {number}
@@ -3013,6 +3013,1443 @@ export interface SearchQuoraRequest {
 /**
  * 
  * @export
+ * @interface ServicesAppTaskAskForHelpAsyncPost200Response
+ */
+export interface ServicesAppTaskAskForHelpAsyncPost200Response {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
+     */
+    '__abp'?: boolean;
+    /**
+     * 
+     * @type {object}
+     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
+     */
+    'result'?: object;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskAskForHelpAsyncPostRequest
+ */
+export interface ServicesAppTaskAskForHelpAsyncPostRequest {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskAskForHelpAsyncPostRequest
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskAskForHelpAsyncPostRequest
+     */
+    'examTaskId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskAskForHelpAsyncPostRequest
+     */
+    'questionId'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskExamAnswerAsyncPostRequest
+ */
+export interface ServicesAppTaskExamAnswerAsyncPostRequest {
+    /**
+     * 
+     * @type {Array<ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner>}
+     * @memberof ServicesAppTaskExamAnswerAsyncPostRequest
+     */
+    'answers'?: Array<ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskExamAnswerAsyncPostRequest
+     */
+    'draft'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskExamAnswerAsyncPostRequest
+     */
+    'questionId'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner
+ */
+export interface ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner
+     */
+    'answers'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner
+     */
+    'uuid'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetExamTaskAsyncGet200Response
+ */
+export interface ServicesAppTaskGetExamTaskAsyncGet200Response {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'address'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'answerPad'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'answerSheet'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'answerSheetId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'answeringUrge'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'correctOnline'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'correctOnlineState'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'correctWithSelf'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'creationTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'displayAnswer'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'enableScore'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'endTime'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'examName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'examTips'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'gradeId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'gradeName'?: string;
+    /**
+     * 
+     * @type {Array<ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner>}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
+     */
+    'groups'?: Array<ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
+ */
+export interface ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
+     */
+    'description'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
+     */
+    'qstCount'?: number;
+    /**
+     * 
+     * @type {Array<ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner>}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
+     */
+    'questions'?: Array<ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner>;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
+     */
+    'showGroupNumber'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+ */
+export interface ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'completed'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'hasMicroClass'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'itemType'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'name'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'originScore'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'relatedGroupId'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'revisingResult'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
+     */
+    'state'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
+ */
+export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200Response {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
+     */
+    '__abp'?: boolean;
+    /**
+     * 
+     * @type {ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
+     */
+    'result'?: ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+ */
+export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'address'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'answerPad'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'answerSheet'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'answerSheetId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'answeringUrge'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'correctOnline'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'correctOnlineState'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'correctWithSelf'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'creationTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'displayAnswer'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'enableScore'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'endTime'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'examName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'examTips'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'gradeId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'gradeName'?: string;
+    /**
+     * 
+     * @type {Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner>}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'groups'?: Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner>;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'isExempted'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'isRead'?: boolean | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'isRepresentative'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'noQstStem'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'qstCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'revisingUrge'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'serialNum'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'specificTrainingType'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'startTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'state'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'studentUserId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'teacherUserId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'testDescription'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'testPagerId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'testPagerName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'testTips'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'topicId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'topicName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'whenShowAnswer'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
+     */
+    'whenShowMicroLesson'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
+ */
+export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
+     */
+    'description'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
+     */
+    'qstCount'?: number;
+    /**
+     * 
+     * @type {Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner>}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
+     */
+    'questions'?: Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+ */
+export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner {
+    /**
+     * 
+     * @type {Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner>}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'answerList'?: Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'answerWithQuestion'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'completed'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {Array<QstFlow>}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'qstFlows'?: Array<QstFlow>;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
+     */
+    'score'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
+ */
+export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
+     */
+    'answers'?: Array<string>;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
+     */
+    'pid'?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
+     */
+    'uuid'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetQuestionViewAsyncGet200Response
+ */
+export interface ServicesAppTaskGetQuestionViewAsyncGet200Response {
+    /**
+     * 
+     * @type {ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
+     */
+    'result'?: ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
+     */
+    'targetUrl'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
+     */
+    'error'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
+     */
+    '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+ */
+export interface ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'attachments'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'qstAnswers'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'analysis'?: string | null;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'microClassToQuestionList'?: Array<object>;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'microClassToStudentList'?: Array<object>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'examDraft'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'revisingDraft'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'revisingResult'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'examAnswered'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'revisingAnswerd'?: boolean;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'lastRoundRevisingRecords'?: Array<object>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'typicalRightAnswers'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'typicalErrorAnswers'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'isInMistakeBook'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'path'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'itemType'?: number;
+    /**
+     * 
+     * @type {Array<QstFlow>}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'qstFlows'?: Array<QstFlow>;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'qstFlowsCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'totalScore'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'totalAnswerScore'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'originScore'?: number | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'answerWithQuestion'?: boolean;
+    /**
+     * 
+     * @type {Array<ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner>}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'answerList'?: Array<ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'microClassList'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+ */
+export interface ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'uuid'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'examAnswers'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'examComments'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'examMicroLessonComment'?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'revisingAnswers'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'revisingComments'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'reviseMicroLessonComment'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'originScore'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'result'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'originResult'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'displayAnswer'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'whenShowAnswer'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'whenShowMicroLesson'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
+     */
+    'taskState'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetStudentTaskListAsyncPost200Response
+ */
+export interface ServicesAppTaskGetStudentTaskListAsyncPost200Response {
+    /**
+     * 
+     * @type {ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
+     */
+    'result'?: ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
+     */
+    '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult
+ */
+export interface ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult {
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult
+     */
+    'totalCount'?: number;
+    /**
+     * 
+     * @type {Array<ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner>}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult
+     */
+    'items'?: Array<ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+ */
+export interface ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'address'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'answerPad'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'answerSheet'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'answeringUrge'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'correctOnline'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'correctOnlineState'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'correctWithSelf'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'creationTime'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'endTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'examName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'examTaskId'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'isCollect'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'isExempted'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'isNoStem'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'isRead'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'revisingUrge'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'serialNum'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'specificTrainingType'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'startTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'taskState'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'testPagerId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'topicId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
+     */
+    'topicName'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskGetStudentTaskListAsyncPostRequest
+ */
+export interface ServicesAppTaskGetStudentTaskListAsyncPostRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPostRequest
+     */
+    'maxResultCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPostRequest
+     */
+    'skipCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskGetStudentTaskListAsyncPostRequest
+     */
+    'taskListType'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner
+ */
+export interface ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner {
+    /**
+     * 
+     * @type {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner>}
+     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner
+     */
+    'answers'?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner
+     */
+    'draft'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner
+     */
+    'questionId'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner
+ */
+export interface ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner
+     */
+    'answers'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner
+     */
+    'uuid'?: string;
+}
+/**
+ * 
+ * @export
  * @interface SetMessageRead200Response
  */
 export interface SetMessageRead200Response {
@@ -3162,7 +4599,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        canIOpenCamera: async (appName: string = "WebApp", appVersion: number = 0, packageName?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        canIOpenCamera: async (appName: string = 'WebApp', appVersion: number = 0, packageName?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('canIOpenCamera', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3256,7 +4693,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        coursesSubscribed: async (appName: string = "WebApp", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        coursesSubscribed: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('coursesSubscribed', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3306,7 +4743,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generatorToken: async (appName: string = "WebApp", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        generatorToken: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('generatorToken', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3356,7 +4793,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllCommonWebSite: async (appName: string = "WebApp", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllCommonWebSite: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getAllCommonWebSite', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3406,7 +4843,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllSettings: async (appName: string = "WebApp", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllSettings: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getAllSettings', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3456,7 +4893,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllWhiteUrlAsync: async (appName: string = "WebApp", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllWhiteUrlAsync: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getAllWhiteUrlAsync', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3507,7 +4944,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMessageList: async (appName: string = "WebApp", appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyMessageList: async (appName: string = 'WebApp', appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMyMessageList', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3560,7 +4997,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyUnreadMessageCount: async (appName: string = "WebApp", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyUnreadMessageCount: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMyUnreadMessageCount', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3611,7 +5048,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getNotice: async (appName: string = "WebApp", appVersion: number = 0, id?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getNotice: async (appName: string = 'WebApp', appVersion: number = 0, id?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getNotice', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3665,7 +5102,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSystemSettingsForStudent: async (appName: string = "WebApp", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSystemSettingsForStudent: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getSystemSettingsForStudent', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3750,7 +5187,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        recordPictures: async (appName: string = "WebApp", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        recordPictures: async (appName: string = 'WebApp', appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('recordPictures', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3804,7 +5241,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        setMessageRead: async (appName: string = "WebApp", appVersion: number = 0, messageId?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        setMessageRead: async (appName: string = 'WebApp', appVersion: number = 0, messageId?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('setMessageRead', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -3909,7 +5346,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async canIOpenCamera(appName: string = "WebApp", appVersion: number = 0, packageName?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CanIOpenCamera200Response>> {
+        async canIOpenCamera(appName: string = 'WebApp', appVersion: number = 0, packageName?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CanIOpenCamera200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.canIOpenCamera(appName, appVersion, packageName, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.canIOpenCamera']?.[localVarOperationServerIndex]?.url;
@@ -3937,7 +5374,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async coursesSubscribed(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CoursesSubscribed200Response>> {
+        async coursesSubscribed(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CoursesSubscribed200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.coursesSubscribed(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.coursesSubscribed']?.[localVarOperationServerIndex]?.url;
@@ -3951,7 +5388,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async generatorToken(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GeneratorToken200Response>> {
+        async generatorToken(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GeneratorToken200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.generatorToken(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.generatorToken']?.[localVarOperationServerIndex]?.url;
@@ -3965,7 +5402,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllCommonWebSite(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllCommonWebSite200Response>> {
+        async getAllCommonWebSite(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllCommonWebSite200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAllCommonWebSite(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getAllCommonWebSite']?.[localVarOperationServerIndex]?.url;
@@ -3979,7 +5416,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllSettings(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllSettings200Response>> {
+        async getAllSettings(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllSettings200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAllSettings(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getAllSettings']?.[localVarOperationServerIndex]?.url;
@@ -3993,7 +5430,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllWhiteUrlAsync(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllWhiteUrlAsync200Response>> {
+        async getAllWhiteUrlAsync(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllWhiteUrlAsync200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAllWhiteUrlAsync(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getAllWhiteUrlAsync']?.[localVarOperationServerIndex]?.url;
@@ -4008,7 +5445,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyMessageList(appName: string = "WebApp", appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyMessageList200Response>> {
+        async getMyMessageList(appName: string = 'WebApp', appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyMessageList200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyMessageList(appName, appVersion, getMyMessageListRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getMyMessageList']?.[localVarOperationServerIndex]?.url;
@@ -4022,7 +5459,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyUnreadMessageCount(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyUnreadMessageCount200Response>> {
+        async getMyUnreadMessageCount(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyUnreadMessageCount200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyUnreadMessageCount(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getMyUnreadMessageCount']?.[localVarOperationServerIndex]?.url;
@@ -4037,7 +5474,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getNotice(appName: string = "WebApp", appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetNotice200Response>> {
+        async getNotice(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetNotice200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getNotice(appName, appVersion, id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getNotice']?.[localVarOperationServerIndex]?.url;
@@ -4051,7 +5488,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSystemSettingsForStudent(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSystemSettingsForStudent200Response>> {
+        async getSystemSettingsForStudent(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSystemSettingsForStudent200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSystemSettingsForStudent(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getSystemSettingsForStudent']?.[localVarOperationServerIndex]?.url;
@@ -4079,7 +5516,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async recordPictures(appName: string = "WebApp", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecordPictures200Response>> {
+        async recordPictures(appName: string = 'WebApp', appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecordPictures200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.recordPictures(appName, appVersion, recordPicturesRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.recordPictures']?.[localVarOperationServerIndex]?.url;
@@ -4094,7 +5531,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async setMessageRead(appName: string = "WebApp", appVersion: number = 0, messageId?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetMessageRead200Response>> {
+        async setMessageRead(appName: string = 'WebApp', appVersion: number = 0, messageId?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetMessageRead200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.setMessageRead(appName, appVersion, messageId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.setMessageRead']?.[localVarOperationServerIndex]?.url;
@@ -4131,7 +5568,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        canIOpenCamera(appName: string = "WebApp", appVersion: number = 0, packageName?: string, options?: any): AxiosPromise<CanIOpenCamera200Response> {
+        canIOpenCamera(appName: string = 'WebApp', appVersion: number = 0, packageName?: string, options?: any): AxiosPromise<CanIOpenCamera200Response> {
             return localVarFp.canIOpenCamera(appName, appVersion, packageName, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4153,7 +5590,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        coursesSubscribed(appName: string = "WebApp", appVersion: number = 0, options?: any): AxiosPromise<CoursesSubscribed200Response> {
+        coursesSubscribed(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<CoursesSubscribed200Response> {
             return localVarFp.coursesSubscribed(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4164,7 +5601,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generatorToken(appName: string = "WebApp", appVersion: number = 0, options?: any): AxiosPromise<GeneratorToken200Response> {
+        generatorToken(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GeneratorToken200Response> {
             return localVarFp.generatorToken(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4175,7 +5612,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllCommonWebSite(appName: string = "WebApp", appVersion: number = 0, options?: any): AxiosPromise<GetAllCommonWebSite200Response> {
+        getAllCommonWebSite(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetAllCommonWebSite200Response> {
             return localVarFp.getAllCommonWebSite(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4186,7 +5623,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllSettings(appName: string = "WebApp", appVersion: number = 0, options?: any): AxiosPromise<GetAllSettings200Response> {
+        getAllSettings(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetAllSettings200Response> {
             return localVarFp.getAllSettings(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4197,7 +5634,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllWhiteUrlAsync(appName: string = "WebApp", appVersion: number = 0, options?: any): AxiosPromise<GetAllWhiteUrlAsync200Response> {
+        getAllWhiteUrlAsync(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetAllWhiteUrlAsync200Response> {
             return localVarFp.getAllWhiteUrlAsync(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4209,7 +5646,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMessageList(appName: string = "WebApp", appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: any): AxiosPromise<GetMyMessageList200Response> {
+        getMyMessageList(appName: string = 'WebApp', appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: any): AxiosPromise<GetMyMessageList200Response> {
             return localVarFp.getMyMessageList(appName, appVersion, getMyMessageListRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4220,7 +5657,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyUnreadMessageCount(appName: string = "WebApp", appVersion: number = 0, options?: any): AxiosPromise<GetMyUnreadMessageCount200Response> {
+        getMyUnreadMessageCount(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetMyUnreadMessageCount200Response> {
             return localVarFp.getMyUnreadMessageCount(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4232,7 +5669,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getNotice(appName: string = "WebApp", appVersion: number = 0, id?: number, options?: any): AxiosPromise<GetNotice200Response> {
+        getNotice(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: any): AxiosPromise<GetNotice200Response> {
             return localVarFp.getNotice(appName, appVersion, id, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4243,7 +5680,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSystemSettingsForStudent(appName: string = "WebApp", appVersion: number = 0, options?: any): AxiosPromise<GetSystemSettingsForStudent200Response> {
+        getSystemSettingsForStudent(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetSystemSettingsForStudent200Response> {
             return localVarFp.getSystemSettingsForStudent(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4265,7 +5702,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        recordPictures(appName: string = "WebApp", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: any): AxiosPromise<RecordPictures200Response> {
+        recordPictures(appName: string = 'WebApp', appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: any): AxiosPromise<RecordPictures200Response> {
             return localVarFp.recordPictures(appName, appVersion, recordPicturesRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4277,7 +5714,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        setMessageRead(appName: string = "WebApp", appVersion: number = 0, messageId?: number, options?: any): AxiosPromise<SetMessageRead200Response> {
+        setMessageRead(appName: string = 'WebApp', appVersion: number = 0, messageId?: number, options?: any): AxiosPromise<SetMessageRead200Response> {
             return localVarFp.setMessageRead(appName, appVersion, messageId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4309,7 +5746,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public canIOpenCamera(appName: string = "WebApp", appVersion: number = 0, packageName?: string, options?: RawAxiosRequestConfig) {
+    public canIOpenCamera(appName: string = 'WebApp', appVersion: number = 0, packageName?: string, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).canIOpenCamera(appName, appVersion, packageName, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4335,7 +5772,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public coursesSubscribed(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public coursesSubscribed(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).coursesSubscribed(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4348,7 +5785,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public generatorToken(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public generatorToken(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).generatorToken(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4361,7 +5798,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getAllCommonWebSite(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getAllCommonWebSite(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getAllCommonWebSite(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4374,7 +5811,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getAllSettings(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getAllSettings(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getAllSettings(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4387,7 +5824,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getAllWhiteUrlAsync(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getAllWhiteUrlAsync(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getAllWhiteUrlAsync(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4401,7 +5838,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getMyMessageList(appName: string = "WebApp", appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: RawAxiosRequestConfig) {
+    public getMyMessageList(appName: string = 'WebApp', appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getMyMessageList(appName, appVersion, getMyMessageListRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4414,7 +5851,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getMyUnreadMessageCount(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getMyUnreadMessageCount(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getMyUnreadMessageCount(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4428,7 +5865,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getNotice(appName: string = "WebApp", appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig) {
+    public getNotice(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getNotice(appName, appVersion, id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4441,7 +5878,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getSystemSettingsForStudent(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getSystemSettingsForStudent(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getSystemSettingsForStudent(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4467,7 +5904,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public recordPictures(appName: string = "WebApp", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: RawAxiosRequestConfig) {
+    public recordPictures(appName: string = 'WebApp', appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).recordPictures(appName, appVersion, recordPicturesRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4481,7 +5918,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public setMessageRead(appName: string = "WebApp", appVersion: number = 0, messageId?: number, options?: RawAxiosRequestConfig) {
+    public setMessageRead(appName: string = 'WebApp', appVersion: number = 0, messageId?: number, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).setMessageRead(appName, appVersion, messageId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4514,7 +5951,7 @@ export const MiscApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDnUrl: async (appName: string = "WebApp", appVersion: number = 0, clientType?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getDnUrl: async (appName: string = 'WebApp', appVersion: number = 0, clientType?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getDnUrl', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4569,7 +6006,7 @@ export const MiscApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQWeather: async (appName: string = "WebApp", appVersion: number = 0, location?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getQWeather: async (appName: string = 'WebApp', appVersion: number = 0, location?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getQWeather', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4634,7 +6071,7 @@ export const MiscApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDnUrl(appName: string = "WebApp", appVersion: number = 0, clientType?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDnUrl200Response>> {
+        async getDnUrl(appName: string = 'WebApp', appVersion: number = 0, clientType?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDnUrl200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDnUrl(appName, appVersion, clientType, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MiscApi.getDnUrl']?.[localVarOperationServerIndex]?.url;
@@ -4649,7 +6086,7 @@ export const MiscApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getQWeather(appName: string = "WebApp", appVersion: number = 0, location?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetQWeather200Response>> {
+        async getQWeather(appName: string = 'WebApp', appVersion: number = 0, location?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetQWeather200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getQWeather(appName, appVersion, location, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MiscApi.getQWeather']?.[localVarOperationServerIndex]?.url;
@@ -4674,7 +6111,7 @@ export const MiscApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDnUrl(appName: string = "WebApp", appVersion: number = 0, clientType?: number, options?: any): AxiosPromise<GetDnUrl200Response> {
+        getDnUrl(appName: string = 'WebApp', appVersion: number = 0, clientType?: number, options?: any): AxiosPromise<GetDnUrl200Response> {
             return localVarFp.getDnUrl(appName, appVersion, clientType, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4686,7 +6123,7 @@ export const MiscApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQWeather(appName: string = "WebApp", appVersion: number = 0, location?: string, options?: any): AxiosPromise<GetQWeather200Response> {
+        getQWeather(appName: string = 'WebApp', appVersion: number = 0, location?: string, options?: any): AxiosPromise<GetQWeather200Response> {
             return localVarFp.getQWeather(appName, appVersion, location, options).then((request) => request(axios, basePath));
         },
     };
@@ -4709,7 +6146,7 @@ export class MiscApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MiscApi
      */
-    public getDnUrl(appName: string = "WebApp", appVersion: number = 0, clientType?: number, options?: RawAxiosRequestConfig) {
+    public getDnUrl(appName: string = 'WebApp', appVersion: number = 0, clientType?: number, options?: RawAxiosRequestConfig) {
         return MiscApiFp(this.configuration).getDnUrl(appName, appVersion, clientType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -4723,7 +6160,7 @@ export class MiscApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MiscApi
      */
-    public getQWeather(appName: string = "WebApp", appVersion: number = 0, location?: string, options?: RawAxiosRequestConfig) {
+    public getQWeather(appName: string = 'WebApp', appVersion: number = 0, location?: string, options?: RawAxiosRequestConfig) {
         return MiscApiFp(this.configuration).getQWeather(appName, appVersion, location, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -4745,7 +6182,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMistakeQstItemDetailInfo: async (appName: string = "WebApp", appVersion: number = 0, itemId?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMistakeQstItemDetailInfo: async (appName: string = 'WebApp', appVersion: number = 0, itemId?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMistakeQstItemDetailInfo', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4799,7 +6236,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMistakeBooks: async (appName: string = "WebApp", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyMistakeBooks: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMyMistakeBooks', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4849,7 +6286,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyTags: async (appName: string = "WebApp", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyTags: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMyTags', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4900,7 +6337,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        multiRemoveMistakeItems: async (appName: string = "WebApp", appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        multiRemoveMistakeItems: async (appName: string = 'WebApp', appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('multiRemoveMistakeItems', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4954,7 +6391,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchMistakeQstItems: async (appName: string = "WebApp", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        searchMistakeQstItems: async (appName: string = 'WebApp', appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('searchMistakeQstItems', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5018,7 +6455,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMistakeQstItemDetailInfo(appName: string = "WebApp", appVersion: number = 0, itemId?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMistakeQstItemDetailInfo200Response>> {
+        async getMistakeQstItemDetailInfo(appName: string = 'WebApp', appVersion: number = 0, itemId?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMistakeQstItemDetailInfo200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMistakeQstItemDetailInfo(appName, appVersion, itemId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.getMistakeQstItemDetailInfo']?.[localVarOperationServerIndex]?.url;
@@ -5032,7 +6469,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyMistakeBooks(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyMistakeBooks200Response>> {
+        async getMyMistakeBooks(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyMistakeBooks200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyMistakeBooks(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.getMyMistakeBooks']?.[localVarOperationServerIndex]?.url;
@@ -5046,7 +6483,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyTags(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyTags200Response>> {
+        async getMyTags(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyTags200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyTags(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.getMyTags']?.[localVarOperationServerIndex]?.url;
@@ -5061,7 +6498,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async multiRemoveMistakeItems(appName: string = "WebApp", appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDnUrl200Response>> {
+        async multiRemoveMistakeItems(appName: string = 'WebApp', appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDnUrl200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.multiRemoveMistakeItems(appName, appVersion, multiRemoveMistakeItemsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.multiRemoveMistakeItems']?.[localVarOperationServerIndex]?.url;
@@ -5076,7 +6513,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchMistakeQstItems(appName: string = "WebApp", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchMistakeQstItems200Response>> {
+        async searchMistakeQstItems(appName: string = 'WebApp', appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchMistakeQstItems200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchMistakeQstItems(appName, appVersion, searchMistakeQstItemsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.searchMistakeQstItems']?.[localVarOperationServerIndex]?.url;
@@ -5101,7 +6538,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMistakeQstItemDetailInfo(appName: string = "WebApp", appVersion: number = 0, itemId?: number, options?: any): AxiosPromise<GetMistakeQstItemDetailInfo200Response> {
+        getMistakeQstItemDetailInfo(appName: string = 'WebApp', appVersion: number = 0, itemId?: number, options?: any): AxiosPromise<GetMistakeQstItemDetailInfo200Response> {
             return localVarFp.getMistakeQstItemDetailInfo(appName, appVersion, itemId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5112,7 +6549,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMistakeBooks(appName: string = "WebApp", appVersion: number = 0, options?: any): AxiosPromise<GetMyMistakeBooks200Response> {
+        getMyMistakeBooks(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetMyMistakeBooks200Response> {
             return localVarFp.getMyMistakeBooks(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5123,7 +6560,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyTags(appName: string = "WebApp", appVersion: number = 0, options?: any): AxiosPromise<GetMyTags200Response> {
+        getMyTags(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetMyTags200Response> {
             return localVarFp.getMyTags(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5135,7 +6572,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        multiRemoveMistakeItems(appName: string = "WebApp", appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: any): AxiosPromise<GetDnUrl200Response> {
+        multiRemoveMistakeItems(appName: string = 'WebApp', appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: any): AxiosPromise<GetDnUrl200Response> {
             return localVarFp.multiRemoveMistakeItems(appName, appVersion, multiRemoveMistakeItemsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5147,7 +6584,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchMistakeQstItems(appName: string = "WebApp", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: any): AxiosPromise<SearchMistakeQstItems200Response> {
+        searchMistakeQstItems(appName: string = 'WebApp', appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: any): AxiosPromise<SearchMistakeQstItems200Response> {
             return localVarFp.searchMistakeQstItems(appName, appVersion, searchMistakeQstItemsRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -5170,7 +6607,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public getMistakeQstItemDetailInfo(appName: string = "WebApp", appVersion: number = 0, itemId?: number, options?: RawAxiosRequestConfig) {
+    public getMistakeQstItemDetailInfo(appName: string = 'WebApp', appVersion: number = 0, itemId?: number, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).getMistakeQstItemDetailInfo(appName, appVersion, itemId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5183,7 +6620,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public getMyMistakeBooks(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getMyMistakeBooks(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).getMyMistakeBooks(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5196,7 +6633,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public getMyTags(appName: string = "WebApp", appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getMyTags(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).getMyTags(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5210,7 +6647,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public multiRemoveMistakeItems(appName: string = "WebApp", appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: RawAxiosRequestConfig) {
+    public multiRemoveMistakeItems(appName: string = 'WebApp', appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).multiRemoveMistakeItems(appName, appVersion, multiRemoveMistakeItemsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5224,7 +6661,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public searchMistakeQstItems(appName: string = "WebApp", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: RawAxiosRequestConfig) {
+    public searchMistakeQstItems(appName: string = 'WebApp', appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).searchMistakeQstItems(appName, appVersion, searchMistakeQstItemsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -5246,7 +6683,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addCatalog: async (appName: string = "WebApp", appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        addCatalog: async (appName: string = 'WebApp', appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('addCatalog', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5300,12 +6737,12 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSession: async (appName: string = "WebApp", appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createSession: async (appName: string = 'WebApp', appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('createSession', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
             assertParamExists('createSession', 'appVersion', appVersion)
-            const localVarPath = `/api/services/app/Quora/CreateSession`;
+            const localVarPath = `/services/app/Quora/CreateSession`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -5354,7 +6791,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteCatalog: async (appName: string = "WebApp", appVersion: number = 0, id?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteCatalog: async (appName: string = 'WebApp', appVersion: number = 0, id?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('deleteCatalog', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5443,7 +6880,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQuoraStudentTopics: async (appName: string = "WebApp", appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getQuoraStudentTopics: async (appName: string = 'WebApp', appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getQuoraStudentTopics', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5497,7 +6934,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSessions: async (appName: string = "WebApp", appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSessions: async (appName: string = 'WebApp', appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getSessions', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5551,12 +6988,12 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchQuora: async (appName: string = "WebApp", appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        searchQuora: async (appName: string = 'WebApp', appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('searchQuora', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
             assertParamExists('searchQuora', 'appVersion', appVersion)
-            const localVarPath = `/api/services/app/Quora/SearchQuora`;
+            const localVarPath = `/services/app/Quora/SearchQuora`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -5615,7 +7052,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async addCatalog(appName: string = "WebApp", appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddCatalog200Response>> {
+        async addCatalog(appName: string = 'WebApp', appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddCatalog200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.addCatalog(appName, appVersion, addCatalogRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.addCatalog']?.[localVarOperationServerIndex]?.url;
@@ -5630,7 +7067,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createSession(appName: string = "WebApp", appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSession200Response>> {
+        async createSession(appName: string = 'WebApp', appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSession200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createSession(appName, appVersion, createSessionRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.createSession']?.[localVarOperationServerIndex]?.url;
@@ -5645,7 +7082,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteCatalog(appName: string = "WebApp", appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetMessageRead200Response>> {
+        async deleteCatalog(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetMessageRead200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteCatalog(appName, appVersion, id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.deleteCatalog']?.[localVarOperationServerIndex]?.url;
@@ -5672,7 +7109,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getQuoraStudentTopics(appName: string = "WebApp", appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+        async getQuoraStudentTopics(appName: string = 'WebApp', appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getQuoraStudentTopics(appName, appVersion, getQuoraStudentTopicsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.getQuoraStudentTopics']?.[localVarOperationServerIndex]?.url;
@@ -5687,7 +7124,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSessions(appName: string = "WebApp", appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSessions200Response>> {
+        async getSessions(appName: string = 'WebApp', appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSessions200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSessions(appName, appVersion, getSessionsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.getSessions']?.[localVarOperationServerIndex]?.url;
@@ -5702,7 +7139,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchQuora(appName: string = "WebApp", appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchQuora200Response>> {
+        async searchQuora(appName: string = 'WebApp', appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchQuora200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchQuora(appName, appVersion, searchQuoraRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.searchQuora']?.[localVarOperationServerIndex]?.url;
@@ -5727,7 +7164,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addCatalog(appName: string = "WebApp", appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: any): AxiosPromise<AddCatalog200Response> {
+        addCatalog(appName: string = 'WebApp', appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: any): AxiosPromise<AddCatalog200Response> {
             return localVarFp.addCatalog(appName, appVersion, addCatalogRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5739,7 +7176,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSession(appName: string = "WebApp", appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: any): AxiosPromise<CreateSession200Response> {
+        createSession(appName: string = 'WebApp', appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: any): AxiosPromise<CreateSession200Response> {
             return localVarFp.createSession(appName, appVersion, createSessionRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5751,7 +7188,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteCatalog(appName: string = "WebApp", appVersion: number = 0, id?: number, options?: any): AxiosPromise<SetMessageRead200Response> {
+        deleteCatalog(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: any): AxiosPromise<SetMessageRead200Response> {
             return localVarFp.deleteCatalog(appName, appVersion, id, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5772,7 +7209,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQuoraStudentTopics(appName: string = "WebApp", appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: any): AxiosPromise<object> {
+        getQuoraStudentTopics(appName: string = 'WebApp', appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: any): AxiosPromise<object> {
             return localVarFp.getQuoraStudentTopics(appName, appVersion, getQuoraStudentTopicsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5784,7 +7221,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSessions(appName: string = "WebApp", appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: any): AxiosPromise<GetSessions200Response> {
+        getSessions(appName: string = 'WebApp', appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: any): AxiosPromise<GetSessions200Response> {
             return localVarFp.getSessions(appName, appVersion, getSessionsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5796,7 +7233,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchQuora(appName: string = "WebApp", appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: any): AxiosPromise<SearchQuora200Response> {
+        searchQuora(appName: string = 'WebApp', appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: any): AxiosPromise<SearchQuora200Response> {
             return localVarFp.searchQuora(appName, appVersion, searchQuoraRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -5819,7 +7256,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public addCatalog(appName: string = "WebApp", appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: RawAxiosRequestConfig) {
+    public addCatalog(appName: string = 'WebApp', appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).addCatalog(appName, appVersion, addCatalogRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5833,7 +7270,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public createSession(appName: string = "WebApp", appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: RawAxiosRequestConfig) {
+    public createSession(appName: string = 'WebApp', appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).createSession(appName, appVersion, createSessionRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5847,7 +7284,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public deleteCatalog(appName: string = "WebApp", appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig) {
+    public deleteCatalog(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).deleteCatalog(appName, appVersion, id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5872,7 +7309,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public getQuoraStudentTopics(appName: string = "WebApp", appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: RawAxiosRequestConfig) {
+    public getQuoraStudentTopics(appName: string = 'WebApp', appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).getQuoraStudentTopics(appName, appVersion, getQuoraStudentTopicsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5886,7 +7323,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public getSessions(appName: string = "WebApp", appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: RawAxiosRequestConfig) {
+    public getSessions(appName: string = 'WebApp', appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).getSessions(appName, appVersion, getSessionsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5900,8 +7337,825 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public searchQuora(appName: string = "WebApp", appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: RawAxiosRequestConfig) {
+    public searchQuora(appName: string = 'WebApp', appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).searchQuora(appName, appVersion, searchQuoraRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * TaskApi - axios parameter creator
+ * @export
+ */
+export const TaskApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {ServicesAppTaskAskForHelpAsyncPostRequest} [servicesAppTaskAskForHelpAsyncPostRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskAskForHelpAsyncPost: async (appVersion: number = 0, appName: string = 'WebApp', servicesAppTaskAskForHelpAsyncPostRequest?: ServicesAppTaskAskForHelpAsyncPostRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('servicesAppTaskAskForHelpAsyncPost', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('servicesAppTaskAskForHelpAsyncPost', 'appName', appName)
+            const localVarPath = `/services/app/Task/AskForHelpAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(servicesAppTaskAskForHelpAsyncPostRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} id 
+         * @param {boolean} isRevising 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskCompleteAsyncPost: async (appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('servicesAppTaskCompleteAsyncPost', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('servicesAppTaskCompleteAsyncPost', 'appName', appName)
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('servicesAppTaskCompleteAsyncPost', 'id', id)
+            // verify required parameter 'isRevising' is not null or undefined
+            assertParamExists('servicesAppTaskCompleteAsyncPost', 'isRevising', isRevising)
+            const localVarPath = `/services/app/Task/CompleteAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+            if (isRevising !== undefined) {
+                localVarQueryParameter['isRevising'] = isRevising;
+            }
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} [taskId] 
+         * @param {ServicesAppTaskExamAnswerAsyncPostRequest} [servicesAppTaskExamAnswerAsyncPostRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskExamAnswerAsyncPost: async (appVersion: number = 0, appName: string = 'WebApp', taskId?: number, servicesAppTaskExamAnswerAsyncPostRequest?: ServicesAppTaskExamAnswerAsyncPostRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('servicesAppTaskExamAnswerAsyncPost', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('servicesAppTaskExamAnswerAsyncPost', 'appName', appName)
+            const localVarPath = `/services/app/Task/ExamAnswerAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (taskId !== undefined) {
+                localVarQueryParameter['taskId'] = taskId;
+            }
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(servicesAppTaskExamAnswerAsyncPostRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskGetExamTaskAsyncGet: async (appName: string = 'WebApp', appVersion: number = 0, id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('servicesAppTaskGetExamTaskAsyncGet', 'appName', appName)
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('servicesAppTaskGetExamTaskAsyncGet', 'appVersion', appVersion)
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('servicesAppTaskGetExamTaskAsyncGet', 'id', id)
+            const localVarPath = `/services/app/Task/GetExamTaskAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskGetNoQstExamTaskAsyncGet: async (id: number, appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('servicesAppTaskGetNoQstExamTaskAsyncGet', 'id', id)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('servicesAppTaskGetNoQstExamTaskAsyncGet', 'appName', appName)
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('servicesAppTaskGetNoQstExamTaskAsyncGet', 'appVersion', appVersion)
+            const localVarPath = `/services/app/Task/GetNoQstExamTaskAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} examId 
+         * @param {number} questionId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskGetQuestionViewAsyncGet: async (appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('servicesAppTaskGetQuestionViewAsyncGet', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('servicesAppTaskGetQuestionViewAsyncGet', 'appName', appName)
+            // verify required parameter 'examId' is not null or undefined
+            assertParamExists('servicesAppTaskGetQuestionViewAsyncGet', 'examId', examId)
+            // verify required parameter 'questionId' is not null or undefined
+            assertParamExists('servicesAppTaskGetQuestionViewAsyncGet', 'questionId', questionId)
+            const localVarPath = `/services/app/Task/GetQuestionViewAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (examId !== undefined) {
+                localVarQueryParameter['examId'] = examId;
+            }
+
+            if (questionId !== undefined) {
+                localVarQueryParameter['questionId'] = questionId;
+            }
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 获取任务列表
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {ServicesAppTaskGetStudentTaskListAsyncPostRequest} [servicesAppTaskGetStudentTaskListAsyncPostRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskGetStudentTaskListAsyncPost: async (appName: string = 'WebApp', appVersion: number = 0, servicesAppTaskGetStudentTaskListAsyncPostRequest?: ServicesAppTaskGetStudentTaskListAsyncPostRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('servicesAppTaskGetStudentTaskListAsyncPost', 'appName', appName)
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('servicesAppTaskGetStudentTaskListAsyncPost', 'appVersion', appVersion)
+            const localVarPath = `/services/app/Task/GetStudentTaskListAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(servicesAppTaskGetStudentTaskListAsyncPostRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {number} taskId 
+         * @param {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>} [servicesAppTaskNoQstExamAnswerAsyncPostRequestInner] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskNoQstExamAnswerAsyncPost: async (appName: string = 'WebApp', appVersion: number = 0, taskId: number, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('servicesAppTaskNoQstExamAnswerAsyncPost', 'appName', appName)
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('servicesAppTaskNoQstExamAnswerAsyncPost', 'appVersion', appVersion)
+            // verify required parameter 'taskId' is not null or undefined
+            assertParamExists('servicesAppTaskNoQstExamAnswerAsyncPost', 'taskId', taskId)
+            const localVarPath = `/services/app/Task/NoQstExamAnswerAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (taskId !== undefined) {
+                localVarQueryParameter['taskId'] = taskId;
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(servicesAppTaskNoQstExamAnswerAsyncPostRequestInner, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * TaskApi - functional programming interface
+ * @export
+ */
+export const TaskApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = TaskApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {ServicesAppTaskAskForHelpAsyncPostRequest} [servicesAppTaskAskForHelpAsyncPostRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async servicesAppTaskAskForHelpAsyncPost(appVersion: number = 0, appName: string = 'WebApp', servicesAppTaskAskForHelpAsyncPostRequest?: ServicesAppTaskAskForHelpAsyncPostRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskAskForHelpAsyncPost(appVersion, appName, servicesAppTaskAskForHelpAsyncPostRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskAskForHelpAsyncPost']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} id 
+         * @param {boolean} isRevising 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async servicesAppTaskCompleteAsyncPost(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskCompleteAsyncPost(appVersion, appName, id, isRevising, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskCompleteAsyncPost']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} [taskId] 
+         * @param {ServicesAppTaskExamAnswerAsyncPostRequest} [servicesAppTaskExamAnswerAsyncPostRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async servicesAppTaskExamAnswerAsyncPost(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, servicesAppTaskExamAnswerAsyncPostRequest?: ServicesAppTaskExamAnswerAsyncPostRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskExamAnswerAsyncPost(appVersion, appName, taskId, servicesAppTaskExamAnswerAsyncPostRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskExamAnswerAsyncPost']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async servicesAppTaskGetExamTaskAsyncGet(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskGetExamTaskAsyncGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskGetExamTaskAsyncGet(appName, appVersion, id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskGetExamTaskAsyncGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async servicesAppTaskGetNoQstExamTaskAsyncGet(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskGetNoQstExamTaskAsyncGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskGetNoQstExamTaskAsyncGet(id, appName, appVersion, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskGetNoQstExamTaskAsyncGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} examId 
+         * @param {number} questionId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async servicesAppTaskGetQuestionViewAsyncGet(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskGetQuestionViewAsyncGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskGetQuestionViewAsyncGet(appVersion, appName, examId, questionId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskGetQuestionViewAsyncGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 获取任务列表
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {ServicesAppTaskGetStudentTaskListAsyncPostRequest} [servicesAppTaskGetStudentTaskListAsyncPostRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async servicesAppTaskGetStudentTaskListAsyncPost(appName: string = 'WebApp', appVersion: number = 0, servicesAppTaskGetStudentTaskListAsyncPostRequest?: ServicesAppTaskGetStudentTaskListAsyncPostRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskGetStudentTaskListAsyncPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskGetStudentTaskListAsyncPost(appName, appVersion, servicesAppTaskGetStudentTaskListAsyncPostRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskGetStudentTaskListAsyncPost']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {number} taskId 
+         * @param {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>} [servicesAppTaskNoQstExamAnswerAsyncPostRequestInner] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async servicesAppTaskNoQstExamAnswerAsyncPost(appName: string = 'WebApp', appVersion: number = 0, taskId: number, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskNoQstExamAnswerAsyncPost(appName, appVersion, taskId, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskNoQstExamAnswerAsyncPost']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+    }
+};
+
+/**
+ * TaskApi - factory interface
+ * @export
+ */
+export const TaskApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = TaskApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {ServicesAppTaskAskForHelpAsyncPostRequest} [servicesAppTaskAskForHelpAsyncPostRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskAskForHelpAsyncPost(appVersion: number = 0, appName: string = 'WebApp', servicesAppTaskAskForHelpAsyncPostRequest?: ServicesAppTaskAskForHelpAsyncPostRequest, options?: any): AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response> {
+            return localVarFp.servicesAppTaskAskForHelpAsyncPost(appVersion, appName, servicesAppTaskAskForHelpAsyncPostRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} id 
+         * @param {boolean} isRevising 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskCompleteAsyncPost(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: any): AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response> {
+            return localVarFp.servicesAppTaskCompleteAsyncPost(appVersion, appName, id, isRevising, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} [taskId] 
+         * @param {ServicesAppTaskExamAnswerAsyncPostRequest} [servicesAppTaskExamAnswerAsyncPostRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskExamAnswerAsyncPost(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, servicesAppTaskExamAnswerAsyncPostRequest?: ServicesAppTaskExamAnswerAsyncPostRequest, options?: any): AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response> {
+            return localVarFp.servicesAppTaskExamAnswerAsyncPost(appVersion, appName, taskId, servicesAppTaskExamAnswerAsyncPostRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskGetExamTaskAsyncGet(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: any): AxiosPromise<ServicesAppTaskGetExamTaskAsyncGet200Response> {
+            return localVarFp.servicesAppTaskGetExamTaskAsyncGet(appName, appVersion, id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskGetNoQstExamTaskAsyncGet(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<ServicesAppTaskGetNoQstExamTaskAsyncGet200Response> {
+            return localVarFp.servicesAppTaskGetNoQstExamTaskAsyncGet(id, appName, appVersion, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} examId 
+         * @param {number} questionId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskGetQuestionViewAsyncGet(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: any): AxiosPromise<ServicesAppTaskGetQuestionViewAsyncGet200Response> {
+            return localVarFp.servicesAppTaskGetQuestionViewAsyncGet(appVersion, appName, examId, questionId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 获取任务列表
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {ServicesAppTaskGetStudentTaskListAsyncPostRequest} [servicesAppTaskGetStudentTaskListAsyncPostRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskGetStudentTaskListAsyncPost(appName: string = 'WebApp', appVersion: number = 0, servicesAppTaskGetStudentTaskListAsyncPostRequest?: ServicesAppTaskGetStudentTaskListAsyncPostRequest, options?: any): AxiosPromise<ServicesAppTaskGetStudentTaskListAsyncPost200Response> {
+            return localVarFp.servicesAppTaskGetStudentTaskListAsyncPost(appName, appVersion, servicesAppTaskGetStudentTaskListAsyncPostRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {number} taskId 
+         * @param {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>} [servicesAppTaskNoQstExamAnswerAsyncPostRequestInner] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppTaskNoQstExamAnswerAsyncPost(appName: string = 'WebApp', appVersion: number = 0, taskId: number, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>, options?: any): AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response> {
+            return localVarFp.servicesAppTaskNoQstExamAnswerAsyncPost(appName, appVersion, taskId, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * TaskApi - object-oriented interface
+ * @export
+ * @class TaskApi
+ * @extends {BaseAPI}
+ */
+export class TaskApi extends BaseAPI {
+    /**
+     * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {ServicesAppTaskAskForHelpAsyncPostRequest} [servicesAppTaskAskForHelpAsyncPostRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskApi
+     */
+    public servicesAppTaskAskForHelpAsyncPost(appVersion: number = 0, appName: string = 'WebApp', servicesAppTaskAskForHelpAsyncPostRequest?: ServicesAppTaskAskForHelpAsyncPostRequest, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).servicesAppTaskAskForHelpAsyncPost(appVersion, appName, servicesAppTaskAskForHelpAsyncPostRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {number} id 
+     * @param {boolean} isRevising 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskApi
+     */
+    public servicesAppTaskCompleteAsyncPost(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).servicesAppTaskCompleteAsyncPost(appVersion, appName, id, isRevising, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {number} [taskId] 
+     * @param {ServicesAppTaskExamAnswerAsyncPostRequest} [servicesAppTaskExamAnswerAsyncPostRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskApi
+     */
+    public servicesAppTaskExamAnswerAsyncPost(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, servicesAppTaskExamAnswerAsyncPostRequest?: ServicesAppTaskExamAnswerAsyncPostRequest, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).servicesAppTaskExamAnswerAsyncPost(appVersion, appName, taskId, servicesAppTaskExamAnswerAsyncPostRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} appName 请求api的应用的包名
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {number} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskApi
+     */
+    public servicesAppTaskGetExamTaskAsyncGet(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).servicesAppTaskGetExamTaskAsyncGet(appName, appVersion, id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id 
+     * @param {string} appName 请求api的应用的包名
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskApi
+     */
+    public servicesAppTaskGetNoQstExamTaskAsyncGet(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).servicesAppTaskGetNoQstExamTaskAsyncGet(id, appName, appVersion, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {number} examId 
+     * @param {number} questionId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskApi
+     */
+    public servicesAppTaskGetQuestionViewAsyncGet(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).servicesAppTaskGetQuestionViewAsyncGet(appVersion, appName, examId, questionId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 获取任务列表
+     * @param {string} appName 请求api的应用的包名
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {ServicesAppTaskGetStudentTaskListAsyncPostRequest} [servicesAppTaskGetStudentTaskListAsyncPostRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskApi
+     */
+    public servicesAppTaskGetStudentTaskListAsyncPost(appName: string = 'WebApp', appVersion: number = 0, servicesAppTaskGetStudentTaskListAsyncPostRequest?: ServicesAppTaskGetStudentTaskListAsyncPostRequest, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).servicesAppTaskGetStudentTaskListAsyncPost(appName, appVersion, servicesAppTaskGetStudentTaskListAsyncPostRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} appName 请求api的应用的包名
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {number} taskId 
+     * @param {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>} [servicesAppTaskNoQstExamAnswerAsyncPostRequestInner] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskApi
+     */
+    public servicesAppTaskNoQstExamAnswerAsyncPost(appName: string = 'WebApp', appVersion: number = 0, taskId: number, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).servicesAppTaskNoQstExamAnswerAsyncPost(appName, appVersion, taskId, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
