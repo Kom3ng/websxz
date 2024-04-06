@@ -98,12 +98,21 @@ export default function LoginPage() {
                 remember: true
             });
         }
-    })
+    }, [])
 
     return (
         <>
             {contextHolder}
-            <Card>
+            <Card
+                style={{
+                    margin: '20px',
+                    width: '300px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    marginTop: '100px'
+                }}
+                title="Login"
+            >
                 <Form
                     name="normal_login"
                     className="login-form"
