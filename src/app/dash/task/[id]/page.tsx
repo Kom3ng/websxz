@@ -43,6 +43,7 @@ export default function ExamView({params}: {params: {id: string}}){
                 }
             }
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     return (
         <Card style={{

@@ -1,9 +1,9 @@
 'use client'
 import { GetStudentTaskList200ResponseResultItemsInner } from "@/utils/api/zykj";
 import { api } from "@/utils/api/zykj/apiInstance";
-import { App, Card, Empty, List, Skeleton, Spin, Tooltip } from "antd";
+import { App, Card, List, Skeleton, Tooltip } from "antd";
 import Link from "next/link";
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useImmer } from "use-immer";
 
@@ -14,7 +14,6 @@ export default function TaskList({ taskType }: { taskType: number }) {
     const [tasks, setTasks] = useImmer<Task[]>([]);
     const [totalCount, setCount] = useState(50);
     const { message } = App.useApp();
-    const heightRef = useRef<HTMLDivElement>(null);
 
     const loadMore = () => {
         if (loading.current) return;
