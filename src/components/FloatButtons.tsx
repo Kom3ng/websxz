@@ -14,7 +14,7 @@ const FloatButtons: React.FC = () => {
                     setThemeMode(themeMode === "dark" ? "light" : "dark")
                 }}
             />
-            <FloatButton.BackTop visibilityHeight={0} />
+            <FloatButton.BackTop visibilityHeight={0} onClick={() => window.scrollTo(0,0)} />
         </FloatButton.Group>
     )
 }

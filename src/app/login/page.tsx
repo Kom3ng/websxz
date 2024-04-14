@@ -3,7 +3,7 @@ import { useStoreDispatch, useStoreSelector } from '@/store';
 import { loginInfoSlice, userInfoSlice } from '@/store/userInfo';
 import { api } from '@/utils/api/zykj/apiInstance';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Card, Checkbox, Form, Input, message } from 'antd';
+import { App, Button, Card, Checkbox, Form, Input, Spin, message } from 'antd';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef } from 'react';
@@ -17,7 +17,7 @@ type FieldType = {
 
 
 export default function LoginPage() {
-    const [messageApi, contextHolder] = message.useMessage();
+    const { message } = App.useApp();
     const dispatch = useStoreDispatch();
     const [isLogining, setIsLogining] = useImmer(false);
     const router = useRouter();
@@ -32,8 +32,8 @@ export default function LoginPage() {
         isPosting.current = true;
         setIsLogining(true);
 
-        messageApi.info('登陆中...')
-        
+        message.info('登陆中...')
+
         await api.manageApi.login({
             userName: values.username,
             password: values.password,
@@ -70,7 +70,7 @@ export default function LoginPage() {
                     }));
                 }
 
-                messageApi.success('登录成功');
+                message.success('登录成功');
 
                 // 跳转到来源页面 若来自登录页
                 const from = params.get('from');
@@ -81,7 +81,7 @@ export default function LoginPage() {
                 }
             }
         }).catch((err) => {
-            messageApi.error(err?.message || '未知错误');
+            message.error(err?.message || '未知错误');
         })
 
         // 启用表单
@@ -98,59 +98,61 @@ export default function LoginPage() {
                 remember: true
             });
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
         <>
-            {contextHolder}
-            <Card
-                style={{
-                    margin: '20px',
-                    width: '300px',
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    marginTop: '100px'
-                }}
-                title="Login"
-            >
-                <Form
-                    name="normal_login"
-                    className="login-form"
-                    initialValues={{ remember: true }}
-                    onFinish={onFinish}
-                    disabled={isLogining}
+            <Spin spinning={isLogining}>
+                <Card
+                    style={{
+                        margin: '20px',
+                        width: '300px',
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                        marginTop: '100px'
+                    }}
+                    title="Login"
                 >
-                    <Form.Item
-                        name="username"
-                        rules={[{ required: true, message: 'Please input your Username!' }]}
+                    <Form
+                        name="normal_login"
+                        className="login-form"
+                        initialValues={{ remember: true }}
+                        onFinish={onFinish}
+                        disabled={isLogining}
                     >
-                        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
-                    </Form.Item>
-                    <Form.Item
-                        name="password"
-                        rules={[{ required: true, message: 'Please input your Password!' }]}
-                    >
-                        <Input
-                            prefix={<LockOutlined className="site-form-item-icon" />}
-                            type="password"
-                            placeholder="Password"
-                        />
-                    </Form.Item>
-                    <Form.Item>
-                        <Form.Item name="remember" valuePropName="checked" noStyle>
-                            <Checkbox>Remember me</Checkbox>
+                        <Form.Item
+                            name="username"
+                            rules={[{ required: true, message: 'Please input your Username!' }]}
+                        >
+                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
                         </Form.Item>
-                    </Form.Item>
+                        <Form.Item
+                            name="password"
+                            rules={[{ required: true, message: 'Please input your Password!' }]}
+                        >
+                            <Input
+                                prefix={<LockOutlined className="site-form-item-icon" />}
+                                type="password"
+                                placeholder="Password"
+                            />
+                        </Form.Item>
+                        <Form.Item>
+                            <Form.Item name="remember" valuePropName="checked" noStyle>
+                                <Checkbox>Remember me</Checkbox>
+                            </Form.Item>
+                        </Form.Item>
 
-                    <Form.Item>
-                        <Button type="primary" htmlType="submit" style={{
-                            width: '100%'
-                        }}>
-                            Log in
-                        </Button>
-                    </Form.Item>
-                </Form>
-            </Card>
+                        <Form.Item>
+                            <Button type="primary" htmlType="submit" style={{
+                                width: '100%'
+                            }}>
+                                Log in
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </Card>
+            </Spin>
         </>
     )
 }

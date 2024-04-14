@@ -113,6 +113,74 @@ export interface ApiError {
 /**
  * 
  * @export
+ * @interface AskForHelp200Response
+ */
+export interface AskForHelp200Response {
+    /**
+     * 
+     * @type {string}
+     * @memberof AskForHelp200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AskForHelp200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof AskForHelp200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AskForHelp200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AskForHelp200Response
+     */
+    '__abp'?: boolean;
+    /**
+     * 
+     * @type {object}
+     * @memberof AskForHelp200Response
+     */
+    'result'?: object;
+}
+/**
+ * 
+ * @export
+ * @interface AskForHelpRequest
+ */
+export interface AskForHelpRequest {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AskForHelpRequest
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof AskForHelpRequest
+     */
+    'examTaskId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof AskForHelpRequest
+     */
+    'questionId'?: number;
+}
+/**
+ * 
+ * @export
  * @interface CanIOpenCamera200Response
  */
 export interface CanIOpenCamera200Response {
@@ -582,6 +650,50 @@ export interface CreateSessionRequest {
      * @memberof CreateSessionRequest
      */
     'summary'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ExamAnswerRequest
+ */
+export interface ExamAnswerRequest {
+    /**
+     * 
+     * @type {Array<ExamAnswerRequestAnswersInner>}
+     * @memberof ExamAnswerRequest
+     */
+    'answers'?: Array<ExamAnswerRequestAnswersInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExamAnswerRequest
+     */
+    'draft'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamAnswerRequest
+     */
+    'questionId'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ExamAnswerRequestAnswersInner
+ */
+export interface ExamAnswerRequestAnswersInner {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ExamAnswerRequestAnswersInner
+     */
+    'answers'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExamAnswerRequestAnswersInner
+     */
+    'uuid'?: string;
 }
 /**
  * 
@@ -1059,6 +1171,310 @@ export interface GetDnUrl200Response {
      * @memberof GetDnUrl200Response
      */
     '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface GetExamTask200Response
+ */
+export interface GetExamTask200Response {
+    /**
+     * 
+     * @type {GetExamTask200ResponseResult}
+     * @memberof GetExamTask200Response
+     */
+    'result'?: GetExamTask200ResponseResult;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200Response
+     */
+    'targetUrl'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof GetExamTask200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200Response
+     */
+    '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface GetExamTask200ResponseResult
+ */
+export interface GetExamTask200ResponseResult {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'address'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'answerPad'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'answerSheet'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'answerSheetId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'answeringUrge'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'correctOnline'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'correctOnlineState'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'correctWithSelf'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'creationTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'displayAnswer'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'enableScore'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'endTime'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'examName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'examTips'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'gradeId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'gradeName'?: string;
+    /**
+     * 
+     * @type {Array<GetExamTask200ResponseResultGroupsInner>}
+     * @memberof GetExamTask200ResponseResult
+     */
+    'groups'?: Array<GetExamTask200ResponseResultGroupsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetExamTask200ResponseResultGroupsInner
+ */
+export interface GetExamTask200ResponseResultGroupsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200ResponseResultGroupsInner
+     */
+    'description'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200ResponseResultGroupsInner
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInner
+     */
+    'qstCount'?: number;
+    /**
+     * 
+     * @type {Array<GetExamTask200ResponseResultGroupsInnerQuestionsInner>}
+     * @memberof GetExamTask200ResponseResultGroupsInner
+     */
+    'questions'?: Array<GetExamTask200ResponseResultGroupsInnerQuestionsInner>;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInner
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200ResponseResultGroupsInner
+     */
+    'showGroupNumber'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface GetExamTask200ResponseResultGroupsInnerQuestionsInner
+ */
+export interface GetExamTask200ResponseResultGroupsInnerQuestionsInner {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'completed'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'hasMicroClass'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'itemType'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'name'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'originScore'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'relatedGroupId'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'revisingResult'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
+     */
+    'state'?: number;
 }
 /**
  * 
@@ -1795,6 +2211,449 @@ export interface GetMyUnreadMessageCount200ResponseResultInner {
 /**
  * 
  * @export
+ * @interface GetNoQstExam200Response
+ */
+export interface GetNoQstExam200Response {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof GetNoQstExam200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200Response
+     */
+    '__abp'?: boolean;
+    /**
+     * 
+     * @type {GetNoQstExam200ResponseResult}
+     * @memberof GetNoQstExam200Response
+     */
+    'result'?: GetNoQstExam200ResponseResult;
+}
+/**
+ * 
+ * @export
+ * @interface GetNoQstExam200ResponseResult
+ */
+export interface GetNoQstExam200ResponseResult {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'address'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'answerPad'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'answerSheet'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'answerSheetId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'answeringUrge'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'correctOnline'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'correctOnlineState'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'correctWithSelf'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'creationTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'displayAnswer'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'enableScore'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'endTime'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'examName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'examTips'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'gradeId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'gradeName'?: string;
+    /**
+     * 
+     * @type {Array<GetNoQstExam200ResponseResultGroupsInner>}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'groups'?: Array<GetNoQstExam200ResponseResultGroupsInner>;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'isExempted'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'isRead'?: boolean | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'isRepresentative'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'noQstStem'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'qstCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'revisingUrge'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'serialNum'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'specificTrainingType'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'startTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'state'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'studentUserId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'teacherUserId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'testDescription'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'testPagerId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'testPagerName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'testTips'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'topicId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'topicName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'whenShowAnswer'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResult
+     */
+    'whenShowMicroLesson'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetNoQstExam200ResponseResultGroupsInner
+ */
+export interface GetNoQstExam200ResponseResultGroupsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResultGroupsInner
+     */
+    'description'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResultGroupsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResultGroupsInner
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResultGroupsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResultGroupsInner
+     */
+    'qstCount'?: number;
+    /**
+     * 
+     * @type {Array<GetNoQstExam200ResponseResultGroupsInnerQuestionsInner>}
+     * @memberof GetNoQstExam200ResponseResultGroupsInner
+     */
+    'questions'?: Array<GetNoQstExam200ResponseResultGroupsInnerQuestionsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+ */
+export interface GetNoQstExam200ResponseResultGroupsInnerQuestionsInner {
+    /**
+     * 
+     * @type {Array<GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner>}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'answerList'?: Array<GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'answerWithQuestion'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'completed'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {Array<QstFlow>}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'qstFlows'?: Array<QstFlow>;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
+     */
+    'score'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
+ */
+export interface GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
+     */
+    'answers'?: Array<string>;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
+     */
+    'pid'?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
+     */
+    'uuid'?: string;
+}
+/**
+ * 
+ * @export
  * @interface GetNotice200Response
  */
 export interface GetNotice200Response {
@@ -2018,6 +2877,333 @@ export interface GetQWeather200ResponseResultDaily {
      * @memberof GetQWeather200ResponseResultDaily
      */
     'windScaleNight'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetQuestionView200Response
+ */
+export interface GetQuestionView200Response {
+    /**
+     * 
+     * @type {GetQuestionView200ResponseResult}
+     * @memberof GetQuestionView200Response
+     */
+    'result'?: GetQuestionView200ResponseResult;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200Response
+     */
+    'targetUrl'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetQuestionView200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof GetQuestionView200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetQuestionView200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetQuestionView200Response
+     */
+    '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface GetQuestionView200ResponseResult
+ */
+export interface GetQuestionView200ResponseResult {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'attachments'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'qstAnswers'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'analysis'?: string | null;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'microClassToQuestionList'?: Array<object>;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'microClassToStudentList'?: Array<object>;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'examDraft'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'revisingDraft'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'revisingResult'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'examAnswered'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'revisingAnswerd'?: boolean;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'lastRoundRevisingRecords'?: Array<object>;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'typicalRightAnswers'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'typicalErrorAnswers'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'isInMistakeBook'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'path'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'itemType'?: number;
+    /**
+     * 
+     * @type {Array<QstFlow>}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'qstFlows'?: Array<QstFlow>;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'qstFlowsCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'totalScore'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'totalAnswerScore'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'originScore'?: number | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'answerWithQuestion'?: boolean;
+    /**
+     * 
+     * @type {Array<GetQuestionView200ResponseResultAnswerListInner>}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'answerList'?: Array<GetQuestionView200ResponseResultAnswerListInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'microClassList'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResult
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetQuestionView200ResponseResultAnswerListInner
+ */
+export interface GetQuestionView200ResponseResultAnswerListInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'uuid'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'examAnswers'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'examComments'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'examMicroLessonComment'?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'revisingAnswers'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'revisingComments'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'reviseMicroLessonComment'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'originScore'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'result'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'originResult'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'displayAnswer'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'whenShowAnswer'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'whenShowMicroLesson'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetQuestionView200ResponseResultAnswerListInner
+     */
+    'taskState'?: number;
 }
 /**
  * 
@@ -2387,6 +3573,256 @@ export interface GetSessionsRequest {
 /**
  * 
  * @export
+ * @interface GetStudentTaskList200Response
+ */
+export interface GetStudentTaskList200Response {
+    /**
+     * 
+     * @type {GetStudentTaskList200ResponseResult}
+     * @memberof GetStudentTaskList200Response
+     */
+    'result'?: GetStudentTaskList200ResponseResult;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetStudentTaskList200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof GetStudentTaskList200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200Response
+     */
+    '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface GetStudentTaskList200ResponseResult
+ */
+export interface GetStudentTaskList200ResponseResult {
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResult
+     */
+    'totalCount'?: number;
+    /**
+     * 
+     * @type {Array<GetStudentTaskList200ResponseResultItemsInner>}
+     * @memberof GetStudentTaskList200ResponseResult
+     */
+    'items'?: Array<GetStudentTaskList200ResponseResultItemsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface GetStudentTaskList200ResponseResultItemsInner
+ */
+export interface GetStudentTaskList200ResponseResultItemsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'address'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'answerPad'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'answerSheet'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'answeringUrge'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'correctOnline'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'correctOnlineState'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'correctWithSelf'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'creationTime'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'endTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'examName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'examTaskId'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'isCollect'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'isExempted'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'isNoStem'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'isRead'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'revisingUrge'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'serialNum'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'specificTrainingType'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'startTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'taskState'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'testPagerId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'topicId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetStudentTaskList200ResponseResultItemsInner
+     */
+    'topicName'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface GetStudentTaskListRequest
+ */
+export interface GetStudentTaskListRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskListRequest
+     */
+    'maxResultCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskListRequest
+     */
+    'skipCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GetStudentTaskListRequest
+     */
+    'taskListType'?: number;
+}
+/**
+ * 
+ * @export
  * @interface GetSystemSettingsForStudent200Response
  */
 export interface GetSystemSettingsForStudent200Response {
@@ -2607,6 +4043,50 @@ export interface MultiRemoveMistakeItemsRequest {
      * @memberof MultiRemoveMistakeItemsRequest
      */
     'itemIds'?: Array<number>;
+}
+/**
+ * 
+ * @export
+ * @interface NoQstExamAnswerRequestInner
+ */
+export interface NoQstExamAnswerRequestInner {
+    /**
+     * 
+     * @type {Array<NoQstExamAnswerRequestInnerAnswersInner>}
+     * @memberof NoQstExamAnswerRequestInner
+     */
+    'answers'?: Array<NoQstExamAnswerRequestInnerAnswersInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExamAnswerRequestInner
+     */
+    'draft'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExamAnswerRequestInner
+     */
+    'questionId'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface NoQstExamAnswerRequestInnerAnswersInner
+ */
+export interface NoQstExamAnswerRequestInnerAnswersInner {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof NoQstExamAnswerRequestInnerAnswersInner
+     */
+    'answers'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExamAnswerRequestInnerAnswersInner
+     */
+    'uuid'?: string;
 }
 /**
  * 
@@ -3009,1443 +4489,6 @@ export interface SearchQuoraRequest {
      * @memberof SearchQuoraRequest
      */
     'imageUrl'?: string;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskAskForHelpAsyncPost200Response
- */
-export interface ServicesAppTaskAskForHelpAsyncPost200Response {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
-     */
-    'targetUrl'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
-     */
-    'success'?: boolean;
-    /**
-     * 
-     * @type {ApiError}
-     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
-     */
-    'error'?: ApiError;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
-     */
-    'unAuthorizedRequest'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
-     */
-    '__abp'?: boolean;
-    /**
-     * 
-     * @type {object}
-     * @memberof ServicesAppTaskAskForHelpAsyncPost200Response
-     */
-    'result'?: object;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskAskForHelpAsyncPostRequest
- */
-export interface ServicesAppTaskAskForHelpAsyncPostRequest {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskAskForHelpAsyncPostRequest
-     */
-    'askForHelp'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskAskForHelpAsyncPostRequest
-     */
-    'examTaskId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskAskForHelpAsyncPostRequest
-     */
-    'questionId'?: number;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskExamAnswerAsyncPostRequest
- */
-export interface ServicesAppTaskExamAnswerAsyncPostRequest {
-    /**
-     * 
-     * @type {Array<ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner>}
-     * @memberof ServicesAppTaskExamAnswerAsyncPostRequest
-     */
-    'answers'?: Array<ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskExamAnswerAsyncPostRequest
-     */
-    'draft'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskExamAnswerAsyncPostRequest
-     */
-    'questionId'?: number;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner
- */
-export interface ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner
-     */
-    'answers'?: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskExamAnswerAsyncPostRequestAnswersInner
-     */
-    'uuid'?: string;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetExamTaskAsyncGet200Response
- */
-export interface ServicesAppTaskGetExamTaskAsyncGet200Response {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'address'?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'answerPad'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'answerSheet'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'answerSheetId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'answeringUrge'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'correctOnline'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'correctOnlineState'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'correctWithSelf'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'creationTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'displayAnswer'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'enableScore'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'endTime'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'examId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'examName'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'examState'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'examTips'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'gradeId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'gradeName'?: string;
-    /**
-     * 
-     * @type {Array<ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner>}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200Response
-     */
-    'groups'?: Array<ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner>;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
- */
-export interface ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
-     */
-    'description'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
-     */
-    'qstCount'?: number;
-    /**
-     * 
-     * @type {Array<ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner>}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
-     */
-    'questions'?: Array<ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner>;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInner
-     */
-    'showGroupNumber'?: boolean;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
- */
-export interface ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'askForHelp'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'completed'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'hasMicroClass'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'itemType'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'name'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'originScore'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'relatedGroupId'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'revisingResult'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetExamTaskAsyncGet200ResponseGroupsInnerQuestionsInner
-     */
-    'state'?: number;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
- */
-export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200Response {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
-     */
-    'targetUrl'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
-     */
-    'success'?: boolean;
-    /**
-     * 
-     * @type {ApiError}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
-     */
-    'error'?: ApiError;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
-     */
-    'unAuthorizedRequest'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
-     */
-    '__abp'?: boolean;
-    /**
-     * 
-     * @type {ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200Response
-     */
-    'result'?: ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
- */
-export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'address'?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'answerPad'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'answerSheet'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'answerSheetId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'answeringUrge'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'correctOnline'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'correctOnlineState'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'correctWithSelf'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'creationTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'displayAnswer'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'enableScore'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'endTime'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'examId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'examName'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'examState'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'examTips'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'gradeId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'gradeName'?: string;
-    /**
-     * 
-     * @type {Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner>}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'groups'?: Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner>;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'isExempted'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'isRead'?: boolean | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'isRepresentative'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'noQstStem'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'qstCount'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'revisingUrge'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'serialNum'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'size'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'specificTrainingType'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'startTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'state'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'studentUserId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'teacherUserId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'testDescription'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'testPagerId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'testPagerName'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'testTips'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'topicId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'topicName'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'whenShowAnswer'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResult
-     */
-    'whenShowMicroLesson'?: number;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
- */
-export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
-     */
-    'description'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
-     */
-    'qstCount'?: number;
-    /**
-     * 
-     * @type {Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner>}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInner
-     */
-    'questions'?: Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner>;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
- */
-export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner {
-    /**
-     * 
-     * @type {Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner>}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'answerList'?: Array<ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner>;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'answerWithQuestion'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'askForHelp'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'completed'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {Array<QstFlow>}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'qstFlows'?: Array<QstFlow>;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInner
-     */
-    'score'?: number;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
- */
-export interface ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
-     */
-    'answers'?: Array<string>;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
-     */
-    'pid'?: number | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetNoQstExamTaskAsyncGet200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
-     */
-    'uuid'?: string;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetQuestionViewAsyncGet200Response
- */
-export interface ServicesAppTaskGetQuestionViewAsyncGet200Response {
-    /**
-     * 
-     * @type {ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
-     */
-    'result'?: ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
-     */
-    'targetUrl'?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
-     */
-    'success'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
-     */
-    'error'?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
-     */
-    'unAuthorizedRequest'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200Response
-     */
-    '__abp'?: boolean;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
- */
-export interface ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'attachments'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'qstAnswers'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'analysis'?: string | null;
-    /**
-     * 
-     * @type {Array<object>}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'microClassToQuestionList'?: Array<object>;
-    /**
-     * 
-     * @type {Array<object>}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'microClassToStudentList'?: Array<object>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'examDraft'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'revisingDraft'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'revisingResult'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'examAnswered'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'revisingAnswerd'?: boolean;
-    /**
-     * 
-     * @type {Array<object>}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'lastRoundRevisingRecords'?: Array<object>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'typicalRightAnswers'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'typicalErrorAnswers'?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'isInMistakeBook'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'askForHelp'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'path'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'itemType'?: number;
-    /**
-     * 
-     * @type {Array<QstFlow>}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'qstFlows'?: Array<QstFlow>;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'qstFlowsCount'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'totalScore'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'totalAnswerScore'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'originScore'?: number | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'answerWithQuestion'?: boolean;
-    /**
-     * 
-     * @type {Array<ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner>}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'answerList'?: Array<ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'microClassList'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResult
-     */
-    'id'?: number;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
- */
-export interface ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'uuid'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'examAnswers'?: Array<string>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'examComments'?: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'examMicroLessonComment'?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'revisingAnswers'?: Array<string>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'revisingComments'?: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'reviseMicroLessonComment'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'originScore'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'result'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'originResult'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'displayAnswer'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'whenShowAnswer'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'whenShowMicroLesson'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'examState'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetQuestionViewAsyncGet200ResponseResultAnswerListInner
-     */
-    'taskState'?: number;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetStudentTaskListAsyncPost200Response
- */
-export interface ServicesAppTaskGetStudentTaskListAsyncPost200Response {
-    /**
-     * 
-     * @type {ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
-     */
-    'result'?: ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
-     */
-    'targetUrl'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
-     */
-    'success'?: boolean;
-    /**
-     * 
-     * @type {ApiError}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
-     */
-    'error'?: ApiError;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
-     */
-    'unAuthorizedRequest'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200Response
-     */
-    '__abp'?: boolean;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult
- */
-export interface ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult {
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult
-     */
-    'totalCount'?: number;
-    /**
-     * 
-     * @type {Array<ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner>}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResult
-     */
-    'items'?: Array<ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner>;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
- */
-export interface ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'address'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'answerPad'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'answerSheet'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'answeringUrge'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'correctOnline'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'correctOnlineState'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'correctWithSelf'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'creationTime'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'endTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'examId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'examName'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'examState'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'examTaskId'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'isCollect'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'isExempted'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'isNoStem'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'isRead'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'revisingUrge'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'serialNum'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'size'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'specificTrainingType'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'startTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'taskState'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'testPagerId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'topicId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPost200ResponseResultItemsInner
-     */
-    'topicName'?: string;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskGetStudentTaskListAsyncPostRequest
- */
-export interface ServicesAppTaskGetStudentTaskListAsyncPostRequest {
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPostRequest
-     */
-    'maxResultCount'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPostRequest
-     */
-    'skipCount'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskGetStudentTaskListAsyncPostRequest
-     */
-    'taskListType'?: number;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner
- */
-export interface ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner {
-    /**
-     * 
-     * @type {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner>}
-     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner
-     */
-    'answers'?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner
-     */
-    'draft'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner
-     */
-    'questionId'?: number;
-}
-/**
- * 
- * @export
- * @interface ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner
- */
-export interface ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner
-     */
-    'answers'?: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppTaskNoQstExamAnswerAsyncPostRequestInnerAnswersInner
-     */
-    'uuid'?: string;
 }
 /**
  * 
@@ -7354,15 +7397,15 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * 
          * @param {number} appVersion 请求api的应用的版本
          * @param {string} appName 请求api的应用的包名
-         * @param {ServicesAppTaskAskForHelpAsyncPostRequest} [servicesAppTaskAskForHelpAsyncPostRequest] 
+         * @param {AskForHelpRequest} [askForHelpRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskAskForHelpAsyncPost: async (appVersion: number = 0, appName: string = 'WebApp', servicesAppTaskAskForHelpAsyncPostRequest?: ServicesAppTaskAskForHelpAsyncPostRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        askForHelp: async (appVersion: number = 0, appName: string = 'WebApp', askForHelpRequest?: AskForHelpRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appVersion' is not null or undefined
-            assertParamExists('servicesAppTaskAskForHelpAsyncPost', 'appVersion', appVersion)
+            assertParamExists('askForHelp', 'appVersion', appVersion)
             // verify required parameter 'appName' is not null or undefined
-            assertParamExists('servicesAppTaskAskForHelpAsyncPost', 'appName', appName)
+            assertParamExists('askForHelp', 'appName', appName)
             const localVarPath = `/services/app/Task/AskForHelpAsync`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7396,7 +7439,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(servicesAppTaskAskForHelpAsyncPostRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(askForHelpRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -7412,15 +7455,15 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskCompleteAsyncPost: async (appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        complete: async (appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appVersion' is not null or undefined
-            assertParamExists('servicesAppTaskCompleteAsyncPost', 'appVersion', appVersion)
+            assertParamExists('complete', 'appVersion', appVersion)
             // verify required parameter 'appName' is not null or undefined
-            assertParamExists('servicesAppTaskCompleteAsyncPost', 'appName', appName)
+            assertParamExists('complete', 'appName', appName)
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('servicesAppTaskCompleteAsyncPost', 'id', id)
+            assertParamExists('complete', 'id', id)
             // verify required parameter 'isRevising' is not null or undefined
-            assertParamExists('servicesAppTaskCompleteAsyncPost', 'isRevising', isRevising)
+            assertParamExists('complete', 'isRevising', isRevising)
             const localVarPath = `/services/app/Task/CompleteAsync`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7471,15 +7514,15 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {number} appVersion 请求api的应用的版本
          * @param {string} appName 请求api的应用的包名
          * @param {number} [taskId] 
-         * @param {ServicesAppTaskExamAnswerAsyncPostRequest} [servicesAppTaskExamAnswerAsyncPostRequest] 
+         * @param {ExamAnswerRequest} [examAnswerRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskExamAnswerAsyncPost: async (appVersion: number = 0, appName: string = 'WebApp', taskId?: number, servicesAppTaskExamAnswerAsyncPostRequest?: ServicesAppTaskExamAnswerAsyncPostRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        examAnswer: async (appVersion: number = 0, appName: string = 'WebApp', taskId?: number, examAnswerRequest?: ExamAnswerRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appVersion' is not null or undefined
-            assertParamExists('servicesAppTaskExamAnswerAsyncPost', 'appVersion', appVersion)
+            assertParamExists('examAnswer', 'appVersion', appVersion)
             // verify required parameter 'appName' is not null or undefined
-            assertParamExists('servicesAppTaskExamAnswerAsyncPost', 'appName', appName)
+            assertParamExists('examAnswer', 'appName', appName)
             const localVarPath = `/services/app/Task/ExamAnswerAsync`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7517,7 +7560,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(servicesAppTaskExamAnswerAsyncPostRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(examAnswerRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -7532,13 +7575,13 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskGetExamTaskAsyncGet: async (appName: string = 'WebApp', appVersion: number = 0, id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getExamTask: async (appName: string = 'WebApp', appVersion: number = 0, id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
-            assertParamExists('servicesAppTaskGetExamTaskAsyncGet', 'appName', appName)
+            assertParamExists('getExamTask', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
-            assertParamExists('servicesAppTaskGetExamTaskAsyncGet', 'appVersion', appVersion)
+            assertParamExists('getExamTask', 'appVersion', appVersion)
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('servicesAppTaskGetExamTaskAsyncGet', 'id', id)
+            assertParamExists('getExamTask', 'id', id)
             const localVarPath = `/services/app/Task/GetExamTaskAsync`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7588,13 +7631,13 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskGetNoQstExamTaskAsyncGet: async (id: number, appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getNoQstExam: async (id: number, appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('servicesAppTaskGetNoQstExamTaskAsyncGet', 'id', id)
+            assertParamExists('getNoQstExam', 'id', id)
             // verify required parameter 'appName' is not null or undefined
-            assertParamExists('servicesAppTaskGetNoQstExamTaskAsyncGet', 'appName', appName)
+            assertParamExists('getNoQstExam', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
-            assertParamExists('servicesAppTaskGetNoQstExamTaskAsyncGet', 'appVersion', appVersion)
+            assertParamExists('getNoQstExam', 'appVersion', appVersion)
             const localVarPath = `/services/app/Task/GetNoQstExamTaskAsync`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7645,15 +7688,15 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskGetQuestionViewAsyncGet: async (appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getQuestionView: async (appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appVersion' is not null or undefined
-            assertParamExists('servicesAppTaskGetQuestionViewAsyncGet', 'appVersion', appVersion)
+            assertParamExists('getQuestionView', 'appVersion', appVersion)
             // verify required parameter 'appName' is not null or undefined
-            assertParamExists('servicesAppTaskGetQuestionViewAsyncGet', 'appName', appName)
+            assertParamExists('getQuestionView', 'appName', appName)
             // verify required parameter 'examId' is not null or undefined
-            assertParamExists('servicesAppTaskGetQuestionViewAsyncGet', 'examId', examId)
+            assertParamExists('getQuestionView', 'examId', examId)
             // verify required parameter 'questionId' is not null or undefined
-            assertParamExists('servicesAppTaskGetQuestionViewAsyncGet', 'questionId', questionId)
+            assertParamExists('getQuestionView', 'questionId', questionId)
             const localVarPath = `/services/app/Task/GetQuestionViewAsync`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7703,15 +7746,15 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * 获取任务列表
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
-         * @param {ServicesAppTaskGetStudentTaskListAsyncPostRequest} [servicesAppTaskGetStudentTaskListAsyncPostRequest] 
+         * @param {GetStudentTaskListRequest} [getStudentTaskListRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskGetStudentTaskListAsyncPost: async (appName: string = 'WebApp', appVersion: number = 0, servicesAppTaskGetStudentTaskListAsyncPostRequest?: ServicesAppTaskGetStudentTaskListAsyncPostRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getStudentTaskList: async (appName: string = 'WebApp', appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
-            assertParamExists('servicesAppTaskGetStudentTaskListAsyncPost', 'appName', appName)
+            assertParamExists('getStudentTaskList', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
-            assertParamExists('servicesAppTaskGetStudentTaskListAsyncPost', 'appVersion', appVersion)
+            assertParamExists('getStudentTaskList', 'appVersion', appVersion)
             const localVarPath = `/services/app/Task/GetStudentTaskListAsync`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7745,7 +7788,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(servicesAppTaskGetStudentTaskListAsyncPostRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(getStudentTaskListRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -7757,17 +7800,17 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
          * @param {number} taskId 
-         * @param {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>} [servicesAppTaskNoQstExamAnswerAsyncPostRequestInner] 
+         * @param {Array<NoQstExamAnswerRequestInner>} [noQstExamAnswerRequestInner] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskNoQstExamAnswerAsyncPost: async (appName: string = 'WebApp', appVersion: number = 0, taskId: number, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        noQstExamAnswer: async (appName: string = 'WebApp', appVersion: number = 0, taskId: number, noQstExamAnswerRequestInner?: Array<NoQstExamAnswerRequestInner>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
-            assertParamExists('servicesAppTaskNoQstExamAnswerAsyncPost', 'appName', appName)
+            assertParamExists('noQstExamAnswer', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
-            assertParamExists('servicesAppTaskNoQstExamAnswerAsyncPost', 'appVersion', appVersion)
+            assertParamExists('noQstExamAnswer', 'appVersion', appVersion)
             // verify required parameter 'taskId' is not null or undefined
-            assertParamExists('servicesAppTaskNoQstExamAnswerAsyncPost', 'taskId', taskId)
+            assertParamExists('noQstExamAnswer', 'taskId', taskId)
             const localVarPath = `/services/app/Task/NoQstExamAnswerAsync`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7805,7 +7848,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(servicesAppTaskNoQstExamAnswerAsyncPostRequestInner, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(noQstExamAnswerRequestInner, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -7826,14 +7869,14 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * 
          * @param {number} appVersion 请求api的应用的版本
          * @param {string} appName 请求api的应用的包名
-         * @param {ServicesAppTaskAskForHelpAsyncPostRequest} [servicesAppTaskAskForHelpAsyncPostRequest] 
+         * @param {AskForHelpRequest} [askForHelpRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async servicesAppTaskAskForHelpAsyncPost(appVersion: number = 0, appName: string = 'WebApp', servicesAppTaskAskForHelpAsyncPostRequest?: ServicesAppTaskAskForHelpAsyncPostRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskAskForHelpAsyncPost(appVersion, appName, servicesAppTaskAskForHelpAsyncPostRequest, options);
+        async askForHelp(appVersion: number = 0, appName: string = 'WebApp', askForHelpRequest?: AskForHelpRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.askForHelp(appVersion, appName, askForHelpRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskAskForHelpAsyncPost']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.askForHelp']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -7845,10 +7888,10 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async servicesAppTaskCompleteAsyncPost(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskCompleteAsyncPost(appVersion, appName, id, isRevising, options);
+        async complete(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.complete(appVersion, appName, id, isRevising, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskCompleteAsyncPost']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.complete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -7856,14 +7899,14 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {number} appVersion 请求api的应用的版本
          * @param {string} appName 请求api的应用的包名
          * @param {number} [taskId] 
-         * @param {ServicesAppTaskExamAnswerAsyncPostRequest} [servicesAppTaskExamAnswerAsyncPostRequest] 
+         * @param {ExamAnswerRequest} [examAnswerRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async servicesAppTaskExamAnswerAsyncPost(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, servicesAppTaskExamAnswerAsyncPostRequest?: ServicesAppTaskExamAnswerAsyncPostRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskExamAnswerAsyncPost(appVersion, appName, taskId, servicesAppTaskExamAnswerAsyncPostRequest, options);
+        async examAnswer(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, examAnswerRequest?: ExamAnswerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.examAnswer(appVersion, appName, taskId, examAnswerRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskExamAnswerAsyncPost']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.examAnswer']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -7874,10 +7917,10 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async servicesAppTaskGetExamTaskAsyncGet(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskGetExamTaskAsyncGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskGetExamTaskAsyncGet(appName, appVersion, id, options);
+        async getExamTask(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExamTask200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getExamTask(appName, appVersion, id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskGetExamTaskAsyncGet']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.getExamTask']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -7888,10 +7931,10 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async servicesAppTaskGetNoQstExamTaskAsyncGet(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskGetNoQstExamTaskAsyncGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskGetNoQstExamTaskAsyncGet(id, appName, appVersion, options);
+        async getNoQstExam(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetNoQstExam200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getNoQstExam(id, appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskGetNoQstExamTaskAsyncGet']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.getNoQstExam']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -7903,24 +7946,24 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async servicesAppTaskGetQuestionViewAsyncGet(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskGetQuestionViewAsyncGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskGetQuestionViewAsyncGet(appVersion, appName, examId, questionId, options);
+        async getQuestionView(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetQuestionView200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getQuestionView(appVersion, appName, examId, questionId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskGetQuestionViewAsyncGet']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.getQuestionView']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 获取任务列表
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
-         * @param {ServicesAppTaskGetStudentTaskListAsyncPostRequest} [servicesAppTaskGetStudentTaskListAsyncPostRequest] 
+         * @param {GetStudentTaskListRequest} [getStudentTaskListRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async servicesAppTaskGetStudentTaskListAsyncPost(appName: string = 'WebApp', appVersion: number = 0, servicesAppTaskGetStudentTaskListAsyncPostRequest?: ServicesAppTaskGetStudentTaskListAsyncPostRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskGetStudentTaskListAsyncPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskGetStudentTaskListAsyncPost(appName, appVersion, servicesAppTaskGetStudentTaskListAsyncPostRequest, options);
+        async getStudentTaskList(appName: string = 'WebApp', appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStudentTaskList200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getStudentTaskList(appName, appVersion, getStudentTaskListRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskGetStudentTaskListAsyncPost']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.getStudentTaskList']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -7928,14 +7971,14 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
          * @param {number} taskId 
-         * @param {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>} [servicesAppTaskNoQstExamAnswerAsyncPostRequestInner] 
+         * @param {Array<NoQstExamAnswerRequestInner>} [noQstExamAnswerRequestInner] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async servicesAppTaskNoQstExamAnswerAsyncPost(appName: string = 'WebApp', appVersion: number = 0, taskId: number, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppTaskNoQstExamAnswerAsyncPost(appName, appVersion, taskId, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner, options);
+        async noQstExamAnswer(appName: string = 'WebApp', appVersion: number = 0, taskId: number, noQstExamAnswerRequestInner?: Array<NoQstExamAnswerRequestInner>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.noQstExamAnswer(appName, appVersion, taskId, noQstExamAnswerRequestInner, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TaskApi.servicesAppTaskNoQstExamAnswerAsyncPost']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TaskApi.noQstExamAnswer']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -7952,12 +7995,12 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * 
          * @param {number} appVersion 请求api的应用的版本
          * @param {string} appName 请求api的应用的包名
-         * @param {ServicesAppTaskAskForHelpAsyncPostRequest} [servicesAppTaskAskForHelpAsyncPostRequest] 
+         * @param {AskForHelpRequest} [askForHelpRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskAskForHelpAsyncPost(appVersion: number = 0, appName: string = 'WebApp', servicesAppTaskAskForHelpAsyncPostRequest?: ServicesAppTaskAskForHelpAsyncPostRequest, options?: any): AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response> {
-            return localVarFp.servicesAppTaskAskForHelpAsyncPost(appVersion, appName, servicesAppTaskAskForHelpAsyncPostRequest, options).then((request) => request(axios, basePath));
+        askForHelp(appVersion: number = 0, appName: string = 'WebApp', askForHelpRequest?: AskForHelpRequest, options?: any): AxiosPromise<AskForHelp200Response> {
+            return localVarFp.askForHelp(appVersion, appName, askForHelpRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -7968,20 +8011,20 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskCompleteAsyncPost(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: any): AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response> {
-            return localVarFp.servicesAppTaskCompleteAsyncPost(appVersion, appName, id, isRevising, options).then((request) => request(axios, basePath));
+        complete(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: any): AxiosPromise<AskForHelp200Response> {
+            return localVarFp.complete(appVersion, appName, id, isRevising, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @param {number} appVersion 请求api的应用的版本
          * @param {string} appName 请求api的应用的包名
          * @param {number} [taskId] 
-         * @param {ServicesAppTaskExamAnswerAsyncPostRequest} [servicesAppTaskExamAnswerAsyncPostRequest] 
+         * @param {ExamAnswerRequest} [examAnswerRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskExamAnswerAsyncPost(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, servicesAppTaskExamAnswerAsyncPostRequest?: ServicesAppTaskExamAnswerAsyncPostRequest, options?: any): AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response> {
-            return localVarFp.servicesAppTaskExamAnswerAsyncPost(appVersion, appName, taskId, servicesAppTaskExamAnswerAsyncPostRequest, options).then((request) => request(axios, basePath));
+        examAnswer(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, examAnswerRequest?: ExamAnswerRequest, options?: any): AxiosPromise<AskForHelp200Response> {
+            return localVarFp.examAnswer(appVersion, appName, taskId, examAnswerRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -7991,8 +8034,8 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskGetExamTaskAsyncGet(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: any): AxiosPromise<ServicesAppTaskGetExamTaskAsyncGet200Response> {
-            return localVarFp.servicesAppTaskGetExamTaskAsyncGet(appName, appVersion, id, options).then((request) => request(axios, basePath));
+        getExamTask(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: any): AxiosPromise<GetExamTask200Response> {
+            return localVarFp.getExamTask(appName, appVersion, id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -8002,8 +8045,8 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskGetNoQstExamTaskAsyncGet(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<ServicesAppTaskGetNoQstExamTaskAsyncGet200Response> {
-            return localVarFp.servicesAppTaskGetNoQstExamTaskAsyncGet(id, appName, appVersion, options).then((request) => request(axios, basePath));
+        getNoQstExam(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetNoQstExam200Response> {
+            return localVarFp.getNoQstExam(id, appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -8014,31 +8057,31 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskGetQuestionViewAsyncGet(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: any): AxiosPromise<ServicesAppTaskGetQuestionViewAsyncGet200Response> {
-            return localVarFp.servicesAppTaskGetQuestionViewAsyncGet(appVersion, appName, examId, questionId, options).then((request) => request(axios, basePath));
+        getQuestionView(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: any): AxiosPromise<GetQuestionView200Response> {
+            return localVarFp.getQuestionView(appVersion, appName, examId, questionId, options).then((request) => request(axios, basePath));
         },
         /**
          * 获取任务列表
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
-         * @param {ServicesAppTaskGetStudentTaskListAsyncPostRequest} [servicesAppTaskGetStudentTaskListAsyncPostRequest] 
+         * @param {GetStudentTaskListRequest} [getStudentTaskListRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskGetStudentTaskListAsyncPost(appName: string = 'WebApp', appVersion: number = 0, servicesAppTaskGetStudentTaskListAsyncPostRequest?: ServicesAppTaskGetStudentTaskListAsyncPostRequest, options?: any): AxiosPromise<ServicesAppTaskGetStudentTaskListAsyncPost200Response> {
-            return localVarFp.servicesAppTaskGetStudentTaskListAsyncPost(appName, appVersion, servicesAppTaskGetStudentTaskListAsyncPostRequest, options).then((request) => request(axios, basePath));
+        getStudentTaskList(appName: string = 'WebApp', appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options?: any): AxiosPromise<GetStudentTaskList200Response> {
+            return localVarFp.getStudentTaskList(appName, appVersion, getStudentTaskListRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
          * @param {number} taskId 
-         * @param {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>} [servicesAppTaskNoQstExamAnswerAsyncPostRequestInner] 
+         * @param {Array<NoQstExamAnswerRequestInner>} [noQstExamAnswerRequestInner] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        servicesAppTaskNoQstExamAnswerAsyncPost(appName: string = 'WebApp', appVersion: number = 0, taskId: number, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>, options?: any): AxiosPromise<ServicesAppTaskAskForHelpAsyncPost200Response> {
-            return localVarFp.servicesAppTaskNoQstExamAnswerAsyncPost(appName, appVersion, taskId, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner, options).then((request) => request(axios, basePath));
+        noQstExamAnswer(appName: string = 'WebApp', appVersion: number = 0, taskId: number, noQstExamAnswerRequestInner?: Array<NoQstExamAnswerRequestInner>, options?: any): AxiosPromise<AskForHelp200Response> {
+            return localVarFp.noQstExamAnswer(appName, appVersion, taskId, noQstExamAnswerRequestInner, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -8054,13 +8097,13 @@ export class TaskApi extends BaseAPI {
      * 
      * @param {number} appVersion 请求api的应用的版本
      * @param {string} appName 请求api的应用的包名
-     * @param {ServicesAppTaskAskForHelpAsyncPostRequest} [servicesAppTaskAskForHelpAsyncPostRequest] 
+     * @param {AskForHelpRequest} [askForHelpRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public servicesAppTaskAskForHelpAsyncPost(appVersion: number = 0, appName: string = 'WebApp', servicesAppTaskAskForHelpAsyncPostRequest?: ServicesAppTaskAskForHelpAsyncPostRequest, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).servicesAppTaskAskForHelpAsyncPost(appVersion, appName, servicesAppTaskAskForHelpAsyncPostRequest, options).then((request) => request(this.axios, this.basePath));
+    public askForHelp(appVersion: number = 0, appName: string = 'WebApp', askForHelpRequest?: AskForHelpRequest, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).askForHelp(appVersion, appName, askForHelpRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8073,8 +8116,8 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public servicesAppTaskCompleteAsyncPost(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).servicesAppTaskCompleteAsyncPost(appVersion, appName, id, isRevising, options).then((request) => request(this.axios, this.basePath));
+    public complete(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).complete(appVersion, appName, id, isRevising, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8082,13 +8125,13 @@ export class TaskApi extends BaseAPI {
      * @param {number} appVersion 请求api的应用的版本
      * @param {string} appName 请求api的应用的包名
      * @param {number} [taskId] 
-     * @param {ServicesAppTaskExamAnswerAsyncPostRequest} [servicesAppTaskExamAnswerAsyncPostRequest] 
+     * @param {ExamAnswerRequest} [examAnswerRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public servicesAppTaskExamAnswerAsyncPost(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, servicesAppTaskExamAnswerAsyncPostRequest?: ServicesAppTaskExamAnswerAsyncPostRequest, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).servicesAppTaskExamAnswerAsyncPost(appVersion, appName, taskId, servicesAppTaskExamAnswerAsyncPostRequest, options).then((request) => request(this.axios, this.basePath));
+    public examAnswer(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, examAnswerRequest?: ExamAnswerRequest, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).examAnswer(appVersion, appName, taskId, examAnswerRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8100,8 +8143,8 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public servicesAppTaskGetExamTaskAsyncGet(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).servicesAppTaskGetExamTaskAsyncGet(appName, appVersion, id, options).then((request) => request(this.axios, this.basePath));
+    public getExamTask(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).getExamTask(appName, appVersion, id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8113,8 +8156,8 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public servicesAppTaskGetNoQstExamTaskAsyncGet(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).servicesAppTaskGetNoQstExamTaskAsyncGet(id, appName, appVersion, options).then((request) => request(this.axios, this.basePath));
+    public getNoQstExam(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).getNoQstExam(id, appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8127,21 +8170,21 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public servicesAppTaskGetQuestionViewAsyncGet(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).servicesAppTaskGetQuestionViewAsyncGet(appVersion, appName, examId, questionId, options).then((request) => request(this.axios, this.basePath));
+    public getQuestionView(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).getQuestionView(appVersion, appName, examId, questionId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 获取任务列表
      * @param {string} appName 请求api的应用的包名
      * @param {number} appVersion 请求api的应用的版本
-     * @param {ServicesAppTaskGetStudentTaskListAsyncPostRequest} [servicesAppTaskGetStudentTaskListAsyncPostRequest] 
+     * @param {GetStudentTaskListRequest} [getStudentTaskListRequest] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public servicesAppTaskGetStudentTaskListAsyncPost(appName: string = 'WebApp', appVersion: number = 0, servicesAppTaskGetStudentTaskListAsyncPostRequest?: ServicesAppTaskGetStudentTaskListAsyncPostRequest, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).servicesAppTaskGetStudentTaskListAsyncPost(appName, appVersion, servicesAppTaskGetStudentTaskListAsyncPostRequest, options).then((request) => request(this.axios, this.basePath));
+    public getStudentTaskList(appName: string = 'WebApp', appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).getStudentTaskList(appName, appVersion, getStudentTaskListRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8149,13 +8192,13 @@ export class TaskApi extends BaseAPI {
      * @param {string} appName 请求api的应用的包名
      * @param {number} appVersion 请求api的应用的版本
      * @param {number} taskId 
-     * @param {Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>} [servicesAppTaskNoQstExamAnswerAsyncPostRequestInner] 
+     * @param {Array<NoQstExamAnswerRequestInner>} [noQstExamAnswerRequestInner] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public servicesAppTaskNoQstExamAnswerAsyncPost(appName: string = 'WebApp', appVersion: number = 0, taskId: number, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner?: Array<ServicesAppTaskNoQstExamAnswerAsyncPostRequestInner>, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).servicesAppTaskNoQstExamAnswerAsyncPost(appName, appVersion, taskId, servicesAppTaskNoQstExamAnswerAsyncPostRequestInner, options).then((request) => request(this.axios, this.basePath));
+    public noQstExamAnswer(appName: string = 'WebApp', appVersion: number = 0, taskId: number, noQstExamAnswerRequestInner?: Array<NoQstExamAnswerRequestInner>, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).noQstExamAnswer(appName, appVersion, taskId, noQstExamAnswerRequestInner, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

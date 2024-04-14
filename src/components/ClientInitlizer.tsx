@@ -25,7 +25,7 @@ export default function ClientInitlizer() {
                 const tokenLast = userInfo.expireInSeconds * 1000;
                 const refreshTokenLast = userInfo.refreshTokenExpireInSeconds * 1000;
                 const now = new Date().getTime();
-                const loginAt = store.getState().loginStatus.loginAt;
+                const loginAt = store.getState().loginInfo.loginAt;
 
                 if (now - loginAt > refreshTokenLast) {
                     router.push(`/login?from=${window.location.pathname}`);

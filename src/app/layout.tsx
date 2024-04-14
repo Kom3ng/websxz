@@ -6,7 +6,7 @@ import StoreProvider from "@/components/StoreProvider";
 import StyleRegistry from "@/components/StyleRegistry";
 import ThemeConfigProvider from "@/components/ThemeConfigProvider";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { Layout } from "antd";
+import { App, Layout } from "antd";
 import { StyleProvider, createStyles, extractStaticStyle } from "antd-style";
 import { Header } from "antd/es/layout/layout";
 import type { Metadata } from "next";
@@ -28,16 +28,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh">
-      <body>
+      <body style={{ height: '100%', margin: 0, padding: 0 }}>
         <AntdRegistry>
           <StoreProvider>
             <ClientInitlizer />
             <ThemeConfigProvider>
               <StyleRegistry>
-                <Body>
-                  <FloatButtons />
-                  {children}
-                </Body>
+                <App>
+                  <Body>
+                    <FloatButtons />
+                    {children}
+                  </Body>
+                </App>
               </StyleRegistry>
             </ThemeConfigProvider>
           </StoreProvider>

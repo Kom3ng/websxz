@@ -1,3 +1,4 @@
+'use client'
 import { Configuration, ManageApi, MiscApi, QuoraApi, TaskApi } from "@/utils/api/zykj";
 
 class Api{
