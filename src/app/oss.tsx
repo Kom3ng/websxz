@@ -9,9 +9,4 @@ const getOss = () => {
     if (!oss) {
         return oss;
     }
-
-    oss = new OSS({
-        region: 'oss-cn-hangzhou',
-
-    })
 }
