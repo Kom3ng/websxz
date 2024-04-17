@@ -14,7 +14,11 @@ const Excalidraw = dynamic(
 export default function DrawPad({ exalidrawApi, children }: { exalidrawApi: ((api: ExcalidrawImperativeAPI) => void), children?: ReactNode }){
     const theme = useTheme();
 
-    return <Excalidraw excalidrawAPI={exalidrawApi} langCode="zh-CN" theme={theme.isDarkMode ? 'dark' : 'light'} >
-        {children}
+    return <Excalidraw 
+               excalidrawAPI={exalidrawApi} 
+               langCode="zh-CN" 
+               theme={theme.isDarkMode ? 'dark' : 'light'} 
+               renderTopRightUI={() => ({children})}
+               >
     </Excalidraw>
 }
