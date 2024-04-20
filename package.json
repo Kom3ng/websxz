@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run genapi && next build",
     "start": "next start",
     "lint": "next lint",
     "genapi": "npx @openapitools/openapi-generator-cli generate -i https://gp.astrack.me/zyapi/dist.json -g typescript-axios -o src/utils/api/zykj/ && ts-node scripts/rewriteapi.ts"
