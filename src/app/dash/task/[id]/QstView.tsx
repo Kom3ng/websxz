@@ -1,4 +1,3 @@
-import { GetQuestionView200ResponseResult } from "@/utils/api/zykj";
 import { api } from "@/utils/api/zykj/apiInstance"
 import { App, Button, Card, Checkbox, GetProp, List, Radio, RadioChangeEvent, Spin } from "antd";
 import axios from "axios";
@@ -10,11 +9,10 @@ import { Footer, exportToBlob } from "@excalidraw/excalidraw";
 import getOss from "@/app/oss";
 import { useStoreSelector } from "@/store";
 import { CheckboxValueType } from "antd/es/checkbox/Group";
-
-type QstView = GetQuestionView200ResponseResult;
+import { QuestionView } from "@/utils/api/zykj";
 
 export default function QstView({ examId, qstId, taskId }: { examId: number, qstId: number, taskId: number }) {
-    const [data, setData] = useState<QstView>({});
+    const [data, setData] = useState<QuestionView>({});
     const [qstHtml, setQstHtml] = useState<string>('');
     const { message } = App.useApp();
     const drawPads = useRef<Map<string, ExcalidrawImperativeAPI>>(new Map());

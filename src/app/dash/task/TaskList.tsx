@@ -1,5 +1,5 @@
 'use client'
-import { GetStudentTaskList200ResponseResultItemsInner } from "@/utils/api/zykj";
+import { TaskListItemsInner } from "@/utils/api/zykj";
 import { api } from "@/utils/api/zykj/apiInstance";
 import { App, Card, List, Skeleton, Tooltip } from "antd";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useImmer } from "use-immer";
 
-type Task = GetStudentTaskList200ResponseResultItemsInner;
+type Task = TaskListItemsInner;
 
 export default function TaskList({ taskType }: { taskType: number }) {
     const loading = useRef<boolean>(false);

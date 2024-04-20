@@ -5,15 +5,15 @@ import { App, Card } from "antd";
 import { useSearchParams } from "next/navigation"
 import { useEffect, useMemo, useState } from "react";
 import Exam from "./Exam";
-import { GetExamTask200ResponseResult, GetNoQstExam200ResponseResult } from "@/utils/api/zykj";
+import { ExamTask, NoQstExam } from "@/utils/api/zykj";
 
 export default function ExamView({params}: {params: {id: string}}){
     const id = Number(params.id);
     const hasQst = useSearchParams().get('hasQst') === 'true' ? true : false;
     const examTaskId = Number.parseInt(useSearchParams().get('examTaskId') ?? '0');
     const {message} = App.useApp()
-    const [examData, setExamData] = useState<GetExamTask200ResponseResult>({});
-    const [noQstData, setNoQstData] = useState<GetNoQstExam200ResponseResult>({});
+    const [examData, setExamData] = useState<ExamTask>({});
+    const [noQstData, setNoQstData] = useState<NoQstExam>({});
     const taskData = useMemo(async () => {
         if (hasQst) {
             const resp = await api.taskApi.getExamTask('WebApp',0,examTaskId);
@@ -37,9 +37,9 @@ export default function ExamView({params}: {params: {id: string}}){
         taskData.then(data => {
             if (data) {
                 if (hasQst) {
-                    setExamData(data as GetExamTask200ResponseResult);
+                    setExamData(data as ExamTask);
                 } else {
-                    setNoQstData(data as GetNoQstExam200ResponseResult);
+                    setNoQstData(data as NoQstExam);
                 }
             }
         })

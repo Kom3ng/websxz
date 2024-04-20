@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic';
 import { useTheme } from "antd-style";
 import { ExcalidrawImperativeAPI } from '@excalidraw/excalidraw/types/types';
-import { Children, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 const Excalidraw = dynamic(
     async () => (await import("@excalidraw/excalidraw")).Excalidraw,

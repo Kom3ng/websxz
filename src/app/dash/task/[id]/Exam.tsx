@@ -1,10 +1,8 @@
-import { GetExamTask200ResponseResult, GetNoQstExam200ResponseResult } from "@/utils/api/zykj";
-import { Card, List, Tabs } from "antd";
+import { List, Tabs } from "antd";
 import QstView from "./QstView";
+import { ExamTask } from "@/utils/api/zykj";
 
-type ExamData = GetExamTask200ResponseResult
-
-export default function Exam({ data, examTaskId }: { data: ExamData, examTaskId: number }){
+export default function Exam({ data, examTaskId }: { data: ExamTask, examTaskId: number }){
     const items = data.groups?.map(group => {
         return {
             key: group.number?.toString() ?? '',
