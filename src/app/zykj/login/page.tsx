@@ -74,10 +74,10 @@ export default function LoginPage() {
 
                 // 跳转到来源页面 若来自登录页
                 const from = params.get('from');
-                if (from?.startsWith('/login')) {
-                    router.push('/');
+                if (from?.startsWith('/zykj/login')) {
+                    router.push('/zykj');
                 } else {
-                    router.push(params.get('from') || '/');
+                    router.push(params.get('from') || '/zykj');
                 }
             }
         }).catch((err) => {

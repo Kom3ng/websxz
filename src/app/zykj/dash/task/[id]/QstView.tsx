@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import DrawPad from "../../DrawPad";
 import { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types/types";
 import { Footer, exportToBlob } from "@excalidraw/excalidraw";
-import getOss from "@/app/oss";
+import getOss from "@/app/zykj/oss";
 import { useStoreSelector } from "@/store";
 import { CheckboxValueType } from "antd/es/checkbox/Group";
 import { QuestionView } from "@/utils/api/zykj";

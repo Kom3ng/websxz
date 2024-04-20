@@ -62,7 +62,7 @@ export default function TaskList({ taskType }: { taskType: number }) {
                     dataSource={tasks}
                     renderItem={(item: Task) => (
 
-                        <Link href={`/dash/task/${item.examId}?examTaskId=${item.examTaskId}&hasQst=${!item.isNoStem}`}>
+                        <Link href={`/zykj/dash/task/${item.examId}?examTaskId=${item.examTaskId}&hasQst=${!item.isNoStem}`}>
                             <Tooltip title={item.endTime ? `截止时间: ${item.endTime}` : ''}>
                                 <Card style={{
                                     margin: '8px',

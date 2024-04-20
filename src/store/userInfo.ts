@@ -38,5 +38,11 @@ export const loginInfoSlice = createSlice({
         login(state) {
             state.loginAt = Date.now();
         },
+        clear(state) {
+            state.username = "";
+            state.password = "";
+            state.autoLogin = false;
+            state.loginAt = 0;
+        }
     }
 })

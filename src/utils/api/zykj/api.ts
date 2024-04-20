@@ -1479,6 +1479,37 @@ export interface GetExamTask200Response {
 /**
  * 
  * @export
+ * @interface GetInfo200Response
+ */
+export interface GetInfo200Response {
+    /**
+     * 
+     * @type {UserInfo}
+     * @memberof GetInfo200Response
+     */
+    'result'?: UserInfo;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetInfo200Response
+     */
+    'targetUrl'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetInfo200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof GetInfo200Response
+     */
+    'error'?: ApiError;
+}
+/**
+ * 
+ * @export
  * @interface GetMistakeQstItemDetailInfo200Response
  */
 export interface GetMistakeQstItemDetailInfo200Response {
@@ -4080,37 +4111,6 @@ export interface SearchQuoraRequest {
 /**
  * 
  * @export
- * @interface ServicesAppUserGetInfoAsyncGet200Response
- */
-export interface ServicesAppUserGetInfoAsyncGet200Response {
-    /**
-     * 
-     * @type {UserInfo}
-     * @memberof ServicesAppUserGetInfoAsyncGet200Response
-     */
-    'result'?: UserInfo;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServicesAppUserGetInfoAsyncGet200Response
-     */
-    'targetUrl'?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ServicesAppUserGetInfoAsyncGet200Response
-     */
-    'success'?: boolean;
-    /**
-     * 
-     * @type {ApiError}
-     * @memberof ServicesAppUserGetInfoAsyncGet200Response
-     */
-    'error'?: ApiError;
-}
-/**
- * 
- * @export
  * @interface Session
  */
 export interface Session {
@@ -5028,6 +5028,39 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInfo: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/services/app/User/GetInfoAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary 获取消息列表
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
@@ -5325,39 +5358,6 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        servicesAppUserGetInfoAsyncGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/services/app/User/GetInfoAsync`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication token required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary 设置消息已读
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
@@ -5562,6 +5562,17 @@ export const ManageApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getInfo(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInfo200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInfo(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ManageApi.getInfo']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary 获取消息列表
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
@@ -5644,17 +5655,6 @@ export const ManageApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.recordPictures(appName, appVersion, recordPicturesRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.recordPictures']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async servicesAppUserGetInfoAsyncGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppUserGetInfoAsyncGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppUserGetInfoAsyncGet(options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ManageApi.servicesAppUserGetInfoAsyncGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -5774,6 +5774,14 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
         },
         /**
          * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInfo(options?: any): AxiosPromise<GetInfo200Response> {
+            return localVarFp.getInfo(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary 获取消息列表
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
@@ -5839,14 +5847,6 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          */
         recordPictures(appName: string = "WebClient", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: any): AxiosPromise<RecordPictures200Response> {
             return localVarFp.recordPictures(appName, appVersion, recordPicturesRequest, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        servicesAppUserGetInfoAsyncGet(options?: any): AxiosPromise<ServicesAppUserGetInfoAsyncGet200Response> {
-            return localVarFp.servicesAppUserGetInfoAsyncGet(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -5973,6 +5973,16 @@ export class ManageApi extends BaseAPI {
 
     /**
      * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ManageApi
+     */
+    public getInfo(options?: RawAxiosRequestConfig) {
+        return ManageApiFp(this.configuration).getInfo(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary 获取消息列表
      * @param {string} appName 请求api的应用的包名
      * @param {number} appVersion 请求api的应用的版本
@@ -6049,16 +6059,6 @@ export class ManageApi extends BaseAPI {
      */
     public recordPictures(appName: string = "WebClient", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).recordPictures(appName, appVersion, recordPicturesRequest, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ManageApi
-     */
-    public servicesAppUserGetInfoAsyncGet(options?: RawAxiosRequestConfig) {
-        return ManageApiFp(this.configuration).servicesAppUserGetInfoAsyncGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

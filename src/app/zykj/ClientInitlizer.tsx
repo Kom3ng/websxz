@@ -18,7 +18,7 @@ export default function ClientInitlizer() {
         async error => {
             if (error.response && error.response.status === 401) {
                 if (error.config.url?.includes("/TokenAuth/RefreshToken")) {
-                    router.push(`/login?from=${window.location.href.replace(window.location.origin, '')}`);
+                    router.push(`/zykj/login?from=${window.location.href.replace(window.location.origin, '')}`);
                     return Promise.reject("登陆过期");
                 }
                 const userInfo = store.getState().userInfo;
@@ -28,7 +28,7 @@ export default function ClientInitlizer() {
                 const loginAt = store.getState().loginInfo.loginAt;
 
                 if (now - loginAt > refreshTokenLast) {
-                    router.push(`/login?from=${window.location.href.replace(window.location.origin, '')}`);
+                    router.push(`/zykj/login?from=${window.location.href.replace(window.location.origin, '')}`);
                     return Promise.reject("登陆过期");
                 }
 
@@ -50,7 +50,7 @@ export default function ClientInitlizer() {
                     return axios.request(error.config);
                 }
 
-                router.push(`/login?from=${window.location.href.replace(window.location.origin, '')}`);
+                router.push(`/zykj/login?from=${window.location.href.replace(window.location.origin, '')}`);
                 return Promise.reject("登陆过期");
             }
 
