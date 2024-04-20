@@ -80,6 +80,50 @@ export interface AddCatalogRequest {
     'name'?: string;
 }
 /**
+ * 
+ * @export
+ * @interface Answers
+ */
+export interface Answers {
+    /**
+     * 
+     * @type {Array<AnswersAnswersInner>}
+     * @memberof Answers
+     */
+    'answers'?: Array<AnswersAnswersInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof Answers
+     */
+    'draft'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Answers
+     */
+    'questionId'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface AnswersAnswersInner
+ */
+export interface AnswersAnswersInner {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof AnswersAnswersInner
+     */
+    'answers'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof AnswersAnswersInner
+     */
+    'uuid'?: string;
+}
+/**
  * 错误信息
  * @export
  * @interface ApiError
@@ -654,46 +698,263 @@ export interface CreateSessionRequest {
 /**
  * 
  * @export
- * @interface ExamAnswerRequest
+ * @interface ExamTask
  */
-export interface ExamAnswerRequest {
-    /**
-     * 
-     * @type {Array<ExamAnswerRequestAnswersInner>}
-     * @memberof ExamAnswerRequest
-     */
-    'answers'?: Array<ExamAnswerRequestAnswersInner>;
+export interface ExamTask {
     /**
      * 
      * @type {string}
-     * @memberof ExamAnswerRequest
+     * @memberof ExamTask
      */
-    'draft'?: string;
+    'address'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExamTask
+     */
+    'answerPad'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExamTask
+     */
+    'answerSheet'?: boolean;
     /**
      * 
      * @type {number}
-     * @memberof ExamAnswerRequest
+     * @memberof ExamTask
      */
-    'questionId'?: number;
+    'answerSheetId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTask
+     */
+    'answeringUrge'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExamTask
+     */
+    'correctOnline'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTask
+     */
+    'correctOnlineState'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExamTask
+     */
+    'correctWithSelf'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExamTask
+     */
+    'creationTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTask
+     */
+    'displayAnswer'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExamTask
+     */
+    'enableScore'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExamTask
+     */
+    'endTime'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTask
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExamTask
+     */
+    'examName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTask
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExamTask
+     */
+    'examTips'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTask
+     */
+    'gradeId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExamTask
+     */
+    'gradeName'?: string;
+    /**
+     * 
+     * @type {Array<ExamTaskGroupsInner>}
+     * @memberof ExamTask
+     */
+    'groups'?: Array<ExamTaskGroupsInner>;
 }
 /**
  * 
  * @export
- * @interface ExamAnswerRequestAnswersInner
+ * @interface ExamTaskGroupsInner
  */
-export interface ExamAnswerRequestAnswersInner {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ExamAnswerRequestAnswersInner
-     */
-    'answers'?: Array<string>;
+export interface ExamTaskGroupsInner {
     /**
      * 
      * @type {string}
-     * @memberof ExamAnswerRequestAnswersInner
+     * @memberof ExamTaskGroupsInner
      */
-    'uuid'?: string;
+    'description'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExamTaskGroupsInner
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInner
+     */
+    'qstCount'?: number;
+    /**
+     * 
+     * @type {Array<ExamTaskGroupsInnerQuestionsInner>}
+     * @memberof ExamTaskGroupsInner
+     */
+    'questions'?: Array<ExamTaskGroupsInnerQuestionsInner>;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInner
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExamTaskGroupsInner
+     */
+    'showGroupNumber'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface ExamTaskGroupsInnerQuestionsInner
+ */
+export interface ExamTaskGroupsInnerQuestionsInner {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'completed'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'hasMicroClass'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'itemType'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'name'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'originScore'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'relatedGroupId'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'revisingResult'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExamTaskGroupsInnerQuestionsInner
+     */
+    'state'?: number;
 }
 /**
  * 
@@ -1180,10 +1441,10 @@ export interface GetDnUrl200Response {
 export interface GetExamTask200Response {
     /**
      * 
-     * @type {GetExamTask200ResponseResult}
+     * @type {ExamTask}
      * @memberof GetExamTask200Response
      */
-    'result'?: GetExamTask200ResponseResult;
+    'result'?: ExamTask;
     /**
      * 
      * @type {string}
@@ -1214,267 +1475,6 @@ export interface GetExamTask200Response {
      * @memberof GetExamTask200Response
      */
     '__abp'?: boolean;
-}
-/**
- * 
- * @export
- * @interface GetExamTask200ResponseResult
- */
-export interface GetExamTask200ResponseResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'address'?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'answerPad'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'answerSheet'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'answerSheetId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'answeringUrge'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'correctOnline'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'correctOnlineState'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'correctWithSelf'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'creationTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'displayAnswer'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'enableScore'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'endTime'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'examId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'examName'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'examState'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'examTips'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'gradeId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'gradeName'?: string;
-    /**
-     * 
-     * @type {Array<GetExamTask200ResponseResultGroupsInner>}
-     * @memberof GetExamTask200ResponseResult
-     */
-    'groups'?: Array<GetExamTask200ResponseResultGroupsInner>;
-}
-/**
- * 
- * @export
- * @interface GetExamTask200ResponseResultGroupsInner
- */
-export interface GetExamTask200ResponseResultGroupsInner {
-    /**
-     * 
-     * @type {string}
-     * @memberof GetExamTask200ResponseResultGroupsInner
-     */
-    'description'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInner
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetExamTask200ResponseResultGroupsInner
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInner
-     */
-    'qstCount'?: number;
-    /**
-     * 
-     * @type {Array<GetExamTask200ResponseResultGroupsInnerQuestionsInner>}
-     * @memberof GetExamTask200ResponseResultGroupsInner
-     */
-    'questions'?: Array<GetExamTask200ResponseResultGroupsInnerQuestionsInner>;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInner
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetExamTask200ResponseResultGroupsInner
-     */
-    'showGroupNumber'?: boolean;
-}
-/**
- * 
- * @export
- * @interface GetExamTask200ResponseResultGroupsInnerQuestionsInner
- */
-export interface GetExamTask200ResponseResultGroupsInnerQuestionsInner {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'askForHelp'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'completed'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'hasMicroClass'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'itemType'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'name'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'originScore'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'relatedGroupId'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'revisingResult'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetExamTask200ResponseResultGroupsInnerQuestionsInner
-     */
-    'state'?: number;
 }
 /**
  * 
@@ -2246,410 +2246,10 @@ export interface GetNoQstExam200Response {
     '__abp'?: boolean;
     /**
      * 
-     * @type {GetNoQstExam200ResponseResult}
+     * @type {NoQstExam}
      * @memberof GetNoQstExam200Response
      */
-    'result'?: GetNoQstExam200ResponseResult;
-}
-/**
- * 
- * @export
- * @interface GetNoQstExam200ResponseResult
- */
-export interface GetNoQstExam200ResponseResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'address'?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'answerPad'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'answerSheet'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'answerSheetId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'answeringUrge'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'correctOnline'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'correctOnlineState'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'correctWithSelf'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'creationTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'displayAnswer'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'enableScore'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'endTime'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'examId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'examName'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'examState'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'examTips'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'gradeId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'gradeName'?: string;
-    /**
-     * 
-     * @type {Array<GetNoQstExam200ResponseResultGroupsInner>}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'groups'?: Array<GetNoQstExam200ResponseResultGroupsInner>;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'isExempted'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'isRead'?: boolean | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'isRepresentative'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'noQstStem'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'qstCount'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'revisingUrge'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'serialNum'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'size'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'specificTrainingType'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'startTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'state'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'studentUserId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'teacherUserId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'testDescription'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'testPagerId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'testPagerName'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'testTips'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'topicId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'topicName'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'whenShowAnswer'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResult
-     */
-    'whenShowMicroLesson'?: number;
-}
-/**
- * 
- * @export
- * @interface GetNoQstExam200ResponseResultGroupsInner
- */
-export interface GetNoQstExam200ResponseResultGroupsInner {
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResultGroupsInner
-     */
-    'description'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResultGroupsInner
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResultGroupsInner
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResultGroupsInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResultGroupsInner
-     */
-    'qstCount'?: number;
-    /**
-     * 
-     * @type {Array<GetNoQstExam200ResponseResultGroupsInnerQuestionsInner>}
-     * @memberof GetNoQstExam200ResponseResultGroupsInner
-     */
-    'questions'?: Array<GetNoQstExam200ResponseResultGroupsInnerQuestionsInner>;
-}
-/**
- * 
- * @export
- * @interface GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
- */
-export interface GetNoQstExam200ResponseResultGroupsInnerQuestionsInner {
-    /**
-     * 
-     * @type {Array<GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner>}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'answerList'?: Array<GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner>;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'answerWithQuestion'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'askForHelp'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'completed'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'myScore'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {Array<QstFlow>}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'qstFlows'?: Array<QstFlow>;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInner
-     */
-    'score'?: number;
-}
-/**
- * 
- * @export
- * @interface GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
- */
-export interface GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
-     */
-    'answers'?: Array<string>;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
-     */
-    'pid'?: number | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetNoQstExam200ResponseResultGroupsInnerQuestionsInnerAnswerListInner
-     */
-    'uuid'?: string;
+    'result'?: NoQstExam;
 }
 /**
  * 
@@ -2886,10 +2486,10 @@ export interface GetQWeather200ResponseResultDaily {
 export interface GetQuestionView200Response {
     /**
      * 
-     * @type {GetQuestionView200ResponseResult}
+     * @type {QuestionView}
      * @memberof GetQuestionView200Response
      */
-    'result'?: GetQuestionView200ResponseResult;
+    'result'?: QuestionView;
     /**
      * 
      * @type {string}
@@ -2920,290 +2520,6 @@ export interface GetQuestionView200Response {
      * @memberof GetQuestionView200Response
      */
     '__abp'?: boolean;
-}
-/**
- * 
- * @export
- * @interface GetQuestionView200ResponseResult
- */
-export interface GetQuestionView200ResponseResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'attachments'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'qstAnswers'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'analysis'?: string | null;
-    /**
-     * 
-     * @type {Array<object>}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'microClassToQuestionList'?: Array<object>;
-    /**
-     * 
-     * @type {Array<object>}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'microClassToStudentList'?: Array<object>;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'examDraft'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'revisingDraft'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'revisingResult'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'examAnswered'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'revisingAnswerd'?: boolean;
-    /**
-     * 
-     * @type {Array<object>}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'lastRoundRevisingRecords'?: Array<object>;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'typicalRightAnswers'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'typicalErrorAnswers'?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'isInMistakeBook'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'askForHelp'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'path'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'itemType'?: number;
-    /**
-     * 
-     * @type {Array<QstFlow>}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'qstFlows'?: Array<QstFlow>;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'qstFlowsCount'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'totalScore'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'totalAnswerScore'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'originScore'?: number | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'answerWithQuestion'?: boolean;
-    /**
-     * 
-     * @type {Array<GetQuestionView200ResponseResultAnswerListInner>}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'answerList'?: Array<GetQuestionView200ResponseResultAnswerListInner>;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'microClassList'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResult
-     */
-    'id'?: number;
-}
-/**
- * 
- * @export
- * @interface GetQuestionView200ResponseResultAnswerListInner
- */
-export interface GetQuestionView200ResponseResultAnswerListInner {
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'uuid'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'number'?: number;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'examAnswers'?: Array<string>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'examComments'?: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'examMicroLessonComment'?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'revisingAnswers'?: Array<string>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'revisingComments'?: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'reviseMicroLessonComment'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'score'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'originScore'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'result'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'originResult'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'displayAnswer'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'whenShowAnswer'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'whenShowMicroLesson'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'examState'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetQuestionView200ResponseResultAnswerListInner
-     */
-    'taskState'?: number;
 }
 /**
  * 
@@ -3287,10 +2603,10 @@ export interface GetQuoraStudentTopicsRequestJoinTime {
 export interface GetSessions200Response {
     /**
      * 
-     * @type {Array<GetSessions200ResponseResultInner>}
+     * @type {Array<Session>}
      * @memberof GetSessions200Response
      */
-    'result'?: Array<GetSessions200ResponseResultInner>;
+    'result'?: Array<Session>;
     /**
      * 
      * @type {string}
@@ -3321,193 +2637,6 @@ export interface GetSessions200Response {
      * @memberof GetSessions200Response
      */
     '__abp'?: boolean;
-}
-/**
- * 
- * @export
- * @interface GetSessions200ResponseResultInner
- */
-export interface GetSessions200ResponseResultInner {
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'cleared'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'closed'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'courseId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'createTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'askUserId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'members'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'messages'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'snapshot'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'summary'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'updateTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'updateUserId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'sessionRole'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'unRead'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'primaryUnRead'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'sentMessages'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'openCount'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'state'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'userId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'joinType'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'joinTime'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'askUserName'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'updateUserName'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'askUserPhoto'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'updateUserPhoto'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'disabled'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'class'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'topicName'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'isCollect'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'searched'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetSessions200ResponseResultInner
-     */
-    'id'?: number;
 }
 /**
  * 
@@ -3578,10 +2707,10 @@ export interface GetSessionsRequest {
 export interface GetStudentTaskList200Response {
     /**
      * 
-     * @type {GetStudentTaskList200ResponseResult}
+     * @type {TaskList}
      * @memberof GetStudentTaskList200Response
      */
-    'result'?: GetStudentTaskList200ResponseResult;
+    'result'?: TaskList;
     /**
      * 
      * @type {string}
@@ -3612,188 +2741,6 @@ export interface GetStudentTaskList200Response {
      * @memberof GetStudentTaskList200Response
      */
     '__abp'?: boolean;
-}
-/**
- * 
- * @export
- * @interface GetStudentTaskList200ResponseResult
- */
-export interface GetStudentTaskList200ResponseResult {
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResult
-     */
-    'totalCount'?: number;
-    /**
-     * 
-     * @type {Array<GetStudentTaskList200ResponseResultItemsInner>}
-     * @memberof GetStudentTaskList200ResponseResult
-     */
-    'items'?: Array<GetStudentTaskList200ResponseResultItemsInner>;
-}
-/**
- * 
- * @export
- * @interface GetStudentTaskList200ResponseResultItemsInner
- */
-export interface GetStudentTaskList200ResponseResultItemsInner {
-    /**
-     * 
-     * @type {string}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'address'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'answerPad'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'answerSheet'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'answeringUrge'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'correctOnline'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'correctOnlineState'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'correctWithSelf'?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'creationTime'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'endTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'examId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'examName'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'examState'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'examTaskId'?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'isCollect'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'isExempted'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'isNoStem'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'isRead'?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'revisingUrge'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'serialNum'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'size'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'specificTrainingType'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'startTime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'taskState'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'testPagerId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'topicId'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof GetStudentTaskList200ResponseResultItemsInner
-     */
-    'topicName'?: string;
 }
 /**
  * 
@@ -4047,44 +2994,400 @@ export interface MultiRemoveMistakeItemsRequest {
 /**
  * 
  * @export
- * @interface NoQstExamAnswerRequestInner
+ * @interface NoQstExam
  */
-export interface NoQstExamAnswerRequestInner {
-    /**
-     * 
-     * @type {Array<NoQstExamAnswerRequestInnerAnswersInner>}
-     * @memberof NoQstExamAnswerRequestInner
-     */
-    'answers'?: Array<NoQstExamAnswerRequestInnerAnswersInner>;
+export interface NoQstExam {
     /**
      * 
      * @type {string}
-     * @memberof NoQstExamAnswerRequestInner
+     * @memberof NoQstExam
      */
-    'draft'?: string;
+    'address'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExam
+     */
+    'answerPad'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExam
+     */
+    'answerSheet'?: boolean;
     /**
      * 
      * @type {number}
-     * @memberof NoQstExamAnswerRequestInner
+     * @memberof NoQstExam
      */
-    'questionId'?: number;
+    'answerSheetId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'answeringUrge'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExam
+     */
+    'correctOnline'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'correctOnlineState'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExam
+     */
+    'correctWithSelf'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'creationTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'displayAnswer'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExam
+     */
+    'enableScore'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'endTime'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'examName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'examTips'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'gradeId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'gradeName'?: string;
+    /**
+     * 
+     * @type {Array<NoQstExamGroupsInner>}
+     * @memberof NoQstExam
+     */
+    'groups'?: Array<NoQstExamGroupsInner>;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExam
+     */
+    'isExempted'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExam
+     */
+    'isRead'?: boolean | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExam
+     */
+    'isRepresentative'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExam
+     */
+    'noQstStem'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'qstCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'revisingUrge'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'serialNum'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'specificTrainingType'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'startTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'state'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'studentUserId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'teacherUserId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'testDescription'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'testPagerId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'testPagerName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'testTips'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'topicId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExam
+     */
+    'topicName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'whenShowAnswer'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExam
+     */
+    'whenShowMicroLesson'?: number;
 }
 /**
  * 
  * @export
- * @interface NoQstExamAnswerRequestInnerAnswersInner
+ * @interface NoQstExamGroupsInner
  */
-export interface NoQstExamAnswerRequestInnerAnswersInner {
+export interface NoQstExamGroupsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExamGroupsInner
+     */
+    'description'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExamGroupsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExamGroupsInner
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExamGroupsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExamGroupsInner
+     */
+    'qstCount'?: number;
+    /**
+     * 
+     * @type {Array<NoQstExamGroupsInnerQuestionsInner>}
+     * @memberof NoQstExamGroupsInner
+     */
+    'questions'?: Array<NoQstExamGroupsInnerQuestionsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface NoQstExamGroupsInnerQuestionsInner
+ */
+export interface NoQstExamGroupsInnerQuestionsInner {
+    /**
+     * 
+     * @type {Array<NoQstExamGroupsInnerQuestionsInnerAnswerListInner>}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'answerList'?: Array<NoQstExamGroupsInnerQuestionsInnerAnswerListInner>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'answerWithQuestion'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'completed'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'myScore'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {Array<QstFlow>}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'qstFlows'?: Array<QstFlow>;
+    /**
+     * 
+     * @type {number}
+     * @memberof NoQstExamGroupsInnerQuestionsInner
+     */
+    'score'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface NoQstExamGroupsInnerQuestionsInnerAnswerListInner
+ */
+export interface NoQstExamGroupsInnerQuestionsInnerAnswerListInner {
     /**
      * 
      * @type {Array<string>}
-     * @memberof NoQstExamAnswerRequestInnerAnswersInner
+     * @memberof NoQstExamGroupsInnerQuestionsInnerAnswerListInner
      */
     'answers'?: Array<string>;
     /**
      * 
+     * @type {number}
+     * @memberof NoQstExamGroupsInnerQuestionsInnerAnswerListInner
+     */
+    'pid'?: number | null;
+    /**
+     * 
      * @type {string}
-     * @memberof NoQstExamAnswerRequestInnerAnswersInner
+     * @memberof NoQstExamGroupsInnerQuestionsInnerAnswerListInner
      */
     'uuid'?: string;
 }
@@ -4154,6 +3457,290 @@ export interface QstFlow {
      * @memberof QstFlow
      */
     'originScore'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface QuestionView
+ */
+export interface QuestionView {
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionView
+     */
+    'attachments'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionView
+     */
+    'qstAnswers'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionView
+     */
+    'analysis'?: string | null;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof QuestionView
+     */
+    'microClassToQuestionList'?: Array<object>;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof QuestionView
+     */
+    'microClassToStudentList'?: Array<object>;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionView
+     */
+    'examDraft'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionView
+     */
+    'revisingDraft'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionView
+     */
+    'revisingResult'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof QuestionView
+     */
+    'examAnswered'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof QuestionView
+     */
+    'revisingAnswerd'?: boolean;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof QuestionView
+     */
+    'lastRoundRevisingRecords'?: Array<object>;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionView
+     */
+    'typicalRightAnswers'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionView
+     */
+    'typicalErrorAnswers'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof QuestionView
+     */
+    'isInMistakeBook'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof QuestionView
+     */
+    'askForHelp'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionView
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionView
+     */
+    'path'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionView
+     */
+    'itemType'?: number;
+    /**
+     * 
+     * @type {Array<QstFlow>}
+     * @memberof QuestionView
+     */
+    'qstFlows'?: Array<QstFlow>;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionView
+     */
+    'qstFlowsCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionView
+     */
+    'totalScore'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionView
+     */
+    'totalAnswerScore'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionView
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionView
+     */
+    'originScore'?: number | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof QuestionView
+     */
+    'answerWithQuestion'?: boolean;
+    /**
+     * 
+     * @type {Array<QuestionViewAnswerListInner>}
+     * @memberof QuestionView
+     */
+    'answerList'?: Array<QuestionViewAnswerListInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionView
+     */
+    'microClassList'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionView
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface QuestionViewAnswerListInner
+ */
+export interface QuestionViewAnswerListInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'uuid'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'examAnswers'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'examComments'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'examMicroLessonComment'?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'revisingAnswers'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'revisingComments'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'reviseMicroLessonComment'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'score'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'originScore'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'result'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'originResult'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'displayAnswer'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'whenShowAnswer'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'whenShowMicroLesson'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewAnswerListInner
+     */
+    'taskState'?: number;
 }
 /**
  * 
@@ -4493,6 +4080,224 @@ export interface SearchQuoraRequest {
 /**
  * 
  * @export
+ * @interface ServicesAppUserGetInfoAsyncGet200Response
+ */
+export interface ServicesAppUserGetInfoAsyncGet200Response {
+    /**
+     * 
+     * @type {UserInfo}
+     * @memberof ServicesAppUserGetInfoAsyncGet200Response
+     */
+    'result'?: UserInfo;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServicesAppUserGetInfoAsyncGet200Response
+     */
+    'targetUrl'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServicesAppUserGetInfoAsyncGet200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof ServicesAppUserGetInfoAsyncGet200Response
+     */
+    'error'?: ApiError;
+}
+/**
+ * 
+ * @export
+ * @interface Session
+ */
+export interface Session {
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'cleared'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Session
+     */
+    'closed'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'courseId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'createTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'askUserId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'members'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'messages'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'snapshot'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'summary'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'updateTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'updateUserId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'sessionRole'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'unRead'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'primaryUnRead'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'sentMessages'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'openCount'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'state'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'userId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'joinType'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'joinTime'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'askUserName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'updateUserName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'askUserPhoto'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'updateUserPhoto'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Session
+     */
+    'disabled'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'class'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Session
+     */
+    'topicName'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Session
+     */
+    'isCollect'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'searched'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Session
+     */
+    'id'?: number;
+}
+/**
+ * 
+ * @export
  * @interface SetMessageRead200Response
  */
 export interface SetMessageRead200Response {
@@ -4532,6 +4337,188 @@ export interface SetMessageRead200Response {
      * @memberof SetMessageRead200Response
      */
     '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface TaskList
+ */
+export interface TaskList {
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskList
+     */
+    'totalCount'?: number;
+    /**
+     * 
+     * @type {Array<TaskListItemsInner>}
+     * @memberof TaskList
+     */
+    'items'?: Array<TaskListItemsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface TaskListItemsInner
+ */
+export interface TaskListItemsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskListItemsInner
+     */
+    'address'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TaskListItemsInner
+     */
+    'answerPad'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TaskListItemsInner
+     */
+    'answerSheet'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'answeringUrge'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TaskListItemsInner
+     */
+    'correctOnline'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'correctOnlineState'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TaskListItemsInner
+     */
+    'correctWithSelf'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskListItemsInner
+     */
+    'creationTime'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskListItemsInner
+     */
+    'endTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskListItemsInner
+     */
+    'examName'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'examState'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'examTaskId'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TaskListItemsInner
+     */
+    'isCollect'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TaskListItemsInner
+     */
+    'isExempted'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TaskListItemsInner
+     */
+    'isNoStem'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TaskListItemsInner
+     */
+    'isRead'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'revisingUrge'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskListItemsInner
+     */
+    'serialNum'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'specificTrainingType'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskListItemsInner
+     */
+    'startTime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'taskState'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'testPagerId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof TaskListItemsInner
+     */
+    'topicId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TaskListItemsInner
+     */
+    'topicName'?: string;
 }
 /**
  * 
@@ -4626,6 +4613,67 @@ export interface TokenAuthRefreshTokenPost200ResponseResult {
      */
     'refreshToken'?: string;
 }
+/**
+ * 
+ * @export
+ * @interface UserInfo
+ */
+export interface UserInfo {
+    /**
+     * 
+     * @type {number}
+     * @memberof UserInfo
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfo
+     */
+    'userName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfo
+     */
+    'realName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfo
+     */
+    'surname'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfo
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfo
+     */
+    'mobile'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfo
+     */
+    'email'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfo
+     */
+    'photo'?: string;
+    /**
+     * 
+     * @type {Array<RoleType>}
+     * @memberof UserInfo
+     */
+    'roles'?: Array<RoleType>;
+}
 
 /**
  * ManageApi - axios parameter creator
@@ -4642,7 +4690,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        canIOpenCamera: async (appName: string = 'WebApp', appVersion: number = 0, packageName?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        canIOpenCamera: async (appName: string = "WebClient", appVersion: number = 0, packageName?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('canIOpenCamera', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4736,7 +4784,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        coursesSubscribed: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        coursesSubscribed: async (appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('coursesSubscribed', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4786,7 +4834,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generatorToken: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        generatorToken: async (appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('generatorToken', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4836,7 +4884,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllCommonWebSite: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllCommonWebSite: async (appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getAllCommonWebSite', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4886,7 +4934,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllSettings: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllSettings: async (appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getAllSettings', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4936,7 +4984,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllWhiteUrlAsync: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllWhiteUrlAsync: async (appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getAllWhiteUrlAsync', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -4987,7 +5035,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMessageList: async (appName: string = 'WebApp', appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyMessageList: async (appName: string = "WebClient", appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMyMessageList', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5040,7 +5088,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyUnreadMessageCount: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyUnreadMessageCount: async (appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMyUnreadMessageCount', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5091,7 +5139,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getNotice: async (appName: string = 'WebApp', appVersion: number = 0, id?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getNotice: async (appName: string = "WebClient", appVersion: number = 0, id?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getNotice', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5145,7 +5193,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSystemSettingsForStudent: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSystemSettingsForStudent: async (appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getSystemSettingsForStudent', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5230,7 +5278,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        recordPictures: async (appName: string = 'WebApp', appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        recordPictures: async (appName: string = "WebClient", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('recordPictures', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5277,6 +5325,39 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppUserGetInfoAsyncGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/services/app/User/GetInfoAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary 设置消息已读
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
@@ -5284,7 +5365,7 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        setMessageRead: async (appName: string = 'WebApp', appVersion: number = 0, messageId?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        setMessageRead: async (appName: string = "WebClient", appVersion: number = 0, messageId?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('setMessageRead', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -5389,7 +5470,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async canIOpenCamera(appName: string = 'WebApp', appVersion: number = 0, packageName?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CanIOpenCamera200Response>> {
+        async canIOpenCamera(appName: string = "WebClient", appVersion: number = 0, packageName?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CanIOpenCamera200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.canIOpenCamera(appName, appVersion, packageName, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.canIOpenCamera']?.[localVarOperationServerIndex]?.url;
@@ -5417,7 +5498,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async coursesSubscribed(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CoursesSubscribed200Response>> {
+        async coursesSubscribed(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CoursesSubscribed200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.coursesSubscribed(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.coursesSubscribed']?.[localVarOperationServerIndex]?.url;
@@ -5431,7 +5512,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async generatorToken(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GeneratorToken200Response>> {
+        async generatorToken(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GeneratorToken200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.generatorToken(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.generatorToken']?.[localVarOperationServerIndex]?.url;
@@ -5445,7 +5526,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllCommonWebSite(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllCommonWebSite200Response>> {
+        async getAllCommonWebSite(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllCommonWebSite200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAllCommonWebSite(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getAllCommonWebSite']?.[localVarOperationServerIndex]?.url;
@@ -5459,7 +5540,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllSettings(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllSettings200Response>> {
+        async getAllSettings(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllSettings200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAllSettings(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getAllSettings']?.[localVarOperationServerIndex]?.url;
@@ -5473,7 +5554,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllWhiteUrlAsync(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllWhiteUrlAsync200Response>> {
+        async getAllWhiteUrlAsync(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAllWhiteUrlAsync200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAllWhiteUrlAsync(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getAllWhiteUrlAsync']?.[localVarOperationServerIndex]?.url;
@@ -5488,7 +5569,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyMessageList(appName: string = 'WebApp', appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyMessageList200Response>> {
+        async getMyMessageList(appName: string = "WebClient", appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyMessageList200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyMessageList(appName, appVersion, getMyMessageListRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getMyMessageList']?.[localVarOperationServerIndex]?.url;
@@ -5502,7 +5583,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyUnreadMessageCount(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyUnreadMessageCount200Response>> {
+        async getMyUnreadMessageCount(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyUnreadMessageCount200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyUnreadMessageCount(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getMyUnreadMessageCount']?.[localVarOperationServerIndex]?.url;
@@ -5517,7 +5598,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getNotice(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetNotice200Response>> {
+        async getNotice(appName: string = "WebClient", appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetNotice200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getNotice(appName, appVersion, id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getNotice']?.[localVarOperationServerIndex]?.url;
@@ -5531,7 +5612,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSystemSettingsForStudent(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSystemSettingsForStudent200Response>> {
+        async getSystemSettingsForStudent(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSystemSettingsForStudent200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSystemSettingsForStudent(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.getSystemSettingsForStudent']?.[localVarOperationServerIndex]?.url;
@@ -5559,10 +5640,21 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async recordPictures(appName: string = 'WebApp', appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecordPictures200Response>> {
+        async recordPictures(appName: string = "WebClient", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecordPictures200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.recordPictures(appName, appVersion, recordPicturesRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.recordPictures']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async servicesAppUserGetInfoAsyncGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesAppUserGetInfoAsyncGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.servicesAppUserGetInfoAsyncGet(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ManageApi.servicesAppUserGetInfoAsyncGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -5574,7 +5666,7 @@ export const ManageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async setMessageRead(appName: string = 'WebApp', appVersion: number = 0, messageId?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetMessageRead200Response>> {
+        async setMessageRead(appName: string = "WebClient", appVersion: number = 0, messageId?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetMessageRead200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.setMessageRead(appName, appVersion, messageId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.setMessageRead']?.[localVarOperationServerIndex]?.url;
@@ -5611,7 +5703,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        canIOpenCamera(appName: string = 'WebApp', appVersion: number = 0, packageName?: string, options?: any): AxiosPromise<CanIOpenCamera200Response> {
+        canIOpenCamera(appName: string = "WebClient", appVersion: number = 0, packageName?: string, options?: any): AxiosPromise<CanIOpenCamera200Response> {
             return localVarFp.canIOpenCamera(appName, appVersion, packageName, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5633,7 +5725,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        coursesSubscribed(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<CoursesSubscribed200Response> {
+        coursesSubscribed(appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<CoursesSubscribed200Response> {
             return localVarFp.coursesSubscribed(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5644,7 +5736,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generatorToken(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GeneratorToken200Response> {
+        generatorToken(appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<GeneratorToken200Response> {
             return localVarFp.generatorToken(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5655,7 +5747,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllCommonWebSite(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetAllCommonWebSite200Response> {
+        getAllCommonWebSite(appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<GetAllCommonWebSite200Response> {
             return localVarFp.getAllCommonWebSite(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5666,7 +5758,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllSettings(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetAllSettings200Response> {
+        getAllSettings(appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<GetAllSettings200Response> {
             return localVarFp.getAllSettings(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5677,7 +5769,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllWhiteUrlAsync(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetAllWhiteUrlAsync200Response> {
+        getAllWhiteUrlAsync(appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<GetAllWhiteUrlAsync200Response> {
             return localVarFp.getAllWhiteUrlAsync(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5689,7 +5781,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMessageList(appName: string = 'WebApp', appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: any): AxiosPromise<GetMyMessageList200Response> {
+        getMyMessageList(appName: string = "WebClient", appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: any): AxiosPromise<GetMyMessageList200Response> {
             return localVarFp.getMyMessageList(appName, appVersion, getMyMessageListRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5700,7 +5792,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyUnreadMessageCount(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetMyUnreadMessageCount200Response> {
+        getMyUnreadMessageCount(appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<GetMyUnreadMessageCount200Response> {
             return localVarFp.getMyUnreadMessageCount(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5712,7 +5804,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getNotice(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: any): AxiosPromise<GetNotice200Response> {
+        getNotice(appName: string = "WebClient", appVersion: number = 0, id?: number, options?: any): AxiosPromise<GetNotice200Response> {
             return localVarFp.getNotice(appName, appVersion, id, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5723,7 +5815,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSystemSettingsForStudent(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetSystemSettingsForStudent200Response> {
+        getSystemSettingsForStudent(appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<GetSystemSettingsForStudent200Response> {
             return localVarFp.getSystemSettingsForStudent(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5745,8 +5837,16 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        recordPictures(appName: string = 'WebApp', appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: any): AxiosPromise<RecordPictures200Response> {
+        recordPictures(appName: string = "WebClient", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: any): AxiosPromise<RecordPictures200Response> {
             return localVarFp.recordPictures(appName, appVersion, recordPicturesRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        servicesAppUserGetInfoAsyncGet(options?: any): AxiosPromise<ServicesAppUserGetInfoAsyncGet200Response> {
+            return localVarFp.servicesAppUserGetInfoAsyncGet(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -5757,7 +5857,7 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        setMessageRead(appName: string = 'WebApp', appVersion: number = 0, messageId?: number, options?: any): AxiosPromise<SetMessageRead200Response> {
+        setMessageRead(appName: string = "WebClient", appVersion: number = 0, messageId?: number, options?: any): AxiosPromise<SetMessageRead200Response> {
             return localVarFp.setMessageRead(appName, appVersion, messageId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5789,7 +5889,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public canIOpenCamera(appName: string = 'WebApp', appVersion: number = 0, packageName?: string, options?: RawAxiosRequestConfig) {
+    public canIOpenCamera(appName: string = "WebClient", appVersion: number = 0, packageName?: string, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).canIOpenCamera(appName, appVersion, packageName, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5815,7 +5915,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public coursesSubscribed(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public coursesSubscribed(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).coursesSubscribed(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5828,7 +5928,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public generatorToken(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public generatorToken(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).generatorToken(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5841,7 +5941,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getAllCommonWebSite(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getAllCommonWebSite(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getAllCommonWebSite(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5854,7 +5954,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getAllSettings(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getAllSettings(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getAllSettings(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5867,7 +5967,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getAllWhiteUrlAsync(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getAllWhiteUrlAsync(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getAllWhiteUrlAsync(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5881,7 +5981,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getMyMessageList(appName: string = 'WebApp', appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: RawAxiosRequestConfig) {
+    public getMyMessageList(appName: string = "WebClient", appVersion: number = 0, getMyMessageListRequest?: GetMyMessageListRequest, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getMyMessageList(appName, appVersion, getMyMessageListRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5894,7 +5994,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getMyUnreadMessageCount(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getMyUnreadMessageCount(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getMyUnreadMessageCount(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5908,7 +6008,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getNotice(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig) {
+    public getNotice(appName: string = "WebClient", appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getNotice(appName, appVersion, id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5921,7 +6021,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public getSystemSettingsForStudent(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getSystemSettingsForStudent(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).getSystemSettingsForStudent(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5947,8 +6047,18 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public recordPictures(appName: string = 'WebApp', appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: RawAxiosRequestConfig) {
+    public recordPictures(appName: string = "WebClient", appVersion: number = 0, recordPicturesRequest?: RecordPicturesRequest, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).recordPictures(appName, appVersion, recordPicturesRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ManageApi
+     */
+    public servicesAppUserGetInfoAsyncGet(options?: RawAxiosRequestConfig) {
+        return ManageApiFp(this.configuration).servicesAppUserGetInfoAsyncGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5961,7 +6071,7 @@ export class ManageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManageApi
      */
-    public setMessageRead(appName: string = 'WebApp', appVersion: number = 0, messageId?: number, options?: RawAxiosRequestConfig) {
+    public setMessageRead(appName: string = "WebClient", appVersion: number = 0, messageId?: number, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).setMessageRead(appName, appVersion, messageId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -5994,7 +6104,7 @@ export const MiscApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDnUrl: async (appName: string = 'WebApp', appVersion: number = 0, clientType?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getDnUrl: async (appName: string = "WebClient", appVersion: number = 0, clientType?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getDnUrl', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6049,7 +6159,7 @@ export const MiscApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQWeather: async (appName: string = 'WebApp', appVersion: number = 0, location?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getQWeather: async (appName: string = "WebClient", appVersion: number = 0, location?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getQWeather', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6114,7 +6224,7 @@ export const MiscApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDnUrl(appName: string = 'WebApp', appVersion: number = 0, clientType?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDnUrl200Response>> {
+        async getDnUrl(appName: string = "WebClient", appVersion: number = 0, clientType?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDnUrl200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDnUrl(appName, appVersion, clientType, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MiscApi.getDnUrl']?.[localVarOperationServerIndex]?.url;
@@ -6129,7 +6239,7 @@ export const MiscApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getQWeather(appName: string = 'WebApp', appVersion: number = 0, location?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetQWeather200Response>> {
+        async getQWeather(appName: string = "WebClient", appVersion: number = 0, location?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetQWeather200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getQWeather(appName, appVersion, location, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MiscApi.getQWeather']?.[localVarOperationServerIndex]?.url;
@@ -6154,7 +6264,7 @@ export const MiscApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDnUrl(appName: string = 'WebApp', appVersion: number = 0, clientType?: number, options?: any): AxiosPromise<GetDnUrl200Response> {
+        getDnUrl(appName: string = "WebClient", appVersion: number = 0, clientType?: number, options?: any): AxiosPromise<GetDnUrl200Response> {
             return localVarFp.getDnUrl(appName, appVersion, clientType, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6166,7 +6276,7 @@ export const MiscApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQWeather(appName: string = 'WebApp', appVersion: number = 0, location?: string, options?: any): AxiosPromise<GetQWeather200Response> {
+        getQWeather(appName: string = "WebClient", appVersion: number = 0, location?: string, options?: any): AxiosPromise<GetQWeather200Response> {
             return localVarFp.getQWeather(appName, appVersion, location, options).then((request) => request(axios, basePath));
         },
     };
@@ -6189,7 +6299,7 @@ export class MiscApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MiscApi
      */
-    public getDnUrl(appName: string = 'WebApp', appVersion: number = 0, clientType?: number, options?: RawAxiosRequestConfig) {
+    public getDnUrl(appName: string = "WebClient", appVersion: number = 0, clientType?: number, options?: RawAxiosRequestConfig) {
         return MiscApiFp(this.configuration).getDnUrl(appName, appVersion, clientType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -6203,7 +6313,7 @@ export class MiscApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MiscApi
      */
-    public getQWeather(appName: string = 'WebApp', appVersion: number = 0, location?: string, options?: RawAxiosRequestConfig) {
+    public getQWeather(appName: string = "WebClient", appVersion: number = 0, location?: string, options?: RawAxiosRequestConfig) {
         return MiscApiFp(this.configuration).getQWeather(appName, appVersion, location, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -6225,7 +6335,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMistakeQstItemDetailInfo: async (appName: string = 'WebApp', appVersion: number = 0, itemId?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMistakeQstItemDetailInfo: async (appName: string = "WebClient", appVersion: number = 0, itemId?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMistakeQstItemDetailInfo', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6279,7 +6389,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMistakeBooks: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyMistakeBooks: async (appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMyMistakeBooks', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6329,7 +6439,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyTags: async (appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyTags: async (appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getMyTags', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6380,7 +6490,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        multiRemoveMistakeItems: async (appName: string = 'WebApp', appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        multiRemoveMistakeItems: async (appName: string = "WebClient", appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('multiRemoveMistakeItems', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6434,7 +6544,7 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchMistakeQstItems: async (appName: string = 'WebApp', appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        searchMistakeQstItems: async (appName: string = "WebClient", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('searchMistakeQstItems', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6498,7 +6608,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMistakeQstItemDetailInfo(appName: string = 'WebApp', appVersion: number = 0, itemId?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMistakeQstItemDetailInfo200Response>> {
+        async getMistakeQstItemDetailInfo(appName: string = "WebClient", appVersion: number = 0, itemId?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMistakeQstItemDetailInfo200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMistakeQstItemDetailInfo(appName, appVersion, itemId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.getMistakeQstItemDetailInfo']?.[localVarOperationServerIndex]?.url;
@@ -6512,7 +6622,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyMistakeBooks(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyMistakeBooks200Response>> {
+        async getMyMistakeBooks(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyMistakeBooks200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyMistakeBooks(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.getMyMistakeBooks']?.[localVarOperationServerIndex]?.url;
@@ -6526,7 +6636,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyTags(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyTags200Response>> {
+        async getMyTags(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyTags200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyTags(appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.getMyTags']?.[localVarOperationServerIndex]?.url;
@@ -6541,7 +6651,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async multiRemoveMistakeItems(appName: string = 'WebApp', appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDnUrl200Response>> {
+        async multiRemoveMistakeItems(appName: string = "WebClient", appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDnUrl200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.multiRemoveMistakeItems(appName, appVersion, multiRemoveMistakeItemsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.multiRemoveMistakeItems']?.[localVarOperationServerIndex]?.url;
@@ -6556,7 +6666,7 @@ export const MistakeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchMistakeQstItems(appName: string = 'WebApp', appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchMistakeQstItems200Response>> {
+        async searchMistakeQstItems(appName: string = "WebClient", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchMistakeQstItems200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchMistakeQstItems(appName, appVersion, searchMistakeQstItemsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.searchMistakeQstItems']?.[localVarOperationServerIndex]?.url;
@@ -6581,7 +6691,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMistakeQstItemDetailInfo(appName: string = 'WebApp', appVersion: number = 0, itemId?: number, options?: any): AxiosPromise<GetMistakeQstItemDetailInfo200Response> {
+        getMistakeQstItemDetailInfo(appName: string = "WebClient", appVersion: number = 0, itemId?: number, options?: any): AxiosPromise<GetMistakeQstItemDetailInfo200Response> {
             return localVarFp.getMistakeQstItemDetailInfo(appName, appVersion, itemId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6592,7 +6702,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMistakeBooks(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetMyMistakeBooks200Response> {
+        getMyMistakeBooks(appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<GetMyMistakeBooks200Response> {
             return localVarFp.getMyMistakeBooks(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6603,7 +6713,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyTags(appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetMyTags200Response> {
+        getMyTags(appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<GetMyTags200Response> {
             return localVarFp.getMyTags(appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6615,7 +6725,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        multiRemoveMistakeItems(appName: string = 'WebApp', appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: any): AxiosPromise<GetDnUrl200Response> {
+        multiRemoveMistakeItems(appName: string = "WebClient", appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: any): AxiosPromise<GetDnUrl200Response> {
             return localVarFp.multiRemoveMistakeItems(appName, appVersion, multiRemoveMistakeItemsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6627,7 +6737,7 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchMistakeQstItems(appName: string = 'WebApp', appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: any): AxiosPromise<SearchMistakeQstItems200Response> {
+        searchMistakeQstItems(appName: string = "WebClient", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: any): AxiosPromise<SearchMistakeQstItems200Response> {
             return localVarFp.searchMistakeQstItems(appName, appVersion, searchMistakeQstItemsRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -6650,7 +6760,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public getMistakeQstItemDetailInfo(appName: string = 'WebApp', appVersion: number = 0, itemId?: number, options?: RawAxiosRequestConfig) {
+    public getMistakeQstItemDetailInfo(appName: string = "WebClient", appVersion: number = 0, itemId?: number, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).getMistakeQstItemDetailInfo(appName, appVersion, itemId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -6663,7 +6773,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public getMyMistakeBooks(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getMyMistakeBooks(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).getMyMistakeBooks(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -6676,7 +6786,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public getMyTags(appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getMyTags(appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).getMyTags(appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -6690,7 +6800,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public multiRemoveMistakeItems(appName: string = 'WebApp', appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: RawAxiosRequestConfig) {
+    public multiRemoveMistakeItems(appName: string = "WebClient", appVersion: number = 0, multiRemoveMistakeItemsRequest?: MultiRemoveMistakeItemsRequest, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).multiRemoveMistakeItems(appName, appVersion, multiRemoveMistakeItemsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -6704,7 +6814,7 @@ export class MistakeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MistakeApi
      */
-    public searchMistakeQstItems(appName: string = 'WebApp', appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: RawAxiosRequestConfig) {
+    public searchMistakeQstItems(appName: string = "WebClient", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).searchMistakeQstItems(appName, appVersion, searchMistakeQstItemsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -6726,7 +6836,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addCatalog: async (appName: string = 'WebApp', appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        addCatalog: async (appName: string = "WebClient", appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('addCatalog', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6780,7 +6890,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSession: async (appName: string = 'WebApp', appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createSession: async (appName: string = "WebClient", appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('createSession', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6834,7 +6944,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteCatalog: async (appName: string = 'WebApp', appVersion: number = 0, id?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteCatalog: async (appName: string = "WebClient", appVersion: number = 0, id?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('deleteCatalog', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6923,7 +7033,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQuoraStudentTopics: async (appName: string = 'WebApp', appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getQuoraStudentTopics: async (appName: string = "WebClient", appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getQuoraStudentTopics', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -6977,7 +7087,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSessions: async (appName: string = 'WebApp', appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSessions: async (appName: string = "WebClient", appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getSessions', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -7031,7 +7141,7 @@ export const QuoraApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchQuora: async (appName: string = 'WebApp', appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        searchQuora: async (appName: string = "WebClient", appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('searchQuora', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -7095,7 +7205,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async addCatalog(appName: string = 'WebApp', appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddCatalog200Response>> {
+        async addCatalog(appName: string = "WebClient", appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddCatalog200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.addCatalog(appName, appVersion, addCatalogRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.addCatalog']?.[localVarOperationServerIndex]?.url;
@@ -7110,7 +7220,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createSession(appName: string = 'WebApp', appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSession200Response>> {
+        async createSession(appName: string = "WebClient", appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSession200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createSession(appName, appVersion, createSessionRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.createSession']?.[localVarOperationServerIndex]?.url;
@@ -7125,7 +7235,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteCatalog(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetMessageRead200Response>> {
+        async deleteCatalog(appName: string = "WebClient", appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetMessageRead200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteCatalog(appName, appVersion, id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.deleteCatalog']?.[localVarOperationServerIndex]?.url;
@@ -7152,7 +7262,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getQuoraStudentTopics(appName: string = 'WebApp', appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+        async getQuoraStudentTopics(appName: string = "WebClient", appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getQuoraStudentTopics(appName, appVersion, getQuoraStudentTopicsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.getQuoraStudentTopics']?.[localVarOperationServerIndex]?.url;
@@ -7167,7 +7277,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSessions(appName: string = 'WebApp', appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSessions200Response>> {
+        async getSessions(appName: string = "WebClient", appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSessions200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSessions(appName, appVersion, getSessionsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.getSessions']?.[localVarOperationServerIndex]?.url;
@@ -7182,7 +7292,7 @@ export const QuoraApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchQuora(appName: string = 'WebApp', appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchQuora200Response>> {
+        async searchQuora(appName: string = "WebClient", appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchQuora200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchQuora(appName, appVersion, searchQuoraRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['QuoraApi.searchQuora']?.[localVarOperationServerIndex]?.url;
@@ -7207,7 +7317,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addCatalog(appName: string = 'WebApp', appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: any): AxiosPromise<AddCatalog200Response> {
+        addCatalog(appName: string = "WebClient", appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: any): AxiosPromise<AddCatalog200Response> {
             return localVarFp.addCatalog(appName, appVersion, addCatalogRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7219,7 +7329,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSession(appName: string = 'WebApp', appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: any): AxiosPromise<CreateSession200Response> {
+        createSession(appName: string = "WebClient", appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: any): AxiosPromise<CreateSession200Response> {
             return localVarFp.createSession(appName, appVersion, createSessionRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7231,7 +7341,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteCatalog(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: any): AxiosPromise<SetMessageRead200Response> {
+        deleteCatalog(appName: string = "WebClient", appVersion: number = 0, id?: number, options?: any): AxiosPromise<SetMessageRead200Response> {
             return localVarFp.deleteCatalog(appName, appVersion, id, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7252,7 +7362,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQuoraStudentTopics(appName: string = 'WebApp', appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: any): AxiosPromise<object> {
+        getQuoraStudentTopics(appName: string = "WebClient", appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: any): AxiosPromise<object> {
             return localVarFp.getQuoraStudentTopics(appName, appVersion, getQuoraStudentTopicsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7264,7 +7374,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSessions(appName: string = 'WebApp', appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: any): AxiosPromise<GetSessions200Response> {
+        getSessions(appName: string = "WebClient", appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: any): AxiosPromise<GetSessions200Response> {
             return localVarFp.getSessions(appName, appVersion, getSessionsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7276,7 +7386,7 @@ export const QuoraApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchQuora(appName: string = 'WebApp', appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: any): AxiosPromise<SearchQuora200Response> {
+        searchQuora(appName: string = "WebClient", appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: any): AxiosPromise<SearchQuora200Response> {
             return localVarFp.searchQuora(appName, appVersion, searchQuoraRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -7299,7 +7409,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public addCatalog(appName: string = 'WebApp', appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: RawAxiosRequestConfig) {
+    public addCatalog(appName: string = "WebClient", appVersion: number = 0, addCatalogRequest?: AddCatalogRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).addCatalog(appName, appVersion, addCatalogRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -7313,7 +7423,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public createSession(appName: string = 'WebApp', appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: RawAxiosRequestConfig) {
+    public createSession(appName: string = "WebClient", appVersion: number = 0, createSessionRequest?: CreateSessionRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).createSession(appName, appVersion, createSessionRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -7327,7 +7437,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public deleteCatalog(appName: string = 'WebApp', appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig) {
+    public deleteCatalog(appName: string = "WebClient", appVersion: number = 0, id?: number, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).deleteCatalog(appName, appVersion, id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -7352,7 +7462,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public getQuoraStudentTopics(appName: string = 'WebApp', appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: RawAxiosRequestConfig) {
+    public getQuoraStudentTopics(appName: string = "WebClient", appVersion: number = 0, getQuoraStudentTopicsRequest?: GetQuoraStudentTopicsRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).getQuoraStudentTopics(appName, appVersion, getQuoraStudentTopicsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -7366,7 +7476,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public getSessions(appName: string = 'WebApp', appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: RawAxiosRequestConfig) {
+    public getSessions(appName: string = "WebClient", appVersion: number = 0, getSessionsRequest?: GetSessionsRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).getSessions(appName, appVersion, getSessionsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -7380,7 +7490,7 @@ export class QuoraApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuoraApi
      */
-    public searchQuora(appName: string = 'WebApp', appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: RawAxiosRequestConfig) {
+    public searchQuora(appName: string = "WebClient", appVersion: number = 0, searchQuoraRequest?: SearchQuoraRequest, options?: RawAxiosRequestConfig) {
         return QuoraApiFp(this.configuration).searchQuora(appName, appVersion, searchQuoraRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -7401,7 +7511,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        askForHelp: async (appVersion: number = 0, appName: string = 'WebApp', askForHelpRequest?: AskForHelpRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        askForHelp: async (appVersion: number = 0, appName: string = "WebClient", askForHelpRequest?: AskForHelpRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appVersion' is not null or undefined
             assertParamExists('askForHelp', 'appVersion', appVersion)
             // verify required parameter 'appName' is not null or undefined
@@ -7455,7 +7565,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        complete: async (appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        complete: async (appVersion: number = 0, appName: string = "WebClient", id: number, isRevising: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appVersion' is not null or undefined
             assertParamExists('complete', 'appVersion', appVersion)
             // verify required parameter 'appName' is not null or undefined
@@ -7514,11 +7624,11 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {number} appVersion 请求api的应用的版本
          * @param {string} appName 请求api的应用的包名
          * @param {number} [taskId] 
-         * @param {ExamAnswerRequest} [examAnswerRequest] 
+         * @param {Answers} [answers] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        examAnswer: async (appVersion: number = 0, appName: string = 'WebApp', taskId?: number, examAnswerRequest?: ExamAnswerRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        examAnswer: async (appVersion: number = 0, appName: string = "WebClient", taskId?: number, answers?: Answers, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appVersion' is not null or undefined
             assertParamExists('examAnswer', 'appVersion', appVersion)
             // verify required parameter 'appName' is not null or undefined
@@ -7560,7 +7670,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(examAnswerRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(answers, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -7575,7 +7685,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getExamTask: async (appName: string = 'WebApp', appVersion: number = 0, id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getExamTask: async (appName: string = "WebClient", appVersion: number = 0, id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getExamTask', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -7631,7 +7741,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getNoQstExam: async (id: number, appName: string = 'WebApp', appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getNoQstExam: async (id: number, appName: string = "WebClient", appVersion: number = 0, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getNoQstExam', 'id', id)
             // verify required parameter 'appName' is not null or undefined
@@ -7688,7 +7798,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQuestionView: async (appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getQuestionView: async (appVersion: number = 0, appName: string = "WebClient", examId: number, questionId: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appVersion' is not null or undefined
             assertParamExists('getQuestionView', 'appVersion', appVersion)
             // verify required parameter 'appName' is not null or undefined
@@ -7750,7 +7860,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStudentTaskList: async (appName: string = 'WebApp', appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getStudentTaskList: async (appName: string = "WebClient", appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('getStudentTaskList', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -7800,11 +7910,11 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
          * @param {number} taskId 
-         * @param {Array<NoQstExamAnswerRequestInner>} [noQstExamAnswerRequestInner] 
+         * @param {Array<Answers>} [answers] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        noQstExamAnswer: async (appName: string = 'WebApp', appVersion: number = 0, taskId: number, noQstExamAnswerRequestInner?: Array<NoQstExamAnswerRequestInner>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        noQstExamAnswer: async (appName: string = "WebClient", appVersion: number = 0, taskId: number, answers?: Array<Answers>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'appName' is not null or undefined
             assertParamExists('noQstExamAnswer', 'appName', appName)
             // verify required parameter 'appVersion' is not null or undefined
@@ -7848,7 +7958,7 @@ export const TaskApiAxiosParamCreator = function (configuration?: Configuration)
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(noQstExamAnswerRequestInner, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(answers, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -7873,7 +7983,7 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async askForHelp(appVersion: number = 0, appName: string = 'WebApp', askForHelpRequest?: AskForHelpRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
+        async askForHelp(appVersion: number = 0, appName: string = "WebClient", askForHelpRequest?: AskForHelpRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.askForHelp(appVersion, appName, askForHelpRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TaskApi.askForHelp']?.[localVarOperationServerIndex]?.url;
@@ -7888,7 +7998,7 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async complete(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
+        async complete(appVersion: number = 0, appName: string = "WebClient", id: number, isRevising: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.complete(appVersion, appName, id, isRevising, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TaskApi.complete']?.[localVarOperationServerIndex]?.url;
@@ -7899,12 +8009,12 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {number} appVersion 请求api的应用的版本
          * @param {string} appName 请求api的应用的包名
          * @param {number} [taskId] 
-         * @param {ExamAnswerRequest} [examAnswerRequest] 
+         * @param {Answers} [answers] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async examAnswer(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, examAnswerRequest?: ExamAnswerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.examAnswer(appVersion, appName, taskId, examAnswerRequest, options);
+        async examAnswer(appVersion: number = 0, appName: string = "WebClient", taskId?: number, answers?: Answers, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.examAnswer(appVersion, appName, taskId, answers, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TaskApi.examAnswer']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -7917,7 +8027,7 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getExamTask(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExamTask200Response>> {
+        async getExamTask(appName: string = "WebClient", appVersion: number = 0, id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetExamTask200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getExamTask(appName, appVersion, id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TaskApi.getExamTask']?.[localVarOperationServerIndex]?.url;
@@ -7931,7 +8041,7 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getNoQstExam(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetNoQstExam200Response>> {
+        async getNoQstExam(id: number, appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetNoQstExam200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getNoQstExam(id, appName, appVersion, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TaskApi.getNoQstExam']?.[localVarOperationServerIndex]?.url;
@@ -7946,7 +8056,7 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getQuestionView(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetQuestionView200Response>> {
+        async getQuestionView(appVersion: number = 0, appName: string = "WebClient", examId: number, questionId: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetQuestionView200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getQuestionView(appVersion, appName, examId, questionId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TaskApi.getQuestionView']?.[localVarOperationServerIndex]?.url;
@@ -7960,7 +8070,7 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStudentTaskList(appName: string = 'WebApp', appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStudentTaskList200Response>> {
+        async getStudentTaskList(appName: string = "WebClient", appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetStudentTaskList200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getStudentTaskList(appName, appVersion, getStudentTaskListRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TaskApi.getStudentTaskList']?.[localVarOperationServerIndex]?.url;
@@ -7971,12 +8081,12 @@ export const TaskApiFp = function(configuration?: Configuration) {
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
          * @param {number} taskId 
-         * @param {Array<NoQstExamAnswerRequestInner>} [noQstExamAnswerRequestInner] 
+         * @param {Array<Answers>} [answers] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async noQstExamAnswer(appName: string = 'WebApp', appVersion: number = 0, taskId: number, noQstExamAnswerRequestInner?: Array<NoQstExamAnswerRequestInner>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.noQstExamAnswer(appName, appVersion, taskId, noQstExamAnswerRequestInner, options);
+        async noQstExamAnswer(appName: string = "WebClient", appVersion: number = 0, taskId: number, answers?: Array<Answers>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AskForHelp200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.noQstExamAnswer(appName, appVersion, taskId, answers, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TaskApi.noQstExamAnswer']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -7999,7 +8109,7 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        askForHelp(appVersion: number = 0, appName: string = 'WebApp', askForHelpRequest?: AskForHelpRequest, options?: any): AxiosPromise<AskForHelp200Response> {
+        askForHelp(appVersion: number = 0, appName: string = "WebClient", askForHelpRequest?: AskForHelpRequest, options?: any): AxiosPromise<AskForHelp200Response> {
             return localVarFp.askForHelp(appVersion, appName, askForHelpRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8011,7 +8121,7 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        complete(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: any): AxiosPromise<AskForHelp200Response> {
+        complete(appVersion: number = 0, appName: string = "WebClient", id: number, isRevising: boolean, options?: any): AxiosPromise<AskForHelp200Response> {
             return localVarFp.complete(appVersion, appName, id, isRevising, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8019,12 +8129,12 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {number} appVersion 请求api的应用的版本
          * @param {string} appName 请求api的应用的包名
          * @param {number} [taskId] 
-         * @param {ExamAnswerRequest} [examAnswerRequest] 
+         * @param {Answers} [answers] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        examAnswer(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, examAnswerRequest?: ExamAnswerRequest, options?: any): AxiosPromise<AskForHelp200Response> {
-            return localVarFp.examAnswer(appVersion, appName, taskId, examAnswerRequest, options).then((request) => request(axios, basePath));
+        examAnswer(appVersion: number = 0, appName: string = "WebClient", taskId?: number, answers?: Answers, options?: any): AxiosPromise<AskForHelp200Response> {
+            return localVarFp.examAnswer(appVersion, appName, taskId, answers, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -8034,7 +8144,7 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getExamTask(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: any): AxiosPromise<GetExamTask200Response> {
+        getExamTask(appName: string = "WebClient", appVersion: number = 0, id: number, options?: any): AxiosPromise<GetExamTask200Response> {
             return localVarFp.getExamTask(appName, appVersion, id, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8045,7 +8155,7 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getNoQstExam(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: any): AxiosPromise<GetNoQstExam200Response> {
+        getNoQstExam(id: number, appName: string = "WebClient", appVersion: number = 0, options?: any): AxiosPromise<GetNoQstExam200Response> {
             return localVarFp.getNoQstExam(id, appName, appVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8057,7 +8167,7 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQuestionView(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: any): AxiosPromise<GetQuestionView200Response> {
+        getQuestionView(appVersion: number = 0, appName: string = "WebClient", examId: number, questionId: number, options?: any): AxiosPromise<GetQuestionView200Response> {
             return localVarFp.getQuestionView(appVersion, appName, examId, questionId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8068,7 +8178,7 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStudentTaskList(appName: string = 'WebApp', appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options?: any): AxiosPromise<GetStudentTaskList200Response> {
+        getStudentTaskList(appName: string = "WebClient", appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options?: any): AxiosPromise<GetStudentTaskList200Response> {
             return localVarFp.getStudentTaskList(appName, appVersion, getStudentTaskListRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8076,12 +8186,12 @@ export const TaskApiFactory = function (configuration?: Configuration, basePath?
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
          * @param {number} taskId 
-         * @param {Array<NoQstExamAnswerRequestInner>} [noQstExamAnswerRequestInner] 
+         * @param {Array<Answers>} [answers] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        noQstExamAnswer(appName: string = 'WebApp', appVersion: number = 0, taskId: number, noQstExamAnswerRequestInner?: Array<NoQstExamAnswerRequestInner>, options?: any): AxiosPromise<AskForHelp200Response> {
-            return localVarFp.noQstExamAnswer(appName, appVersion, taskId, noQstExamAnswerRequestInner, options).then((request) => request(axios, basePath));
+        noQstExamAnswer(appName: string = "WebClient", appVersion: number = 0, taskId: number, answers?: Array<Answers>, options?: any): AxiosPromise<AskForHelp200Response> {
+            return localVarFp.noQstExamAnswer(appName, appVersion, taskId, answers, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -8102,7 +8212,7 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public askForHelp(appVersion: number = 0, appName: string = 'WebApp', askForHelpRequest?: AskForHelpRequest, options?: RawAxiosRequestConfig) {
+    public askForHelp(appVersion: number = 0, appName: string = "WebClient", askForHelpRequest?: AskForHelpRequest, options?: RawAxiosRequestConfig) {
         return TaskApiFp(this.configuration).askForHelp(appVersion, appName, askForHelpRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -8116,7 +8226,7 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public complete(appVersion: number = 0, appName: string = 'WebApp', id: number, isRevising: boolean, options?: RawAxiosRequestConfig) {
+    public complete(appVersion: number = 0, appName: string = "WebClient", id: number, isRevising: boolean, options?: RawAxiosRequestConfig) {
         return TaskApiFp(this.configuration).complete(appVersion, appName, id, isRevising, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -8125,13 +8235,13 @@ export class TaskApi extends BaseAPI {
      * @param {number} appVersion 请求api的应用的版本
      * @param {string} appName 请求api的应用的包名
      * @param {number} [taskId] 
-     * @param {ExamAnswerRequest} [examAnswerRequest] 
+     * @param {Answers} [answers] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public examAnswer(appVersion: number = 0, appName: string = 'WebApp', taskId?: number, examAnswerRequest?: ExamAnswerRequest, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).examAnswer(appVersion, appName, taskId, examAnswerRequest, options).then((request) => request(this.axios, this.basePath));
+    public examAnswer(appVersion: number = 0, appName: string = "WebClient", taskId?: number, answers?: Answers, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).examAnswer(appVersion, appName, taskId, answers, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8143,7 +8253,7 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public getExamTask(appName: string = 'WebApp', appVersion: number = 0, id: number, options?: RawAxiosRequestConfig) {
+    public getExamTask(appName: string = "WebClient", appVersion: number = 0, id: number, options?: RawAxiosRequestConfig) {
         return TaskApiFp(this.configuration).getExamTask(appName, appVersion, id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -8156,7 +8266,7 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public getNoQstExam(id: number, appName: string = 'WebApp', appVersion: number = 0, options?: RawAxiosRequestConfig) {
+    public getNoQstExam(id: number, appName: string = "WebClient", appVersion: number = 0, options?: RawAxiosRequestConfig) {
         return TaskApiFp(this.configuration).getNoQstExam(id, appName, appVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -8170,7 +8280,7 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public getQuestionView(appVersion: number = 0, appName: string = 'WebApp', examId: number, questionId: number, options?: RawAxiosRequestConfig) {
+    public getQuestionView(appVersion: number = 0, appName: string = "WebClient", examId: number, questionId: number, options?: RawAxiosRequestConfig) {
         return TaskApiFp(this.configuration).getQuestionView(appVersion, appName, examId, questionId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -8183,7 +8293,7 @@ export class TaskApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public getStudentTaskList(appName: string = 'WebApp', appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options?: RawAxiosRequestConfig) {
+    public getStudentTaskList(appName: string = "WebClient", appVersion: number = 0, getStudentTaskListRequest?: GetStudentTaskListRequest, options?: RawAxiosRequestConfig) {
         return TaskApiFp(this.configuration).getStudentTaskList(appName, appVersion, getStudentTaskListRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -8192,13 +8302,13 @@ export class TaskApi extends BaseAPI {
      * @param {string} appName 请求api的应用的包名
      * @param {number} appVersion 请求api的应用的版本
      * @param {number} taskId 
-     * @param {Array<NoQstExamAnswerRequestInner>} [noQstExamAnswerRequestInner] 
+     * @param {Array<Answers>} [answers] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TaskApi
      */
-    public noQstExamAnswer(appName: string = 'WebApp', appVersion: number = 0, taskId: number, noQstExamAnswerRequestInner?: Array<NoQstExamAnswerRequestInner>, options?: RawAxiosRequestConfig) {
-        return TaskApiFp(this.configuration).noQstExamAnswer(appName, appVersion, taskId, noQstExamAnswerRequestInner, options).then((request) => request(this.axios, this.basePath));
+    public noQstExamAnswer(appName: string = "WebClient", appVersion: number = 0, taskId: number, answers?: Array<Answers>, options?: RawAxiosRequestConfig) {
+        return TaskApiFp(this.configuration).noQstExamAnswer(appName, appVersion, taskId, answers, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
