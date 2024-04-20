@@ -1,18 +1,24 @@
 'use client'
 
+import { useStoreSelector } from "@/store";
 import { Avatar, Menu, MenuProps } from "antd"
 import { useTheme } from "antd-style"
 import { Header } from "antd/es/layout/layout"
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 
 
 export function AppHeader() {
     const router = useRouter();
+    const userInfo = useStoreSelector(state => state.userInfo);
 
     const items: MenuProps['items'] = [
         { key: '1', label: 'Task', onClick: () => router.push('/dash/task')},
+        { key: '2', label: '在线专栏', onClick: () => {
+            if (window) {
+                window.open(`http://sxz.school.zykj.org/navPage.html?apiHost=http://sxz.api6.zykj.org&apiToken=${userInfo.accessToken}&timeStamp=${Date.now()}`);
+            }
+        }},
     ];
 
     return (

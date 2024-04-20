@@ -18,7 +18,7 @@ export default function DrawPad({ exalidrawApi, children }: { exalidrawApi: ((ap
                excalidrawAPI={exalidrawApi} 
                langCode="zh-CN" 
                theme={theme.isDarkMode ? 'dark' : 'light'} 
-               renderTopRightUI={() => (<>{children}</>)}
+               renderTopRightUI={() =><>{children}</>}
                >
     </Excalidraw>
 }
