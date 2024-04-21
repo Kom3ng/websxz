@@ -9,7 +9,7 @@ import AppAvatar from "./AppAvatar";
 
 
 
-export function AppHeader() {
+export default function AppHeader() {
     const router = useRouter();
     const userInfo = useStoreSelector(state => state.userInfo);
 

@@ -4,18 +4,20 @@ import { UserInfo } from "@/utils/api/zykj"
 import { api } from "@/utils/api/zykj/apiInstance"
 import { Avatar, Button, List, Popover } from "antd"
 import { useRouter } from "next/navigation";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function AppAvatar(){
     const [userInfo, setUserInfo] = useState<UserInfo>({});
     const dispach = useStoreDispatch();
     const router = useRouter();
 
-    api.manageApi.getInfo().then(res => {
-        if(res.data.result){
-            setUserInfo(res.data.result ?? {})
-        }
-    })
+    useEffect(() => {
+        api.manageApi.getInfo().then(res => {
+            if(res.data.result){
+                setUserInfo(res.data.result ?? {})
+            }
+        })
+    }, []);
     
     return (
         <Popover

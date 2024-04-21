@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono, Oswald, Ubuntu_Mono } from "next/font/google";
 import StoreProvider from "./StoreProvider";
 import '../styles/global.css'
-
-const inter = Inter({ subsets: ["latin"] });
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import ThemeConfigProvider from "./ThemeConfigProvider";
+import StyleRegistry from "./StyleRegistry";
+import { App } from "antd";
 
 export const metadata: Metadata = {
   title: "Web Sxz",
   description: "Web apps for sxz",
 };
 
+const jetBrainsMono = Ubuntu_Mono({
+  subsets: ["latin"],
+  weight: '400'
+});
 
 export default function RootLayout({
   children,
@@ -17,13 +23,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh">
-      <body style={{ height: '100%', margin: 0, padding: 0 }}>
-        <main className={inter.className}>
-          <StoreProvider>
-            {children}
-          </StoreProvider>
-        </main>
+    <html className="dark" lang="zh">
+      <body className={jetBrainsMono.className} style={{ height: '100%', margin: 0, padding: 0 }}>
+        <StoreProvider>
+          <AntdRegistry>
+            <ThemeConfigProvider>
+              <StyleRegistry>
+                <App>
+                  {children}
+                </App>
+              </StyleRegistry>
+            </ThemeConfigProvider>
+          </AntdRegistry>
+        </StoreProvider>
       </body>
     </html>
   );

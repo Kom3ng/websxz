@@ -1,7 +1,7 @@
 import { Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
 import React from "react";
-import { AppHeader } from "./Header";
+import AppHeader from "./Header";
 
 export default function DashLayout({
     children
@@ -10,7 +10,7 @@ export default function DashLayout({
 }>) {
     
     return (
-        <Layout>
+        <Layout className="min-h-screen">
             <AppHeader />
             <Content>{children}</Content>
         </Layout>
