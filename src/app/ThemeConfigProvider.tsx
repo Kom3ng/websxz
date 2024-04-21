@@ -9,30 +9,39 @@ const jetBrainsMono = Ubuntu_Mono({
   weight: '400'
 });
 
+const setTailwindTheme = (mode: string) => {
+  if (mode !== 'dark') {
+    document.documentElement.classList.remove('dark')
+  } else {
+    document.documentElement.classList.add('dark')
+  }
+}
+
 
 export default function ThemeConfigProvider({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) {
-    let themeMode = useStoreSelector(state => state.appearenceSettings.themeMode);
-    const dispatch = useStoreDispatch();
-
-    return (
-        <ThemeProvider 
-          defaultThemeMode={'auto'}
-          onThemeModeChange={(mode) => {
-            themeMode = mode
-            dispatch(appearenceSettingsSlece.actions.setThemeMode(mode))
-          }}
-          themeMode={themeMode}
-          theme={{
-            token: {
-              fontFamily: jetBrainsMono.style.fontFamily
-            }
-          }}
-        >
-            {children}
-        </ThemeProvider>
-    )
-  }
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  let themeMode = useStoreSelector(state => state.appearenceSettings.themeMode);
+  const dispatch = useStoreDispatch();
+  setTailwindTheme(themeMode);
+  return (
+    <ThemeProvider
+      defaultThemeMode={'auto'}
+      onThemeModeChange={(mode) => {
+        themeMode = mode;
+        setTailwindTheme(mode);
+        dispatch(appearenceSettingsSlece.actions.setThemeMode(mode))
+      }}
+      themeMode={themeMode}
+      theme={{
+        token: {
+          fontFamily: jetBrainsMono.style.fontFamily
+        }
+      }}
+    >
+      {children}
+    </ThemeProvider>
+  )
+}

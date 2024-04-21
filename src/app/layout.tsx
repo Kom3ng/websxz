@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="dark" lang="zh">
+    <html lang="zh">
       <body className={jetBrainsMono.className} style={{ height: '100%', margin: 0, padding: 0 }}>
         <StoreProvider>
           <AntdRegistry>
