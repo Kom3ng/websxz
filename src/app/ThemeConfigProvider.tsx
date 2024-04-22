@@ -37,7 +37,7 @@ export default function ThemeConfigProvider({
       themeMode={themeMode}
       theme={{
         token: {
-          fontFamily: jetBrainsMono.style.fontFamily
+          fontFamily: 'inherit'
         }
       }}
     >
