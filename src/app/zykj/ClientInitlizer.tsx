@@ -19,17 +19,17 @@ export default function ClientInitlizer() {
             if (error.response && error.response.status === 401) {
                 if (error.config.url?.includes("/TokenAuth/RefreshToken")) {
                     router.push(`/zykj/login?from=${window.location.href.replace(window.location.origin, '')}`);
-                    return Promise.reject("登陆过期");
+                    return Promise.reject("登陆过期(refresh token failed)");
                 }
                 const userInfo = store.getState().userInfo;
                 const tokenLast = userInfo.expireInSeconds * 1000;
-                const refreshTokenLast = userInfo.refreshTokenExpireInSeconds * 1000;
+                const refreshTokenLast = userInfo.refreshExpireInSeconds * 1000;
                 const now = new Date().getTime();
                 const loginAt = store.getState().loginInfo.loginAt;
 
                 if (now - loginAt > refreshTokenLast) {
                     router.push(`/zykj/login?from=${window.location.href.replace(window.location.origin, '')}`);
-                    return Promise.reject("登陆过期");
+                    return Promise.reject("登陆过期(refresh token expired)");
                 }
 
                 if (now - loginAt > tokenLast) {
@@ -42,7 +42,7 @@ export default function ClientInitlizer() {
                         token: resp.data.result.accessToken,
                         expireInSeconds: resp.data.result.expireInSeconds,
                         refreshToken: resp.data.result.refreshToken,
-                        refreshTokenExpireInSeconds: resp.data.result.refreshExpireInSeconds
+                        refreshExpireInSeconds: resp.data.result.refreshExpireInSeconds
                     }));
                     store.dispatch(loginInfoSlice.actions.login());
                     api.updateToken(resp.data.result.accessToken || '');
@@ -51,7 +51,7 @@ export default function ClientInitlizer() {
                 }
 
                 router.push(`/zykj/login?from=${window.location.href.replace(window.location.origin, '')}`);
-                return Promise.reject("登陆过期");
+                return Promise.reject("登陆过期(unknownp)");
             }
 
             return Promise.reject(error);
