@@ -46,7 +46,8 @@ export default function ClientInitlizer() {
                     }));
                     store.dispatch(loginInfoSlice.actions.login());
                     api.updateToken(resp.data.result.accessToken || '');
-
+                    
+                    error.config.headers.Authorization = `Bearer ${resp.data.result.accessToken}`;
                     return axios.request(error.config);
                 }
 
