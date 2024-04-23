@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # generated api
-src/utils/api/zykj
+/src/utils/api/zykj
