@@ -39,7 +39,7 @@ export default function ClientInitlizer() {
                     }
                     store.dispatch(userInfoSlice.actions.setUserInfo({
                         ...userInfo,
-                        token: resp.data.result.accessToken,
+                        accessToken: resp.data.result.accessToken,
                         expireInSeconds: resp.data.result.expireInSeconds,
                         refreshToken: resp.data.result.refreshToken,
                         refreshExpireInSeconds: resp.data.result.refreshExpireInSeconds
@@ -52,7 +52,7 @@ export default function ClientInitlizer() {
                 }
 
                 router.push(`/zykj/login?from=${window.location.href.replace(window.location.origin, '')}`);
-                return Promise.reject("登陆过期(unknownp)");
+                return Promise.reject("登陆过期(unknown)");
             }
 
             return Promise.reject(error);
