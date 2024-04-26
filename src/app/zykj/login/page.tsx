@@ -102,16 +102,10 @@ export default function LoginPage() {
     }, [])
 
     return (
-        <>
+        <div className="flex justify-center items-center h-screen">
             <Spin spinning={isLogining}>
                 <Card
-                    style={{
-                        margin: '20px',
-                        width: '300px',
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        marginTop: '100px'
-                    }}
+                    className="m-8 w-80"
                     title="Login"
                 >
                     <Form
@@ -153,6 +147,6 @@ export default function LoginPage() {
                     </Form>
                 </Card>
             </Spin>
-        </>
+        </div>
     )
 }

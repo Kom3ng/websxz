@@ -3,38 +3,36 @@
 import { api } from "@/utils/api/zykj/apiInstance";
 import { App, Card } from "antd";
 import { useSearchParams } from "next/navigation"
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Exam from "./Exam";
 import { ExamTask, NoQstExam } from "@/utils/api/zykj";
 
-export default function ExamView({params}: {params: {id: string}}){
+export default function ExamView({ params }: { params: { id: string } }) {
     const id = Number(params.id);
     const hasQst = useSearchParams().get('hasQst') === 'true' ? true : false;
-    const examTaskId = Number.parseInt(useSearchParams().get('examTaskId') ?? '0');
-    const {message} = App.useApp()
+    const { message } = App.useApp()
     const [examData, setExamData] = useState<ExamTask>({});
     const [noQstData, setNoQstData] = useState<NoQstExam>({});
-    const taskData = useMemo(async () => {
+    const taskData = async () => {
         if (hasQst) {
-            const resp = await api.taskApi.getExamTask('WebApp',0,examTaskId);
+            const resp = await api.taskApi.getExamTask('WebApp', 0, id);
             if (resp.data.error) {
                 message.error(resp.data.error.message);
                 return null;
             }
             return resp.data.result;
         } else {
-            const resp = await api.taskApi.getNoQstExam(examTaskId,'WebApp',0);
+            const resp = await api.taskApi.getNoQstExam(id, 'WebApp', 0);
             if (resp.data.error) {
                 message.error(resp.data.error.message);
                 return null;
             }
             return resp.data.result;
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[id,hasQst]);
+    };
 
     useEffect(() => {
-        taskData.then(data => {
+        taskData().then(data => {
             if (data) {
                 if (hasQst) {
                     setExamData(data as ExamTask);
@@ -43,15 +41,11 @@ export default function ExamView({params}: {params: {id: string}}){
                 }
             }
         })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     return (
-        <Card style={{
-            margin: 24,
-        }}>
-            {
-                examData ? <Exam data={examData} examTaskId={examTaskId} /> : <></>
-            }
-        </Card>
+        <>
+            {examData ? <Exam data={examData} examTaskId={id} /> : <></>}
+        </>
     )
 }

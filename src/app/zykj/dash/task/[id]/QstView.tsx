@@ -2,7 +2,6 @@ import { api } from "@/utils/api/zykj/apiInstance"
 import { App, Button, Card, Checkbox, GetProp, List, Radio, RadioChangeEvent, Spin } from "antd";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
 import DrawPad from "../../DrawPad";
 import { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types/types";
 import { Footer, exportToBlob } from "@excalidraw/excalidraw";

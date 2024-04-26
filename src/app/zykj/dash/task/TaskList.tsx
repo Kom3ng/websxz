@@ -55,18 +55,26 @@ export default function TaskList({ taskType }: { taskType: number }) {
                 dataLength={tasks.length}
                 next={loadMore}
                 hasMore={tasks.length < totalCount}
-                loader={<Skeleton paragraph={{ rows: 1 }} active />}
+                loader={<Skeleton active />}
             >
                 <List
-                    grid={{ gutter: 16, column: 4 }}
+                    grid={{ 
+                        gutter: 16, 
+                        column: 4,
+                        xs: 1,
+                        sm: 2,
+                        md: 3,
+                        lg: 4,
+                        xl: 4,
+                        xxl: 5, 
+                    }}
                     dataSource={tasks}
+                    
                     renderItem={(item: Task) => (
 
-                        <Link href={`/zykj/dash/task/${item.examId}?examTaskId=${item.examTaskId}&hasQst=${!item.isNoStem}`}>
+                        <Link href={`/zykj/dash/task/${item.examTaskId}?&hasQst=${!item.isNoStem}`}>
                             <Tooltip title={item.endTime ? `截止时间: ${item.endTime}` : ''}>
-                                <Card style={{
-                                    margin: '8px',
-                                }}>
+                                <Card className="m-2">
                                     <List.Item key={item.examId}>
                                         <List.Item.Meta
                                             title={item.topicName}
