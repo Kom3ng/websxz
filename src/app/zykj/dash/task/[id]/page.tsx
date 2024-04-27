@@ -1,7 +1,7 @@
 'use client'
 
 import { api } from "@/utils/api/zykj/apiInstance";
-import { App, Card } from "antd";
+import { App, Card, Spin } from "antd";
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react";
 import Exam from "./Exam";
@@ -46,7 +46,10 @@ export default function ExamView({ params }: { params: { id: string } }) {
     }, [])
     return (
         <>
-            {examData ? <Exam data={examData} examTaskId={id} /> : <NoQstExamView data={noQstData} examTaskId={id} ></NoQstExamView>}
+          { hasQst ? 
+          (examData ? <Exam data={examData} examTaskId={id} /> : <Spin />):
+          
+          (noQstData ? <NoQstExamView data={noQstData} examTaskId={id} ></NoQstExamView>:<Spin />)}
         </>
     )
 }
