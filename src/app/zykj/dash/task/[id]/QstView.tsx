@@ -1,21 +1,26 @@
 import { api } from "@/utils/api/zykj/apiInstance"
-import { App, Button, Card, Checkbox, GetProp, List, Radio, RadioChangeEvent, Spin } from "antd";
+import { App, Card, Checkbox, List, Radio, RadioChangeEvent, Spin } from "antd";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-import DrawPad from "../../DrawPad";
-import { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types/types";
-import { Footer, exportToBlob } from "@excalidraw/excalidraw";
 import getOss from "@/app/zykj/oss";
 import { useStoreSelector } from "@/store";
 import { CheckboxValueType } from "antd/es/checkbox/Group";
 import { QuestionView } from "@/utils/api/zykj";
+import dynamic from "next/dynamic";
+const DrawPad = dynamic(
+    async () => (await import('../../DrawPad')).default,
+    {
+        loading: () => <div>Loading...</div>,
+        ssr: false
+    }
+);
 
 export default function QstView({ examId, qstId, taskId }: { examId: number, qstId: number, taskId: number }) {
     const [data, setData] = useState<QuestionView>({});
     const [qstHtml, setQstHtml] = useState<string>('');
     const { message } = App.useApp();
-    const drawPads = useRef<Map<string, ExcalidrawImperativeAPI>>(new Map());
     const userInfo = useStoreSelector(state => state.userInfo);
+    const uuid = data.qstFlows?.at(0)?.uuid ?? '';
 
     useEffect(() => {
         const requestData = (times: number) => {
@@ -79,46 +84,6 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
         })
     }
 
-    const submitDrawPad = (uuid: string) => {
-        const eApi = drawPads.current.get(uuid);
-
-        if (!eApi) return;
-
-        const blob = exportToBlob(
-            {
-                elements: eApi.getSceneElements(),
-                appState: eApi.getAppState(),
-                files: eApi.getFiles(),
-                mimeType: 'image/webp'
-            }
-        )
-
-        const oss = getOss();
-
-        const path = `answers/${userInfo.userId}/ToCorrect/${taskId}/${qstId}/${uuid}/sketch/answer_${Date.now()}.webp`;
-
-        Promise.all([
-            oss,
-            blob
-        ]).then(([o, b]) => {
-            return o.put(path, b);
-        }).then((r) => {
-            if (r.res.status === 200) {
-                message.success('上传成功!');
-            }
-        }).then(() => {
-            api.taskApi.examAnswer(0, 'WebApp', taskId, {
-                answers: [
-                    {
-                        answers: [`http://ezy-sxz.oss-cn-hangzhou.aliyuncs.com/${path}`],
-                        uuid
-                    }
-                ],
-                draft: '',
-                questionId: qstId
-            })
-        })
-    }
 
     return <Card style={{
         margin: 16
@@ -136,13 +101,33 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
                             <div style={{
                                 height: 500
                             }}>
-                                <DrawPad exalidrawApi={(api) => drawPads.current.set(data.qstFlows?.at(0)?.uuid ?? '', api)} >
-                                    <Footer>
-                                        <Button style={{
-                                            marginLeft: "0.5rem",
-                                        }} onClick={() => submitDrawPad(data.qstFlows?.at(0)?.uuid ?? '')}>完成</Button>
-                                    </Footer>
-                                </DrawPad>
+                                <DrawPad onExport={(blob) => {
+                                    const oss = getOss();
+
+                                    const path = `answers/${userInfo.userId}/ToCorrect/${taskId}/${qstId}/${uuid}/sketch/answer_${Date.now()}.webp`;
+
+                                    Promise.all([
+                                        oss,
+                                        blob
+                                    ]).then(([o, b]) => {
+                                        return o.put(path, b);
+                                    }).then((r) => {
+                                        if (r.res.status === 200) {
+                                            message.success('上传成功!');
+                                        }
+                                    }).then(() => {
+                                        api.taskApi.examAnswer(0, 'WebApp', taskId, {
+                                            answers: [
+                                                {
+                                                    answers: [`http://ezy-sxz.oss-cn-hangzhou.aliyuncs.com/${path}`],
+                                                    uuid
+                                                }
+                                            ],
+                                            draft: '',
+                                            questionId: qstId
+                                        })
+                                    })
+                                }} />
                             </div>
                             :
                             <List
@@ -182,13 +167,33 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
                                                             height: 250,
                                                             margin: 50
                                                         }}>
-                                                            <DrawPad exalidrawApi={(api) => drawPads.current.set(i.uuid ?? '', api)} >
-                                                                <Footer>
-                                                                    <Button style={{
-                                                                        marginLeft: "0.5rem",
-                                                                    }} onClick={() => submitDrawPad(item.uuid ?? '')}>完成</Button>
-                                                                </Footer>
-                                                            </DrawPad>
+                                                            <DrawPad onExport={(blob) => {
+                                                                const oss = getOss();
+
+                                                                const path = `answers/${userInfo.userId}/ToCorrect/${taskId}/${qstId}/${uuid}/sketch/answer_${Date.now()}.webp`;
+
+                                                                Promise.all([
+                                                                    oss,
+                                                                    blob
+                                                                ]).then(([o, b]) => {
+                                                                    return o.put(path, b);
+                                                                }).then((r) => {
+                                                                    if (r.res.status === 200) {
+                                                                        message.success('上传成功!');
+                                                                    }
+                                                                }).then(() => {
+                                                                    api.taskApi.examAnswer(0, 'WebApp', taskId, {
+                                                                        answers: [
+                                                                            {
+                                                                                answers: [`http://ezy-sxz.oss-cn-hangzhou.aliyuncs.com/${path}`],
+                                                                                uuid
+                                                                            }
+                                                                        ],
+                                                                        draft: '',
+                                                                        questionId: qstId
+                                                                    })
+                                                                })
+                                                            }} />
 
                                                         </div>
                                                     )
