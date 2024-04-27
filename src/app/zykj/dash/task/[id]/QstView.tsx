@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 const DrawPad = dynamic(
     async () => (await import('../../DrawPad')).default,
     {
-        loading: () => <div>Loading...</div>,
+        loading: () => <Spin />,
         ssr: false
     }
 );
@@ -24,7 +24,7 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
 
     useEffect(() => {
         const requestData = (times: number) => {
-            api.taskApi.getQuestionView(0, 'WebApp', examId, qstId)
+            api.taskApi.getQuestionView(undefined, undefined, examId, qstId)
                 .then(resp => {
                     if (!resp.data.success) {
                         return Promise.reject(resp.data.error);
@@ -59,7 +59,7 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
     }, [examId, qstId])
 
     const onChoose = (e: RadioChangeEvent, uuid: string) => {
-        api.taskApi.examAnswer(0, 'WebApp', taskId, {
+        api.taskApi.examAnswer(undefined, undefined, taskId, {
             answers: [
                 {
                     answers: [e.target.value],
@@ -72,7 +72,7 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
     }
 
     const onMultiChoose = (v: CheckboxValueType[], uuid: string) => {
-        api.taskApi.examAnswer(0, 'WebApp', taskId, {
+        api.taskApi.examAnswer(undefined, undefined, taskId, {
             answers: [
                 {
                     answers: v.map(v => v.toString()),
@@ -182,11 +182,11 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
                                                                         message.success('上传成功!');
                                                                     }
                                                                 }).then(() => {
-                                                                    api.taskApi.examAnswer(0, 'WebApp', taskId, {
+                                                                    api.taskApi.examAnswer(undefined, undefined, taskId, {
                                                                         answers: [
                                                                             {
                                                                                 answers: [`http://ezy-sxz.oss-cn-hangzhou.aliyuncs.com/${path}`],
-                                                                                uuid
+                                                                                uuid: i.uuid
                                                                             }
                                                                         ],
                                                                         draft: '',
@@ -204,6 +204,5 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
                             />
                     }</> : <Spin />
         }
-
     </Card>
 }
