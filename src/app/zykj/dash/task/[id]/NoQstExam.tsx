@@ -60,7 +60,7 @@ export default function NoQstExamView({ data, examTaskId }: { data: NoQstExam, e
                     const uuid = firstQst?.uuid;
 
                     if (firstQst?.type === 5) {
-                        return <div className="h-[120]">
+                        return <div className="h-[500px]">
                             <DrawPad onExport={(blob) => {
                                 const oss = getOss();
 
@@ -122,10 +122,7 @@ export default function NoQstExamView({ data, examTaskId }: { data: NoQstExam, e
                                             dataSource={i.subQuestions ?? [item]}
                                             renderItem={(i) => {
                                                 return (
-                                                    <div style={{
-                                                        height: 250,
-                                                        margin: 50
-                                                    }}>
+                                                    <div className="m-12 h-60">
                                                         <DrawPad onExport={(blob) => {
                                                             const oss = getOss();
 

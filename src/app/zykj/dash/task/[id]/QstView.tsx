@@ -96,7 +96,7 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
 
                     {
                         data.itemType === 5 ?
-                            <div className="h-[120]">
+                            <div className="h-[500px]">
                                 <DrawPad onExport={(blob) => {
                                     const oss = getOss();
 
