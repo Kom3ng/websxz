@@ -85,9 +85,7 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
     }
 
 
-    return <Card style={{
-        margin: 16
-    }}>
+    return <Card className="m-4">
         {
             data ?
                 <>{
@@ -98,9 +96,7 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
 
                     {
                         data.itemType === 5 ?
-                            <div style={{
-                                height: 500
-                            }}>
+                            <div className="h-[120]">
                                 <DrawPad onExport={(blob) => {
                                     const oss = getOss();
 
@@ -163,14 +159,11 @@ export default function QstView({ examId, qstId, taskId }: { examId: number, qst
                                                 dataSource={item.subQuestions ?? [item]}
                                                 renderItem={(i) => {
                                                     return (
-                                                        <div style={{
-                                                            height: 250,
-                                                            margin: 50
-                                                        }}>
+                                                        <div className="m-12 h-60">
                                                             <DrawPad onExport={(blob) => {
                                                                 const oss = getOss();
 
-                                                                const path = `answers/${userInfo.userId}/ToCorrect/${taskId}/${qstId}/${uuid}/sketch/answer_${Date.now()}.webp`;
+                                                                const path = `answers/${userInfo.userId}/ToCorrect/${taskId}/${qstId}/${i.uuid}/sketch/answer_${Date.now()}.webp`;
 
                                                                 Promise.all([
                                                                     oss,

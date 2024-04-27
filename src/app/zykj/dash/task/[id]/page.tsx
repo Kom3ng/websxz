@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react";
 import Exam from "./Exam";
 import { ExamTask, NoQstExam } from "@/utils/api/zykj";
+import NoQstExamView from "./NoQstExam";
 
 export default function ExamView({ params }: { params: { id: string } }) {
     const id = Number(params.id);
@@ -45,7 +46,7 @@ export default function ExamView({ params }: { params: { id: string } }) {
     }, [])
     return (
         <>
-            {examData ? <Exam data={examData} examTaskId={id} /> : <></>}
+            {examData ? <Exam data={examData} examTaskId={id} /> : <NoQstExamView data={noQstData} examTaskId={id} ></NoQstExamView>}
         </>
     )
 }
