@@ -17,7 +17,7 @@ export default function AppHeader() {
         { key: '1', label: 'Task', onClick: () => router.push('/zykj/dash/task')},
         { key: '2', label: '在线专栏', onClick: () => {
             if (window) {
-                window.open(`http://sxz.school.zykj.org/navPage.html?apiHost=http://sxz.api6.zykj.org&apiToken=${userInfo.accessToken}&timeStamp=${Date.now()}`);
+                window.open(`http://sxz.school.zykj.org/navPage.html?apiHost=http://sxz.api.zykj.org&apiToken=${userInfo.accessToken}&timeStamp=${Date.now()}`);
             }
         }},
     ];
