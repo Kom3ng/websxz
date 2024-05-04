@@ -1,7 +1,7 @@
 'use client'
 
 import { api } from "@/utils/api/zykj/apiInstance";
-import { App, Card, Spin } from "antd";
+import {App, FloatButton, Spin} from "antd";
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react";
 import Exam from "./Exam";
@@ -10,7 +10,7 @@ import NoQstExamView from "./NoQstExam";
 
 export default function ExamView({ params }: { params: { id: string } }) {
     const id = Number(params.id);
-    const hasQst = useSearchParams().get('hasQst') === 'true' ? true : false;
+    const hasQst = useSearchParams().get('hasQst') === 'true';
     const { message } = App.useApp()
     const [examData, setExamData] = useState<ExamTask>({});
     const [noQstData, setNoQstData] = useState<NoQstExam>({});
@@ -48,8 +48,18 @@ export default function ExamView({ params }: { params: { id: string } }) {
         <>
           { hasQst ? 
           (examData ? <Exam data={examData} examTaskId={id} /> : <Spin />):
-          
           (noQstData ? <NoQstExamView data={noQstData} examTaskId={id} ></NoQstExamView>:<Spin />)}
+            <FloatButton
+                tooltip={<div>提交</div>}
+                onClick={() => {
+                api.taskApi.complete(undefined, undefined, id, true).then(resp => {
+                    if (resp.data.error) {
+                        message.error(resp.data.error.message);
+                        return;
+                    }
+                    message.success('提交成功');
+                })
+            }}></FloatButton>
         </>
     )
 }

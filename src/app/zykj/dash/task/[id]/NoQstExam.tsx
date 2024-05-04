@@ -1,5 +1,4 @@
 import { App, Checkbox, List, Radio, RadioChangeEvent, Spin, Tabs } from "antd";
-import QstView from "./QstView";
 import { NoQstExam } from "@/utils/api/zykj";
 import dynamic from "next/dynamic";
 import getOss from "@/app/zykj/oss";
@@ -96,6 +95,7 @@ export default function NoQstExamView({ data, examTaskId }: { data: NoQstExam, e
                                 switch (i.qstType) {
                                     case 0: {
                                         return <Radio.Group
+                                            className="m-2"
                                             onChange={(e) => onChoose(e, i.uuid ?? '', item.id ?? 0)}
                                         >
                                             {
@@ -107,6 +107,7 @@ export default function NoQstExamView({ data, examTaskId }: { data: NoQstExam, e
                                     }
                                     case 2: {
                                         return <Checkbox.Group
+                                            className="m-2"
                                             onChange={(v) => onMultiChoose(v, i.uuid ?? '', item.id ?? 0)}
                                         >
                                             {
