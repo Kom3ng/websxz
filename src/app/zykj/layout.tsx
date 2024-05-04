@@ -13,7 +13,7 @@ export default function AppLayout({
         <Layout>
             <Content className="min-h-screen">
                 <ClientInitlizer />
-                <FloatButtons />
+
                 {children}
             </Content>
         </Layout>

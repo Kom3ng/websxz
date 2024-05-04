@@ -1,3 +1,5 @@
+"use client"
+
 import { useStoreDispatch } from "@/store";
 import { loginInfoSlice, userInfoSlice } from "@/store/userInfo";
 import { UserInfo } from "@/utils/api/zykj"

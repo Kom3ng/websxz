@@ -3,9 +3,7 @@ import TaskList from "./TaskList";
 
 export default function MistakePage() {
     return (
-        <Card style={{
-            margin: '20px',
-        }}>
+        <Card className="m-5">
             <Tabs 
             tabPosition='left'
             items={[

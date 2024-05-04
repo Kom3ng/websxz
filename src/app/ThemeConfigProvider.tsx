@@ -34,7 +34,7 @@ export default function ThemeConfigProvider({
         setTailwindTheme(mode);
         dispatch(appearenceSettingsSlece.actions.setThemeMode(mode))
       }}
-      themeMode={themeMode}
+      themeMode={'auto'}
       theme={{
         token: {
           fontFamily: 'inherit'

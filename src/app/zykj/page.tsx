@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Page() {
     return (
-        <div className="min-h-screen bg-slate-50 dark:bg-gray-400">
+        <div className="min-h-screen">
             <div className="px-20 space-y-4">
                 <div className="h-20"></div>
                 <p className="text-5xl font-bold">Zykj</p>

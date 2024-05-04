@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh">
-      <body className={jetBrainsMono.className} style={{ height: '100%', margin: 0, padding: 0 }}>
+      <body className={`${jetBrainsMono.className} 
+      bg-neutral-50 dark:bg-neutral-950
+      text-neutral-100 dark:text-neutral-900`}>
         <StoreProvider>
           <AntdRegistry>
             <ThemeConfigProvider>
