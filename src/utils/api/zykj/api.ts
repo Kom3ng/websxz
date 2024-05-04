@@ -4035,10 +4035,10 @@ export interface SearchMistakeQstItemsRequest {
     'haveNoTag'?: boolean;
     /**
      * 
-     * @type {boolean}
+     * @type {number}
      * @memberof SearchMistakeQstItemsRequest
      */
-    'maxResultCount'?: boolean;
+    'maxResultCount'?: number;
     /**
      * 
      * @type {number}
