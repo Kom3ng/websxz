@@ -17,6 +17,7 @@ export default function ThemeConfigProvider({
 }>) {
   return (
     <ThemeProvider
+      themeMode: "auto"
       theme={{
         token: {
           fontFamily: 'inherit'
