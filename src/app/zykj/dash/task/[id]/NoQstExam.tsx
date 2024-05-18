@@ -97,6 +97,7 @@ export default function NoQstExamView({ data, examTaskId }: { data: NoQstExam, e
                                         return <Radio.Group
                                             className="m-2"
                                             onChange={(e) => onChoose(e, i.uuid ?? '', item.id ?? 0)}
+                                            defaultValue={item.answerList?.at(0)?.answers?.at(0) ?? ''}
                                         >
                                             {
                                                 i.options?.map(opt => {
