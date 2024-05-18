@@ -58,7 +58,7 @@ export default function NoQstExamView({ data, examTaskId }: { data: NoQstExam, e
                     const firstQst = item.qstFlows?.at(0);
                     const uuid = firstQst?.uuid;
 
-                    if (firstQst?.type === 5) {
+                    if (firstQst?.qstType === 3) {
                         return <div className="h-[500px]">
                             <DrawPad onExport={(blob) => {
                                 const oss = getOss();

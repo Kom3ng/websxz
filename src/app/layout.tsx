@@ -6,6 +6,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import ThemeConfigProvider from "./ThemeConfigProvider";
 import StyleRegistry from "./StyleRegistry";
 import { App } from "antd";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Web Sxz",
@@ -38,6 +39,7 @@ export default function RootLayout({
             </ThemeConfigProvider>
           </AntdRegistry>
         </StoreProvider>
+        <GoogleAnalytics gaId="G-Z1G794KZH1" />
       </body>
     </html>
   );
