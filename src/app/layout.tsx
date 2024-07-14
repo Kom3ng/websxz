@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Oswald, Ubuntu_Mono } from "next/font/google";
+import { Ubuntu_Mono } from "next/font/google";
 import StoreProvider from "./StoreProvider";
 import '../styles/global.css'
-import { AntdRegistry } from "@ant-design/nextjs-registry";
-import ThemeConfigProvider from "./ThemeConfigProvider";
-import StyleRegistry from "./StyleRegistry";
-import { App } from "antd";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Web Sxz",
@@ -25,21 +23,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh">
-      <body className={`${jetBrainsMono.className} 
-      bg-neutral-50 dark:bg-neutral-950
-      text-neutral-100 dark:text-neutral-900`}>
+      <body className={`${jetBrainsMono.className}`}>
         <StoreProvider>
-          <AntdRegistry>
-            <ThemeConfigProvider>
-              <StyleRegistry>
-                <App>
-                  {children}
-                </App>
-              </StyleRegistry>
-            </ThemeConfigProvider>
-          </AntdRegistry>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+          >
+            {children}
+          </ThemeProvider>
         </StoreProvider>
         <GoogleAnalytics gaId="G-Z1G794KZH1" />
+        <Toaster />
       </body>
     </html>
   );

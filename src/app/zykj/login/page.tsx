@@ -1,13 +1,20 @@
 "use client"
+import { Card, CardTitle } from '@/components/ui/card';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { useToast } from '@/components/ui/use-toast';
 import { useStoreDispatch, useStoreSelector } from '@/store';
 import { loginInfoSlice, userInfoSlice } from '@/store/userInfo';
 import { api } from '@/utils/api/zykj/apiInstance';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { App, Button, Card, Checkbox, Form, Input, Spin, message } from 'antd';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef } from 'react';
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from 'react-hook-form';
 import { useImmer } from "use-immer";
+import { z } from "zod";
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 
 type FieldType = {
     username: string;
@@ -15,16 +22,28 @@ type FieldType = {
     remember: boolean;
 };
 
+const formSchema = z.object({
+    username: z.string({ required_error: "用户名不能为空" }),
+    password: z.string({ required_error: "密码不能为空" }),
+    remember: z.boolean()
+});
 
 export default function LoginPage() {
-    const { message } = App.useApp();
     const dispatch = useStoreDispatch();
     const [isLogining, setIsLogining] = useImmer(false);
     const router = useRouter();
     const params = useSearchParams();
-    let isPosting = useRef(false);
+    const isPosting = useRef(false);
+    const { toast } = useToast();
 
-    const onFinish = async (values: FieldType) => {
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            remember: false,
+        }
+    });
+
+    const onFinish = async (values: z.infer<typeof formSchema>) => {
         // 防止执行两次
         if (isPosting.current) return;
 
@@ -32,7 +51,9 @@ export default function LoginPage() {
         isPosting.current = true;
         setIsLogining(true);
 
-        message.info('登陆中...')
+        toast({
+            description: '登录中...',
+        });
 
         await api.manageApi.login({
             userName: values.username,
@@ -70,7 +91,9 @@ export default function LoginPage() {
                     }));
                 }
 
-                message.success('登录成功');
+                toast({
+                    description: '登录成功!',
+                });
 
                 // 跳转到来源页面 若来自登录页
                 const from = params.get('from');
@@ -81,7 +104,10 @@ export default function LoginPage() {
                 }
             }
         }).catch((err) => {
-            message.error(err?.message || '未知错误');
+            toast({
+                description: err || '未知错误',
+                variant: "destructive",
+            });
         })
 
         // 启用表单
@@ -98,55 +124,72 @@ export default function LoginPage() {
                 remember: true
             });
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
         <div className="flex justify-center items-center h-screen">
-            <Spin spinning={isLogining}>
-                <Card
-                    className="m-8 w-80"
-                    title="Login"
-                >
-                    <Form
-                        name="normal_login"
-                        className="login-form"
-                        initialValues={{ remember: true }}
-                        onFinish={onFinish}
-                        disabled={isLogining}
-                    >
-                        <Form.Item
-                            name="username"
-                            rules={[{ required: true, message: 'Please input your Username!' }]}
-                        >
-                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
-                        </Form.Item>
-                        <Form.Item
-                            name="password"
-                            rules={[{ required: true, message: 'Please input your Password!' }]}
-                        >
-                            <Input
-                                prefix={<LockOutlined className="site-form-item-icon" />}
-                                type="password"
-                                placeholder="Password"
+            <Card className="m-8 w-80">
+                <div className="m-4">
+                    <CardTitle>Login</CardTitle>
+                    <Form {...form}>
+                        <form onSubmit={form.handleSubmit(onFinish)} className="space-y-8 mt-2">
+                            <FormField
+                                control={form.control}
+                                name='username'
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>用户名</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="username" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
                             />
-                        </Form.Item>
-                        <Form.Item>
-                            <Form.Item name="remember" valuePropName="checked" noStyle>
-                                <Checkbox>Remember me</Checkbox>
-                            </Form.Item>
-                        </Form.Item>
 
-                        <Form.Item>
-                            <Button type="primary" htmlType="submit" style={{
-                                width: '100%'
-                            }}>
-                                Log in
+                            <FormField
+                                control={form.control}
+                                name='password'
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>密码</FormLabel>
+                                        <FormControl>
+                                            <Input type='password' placeholder='password' {...field}></Input>
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
+                                <FormField
+                                    control={form.control}
+                                    name='remember'
+                                    render={({ field }) => (
+                                        <FormItem className="flex flex-row items-start space-x-2 space-y-0">
+                                            <FormControl>
+                                                <Checkbox
+                                                    checked={field.value}
+                                                    onCheckedChange={field.onChange}
+                                                />
+                                            </FormControl>
+                                            <div className='space-y-1 leading-none'>
+                                                <FormDescription>记住密码</FormDescription>
+                                            </div>
+                                        </FormItem>
+                                        
+                                    )}
+                                />
+                                
+      
+
+                            <Button disabled={isLogining} type="submit" className="w-full">
+                                登入
                             </Button>
-                        </Form.Item>
+                        </form>
                     </Form>
-                </Card>
-            </Spin>
-        </div>
+                </div>
+            </Card>
+        </div >
     )
 }

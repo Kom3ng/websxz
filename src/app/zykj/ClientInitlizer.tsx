@@ -33,7 +33,7 @@ export default function ClientInitlizer() {
                 }
 
                 if (now - loginAt > tokenLast) {
-                    const resp = await api.manageApi.tokenAuthRefreshTokenPost(userInfo.refreshToken);
+                    const resp = await api.manageApi.refreshToken(userInfo.refreshToken);
                     if (resp.data.error || !resp.data.result) {
                         return Promise.reject(resp.data.error?.message);
                     }

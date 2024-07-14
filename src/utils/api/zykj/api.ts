@@ -82,6 +82,258 @@ export interface AddCatalogRequest {
 /**
  * 
  * @export
+ * @interface AddCustomMistakeQstItem200Response
+ */
+export interface AddCustomMistakeQstItem200Response {
+    /**
+     * 
+     * @type {number}
+     * @memberof AddCustomMistakeQstItem200Response
+     */
+    'result'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof AddCustomMistakeQstItem200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddCustomMistakeQstItem200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof AddCustomMistakeQstItem200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddCustomMistakeQstItem200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddCustomMistakeQstItem200Response
+     */
+    '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface AddInMistakeBook200Response
+ */
+export interface AddInMistakeBook200Response {
+    /**
+     * 
+     * @type {string}
+     * @memberof AddInMistakeBook200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddInMistakeBook200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof AddInMistakeBook200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddInMistakeBook200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddInMistakeBook200Response
+     */
+    '__abp'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof AddInMistakeBook200Response
+     */
+    'result'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface AddInMistakeBookRequest
+ */
+export interface AddInMistakeBookRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof AddInMistakeBookRequest
+     */
+    'examId'?: number;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof AddInMistakeBookRequest
+     */
+    'extraStems'?: Array<string>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddInMistakeBookRequest
+     */
+    'isRelatedGroup'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof AddInMistakeBookRequest
+     */
+    'questionId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof AddInMistakeBookRequest
+     */
+    'stemShoot'?: string;
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof AddInMistakeBookRequest
+     */
+    'tagIdList'?: Array<number>;
+}
+/**
+ * 
+ * @export
+ * @interface AddPictureNote200Response
+ */
+export interface AddPictureNote200Response {
+    /**
+     * 
+     * @type {object}
+     * @memberof AddPictureNote200Response
+     */
+    'result'?: object | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof AddPictureNote200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddPictureNote200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof AddPictureNote200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddPictureNote200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AddPictureNote200Response
+     */
+    '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface AddPictureNoteRequest
+ */
+export interface AddPictureNoteRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof AddPictureNoteRequest
+     */
+    'mistakeItemId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof AddPictureNoteRequest
+     */
+    'pictureNote'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface AnswerInfo
+ */
+export interface AnswerInfo {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof AnswerInfo
+     */
+    'examAnswers'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof AnswerInfo
+     */
+    'examComments'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof AnswerInfo
+     */
+    'examMicroLessonComment'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof AnswerInfo
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof AnswerInfo
+     */
+    'result'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof AnswerInfo
+     */
+    'reviseMicroLessonComment'?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof AnswerInfo
+     */
+    'revisingAnswers'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof AnswerInfo
+     */
+    'revisingComments'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof AnswerInfo
+     */
+    'uuid'?: string | null;
+}
+/**
+ * 
+ * @export
  * @interface Answers
  */
 export interface Answers {
@@ -694,6 +946,212 @@ export interface CreateSessionRequest {
      * @memberof CreateSessionRequest
      */
     'summary'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CustomMistakeInfo
+ */
+export interface CustomMistakeInfo {
+    /**
+     * 
+     * @type {Array<AnswerInfo>}
+     * @memberof CustomMistakeInfo
+     */
+    'answerInfos'?: Array<AnswerInfo>;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'attachments'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'attainedLevel'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomMistakeInfo
+     */
+    'bookId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'diff'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'errorReason'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomMistakeInfo
+     */
+    'examId'?: number | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CustomMistakeInfo
+     */
+    'extraStems'?: Array<string>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CustomMistakeInfo
+     */
+    'isShowAnswer'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CustomMistakeInfo
+     */
+    'isShowMicroLesson'?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomMistakeInfo
+     */
+    'itemId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomMistakeInfo
+     */
+    'itemType'?: number;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CustomMistakeInfo
+     */
+    'microClassToQuestionList'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CustomMistakeInfo
+     */
+    'microClassToStudentList'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CustomMistakeInfo
+     */
+    'mistakeTags'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'name'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'note'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomMistakeInfo
+     */
+    'number'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'pictureNote'?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CustomMistakeInfo
+     */
+    'qstFlows'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'qstPath'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomMistakeInfo
+     */
+    'questionId'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomMistakeInfo
+     */
+    'revisingResult'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'typicalErrorAnswers'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeInfo
+     */
+    'typicalRightAnswers'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface CustomMistakeQstItem
+ */
+export interface CustomMistakeQstItem {
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomMistakeQstItem
+     */
+    'diff'?: number;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CustomMistakeQstItem
+     */
+    'extraAnswers'?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CustomMistakeQstItem
+     */
+    'extraStems'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeQstItem
+     */
+    'stemShoot'?: string;
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof CustomMistakeQstItem
+     */
+    'tagIdList'?: Array<number>;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomMistakeQstItem
+     */
+    'title'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomMistakeQstItem
+     */
+    'topicId'?: number;
 }
 /**
  * 
@@ -1389,6 +1847,49 @@ export interface GetCatalogs200ResponseResultInner {
      * @memberof GetCatalogs200ResponseResultInner
      */
     'sort'?: number;
+}
+/**
+ * 
+ * @export
+ * @interface GetCustomMistakeQstItemDetailInfo200Response
+ */
+export interface GetCustomMistakeQstItemDetailInfo200Response {
+    /**
+     * 
+     * @type {CustomMistakeInfo}
+     * @memberof GetCustomMistakeQstItemDetailInfo200Response
+     */
+    'result'?: CustomMistakeInfo;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetCustomMistakeQstItemDetailInfo200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetCustomMistakeQstItemDetailInfo200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof GetCustomMistakeQstItemDetailInfo200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetCustomMistakeQstItemDetailInfo200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof GetCustomMistakeQstItemDetailInfo200Response
+     */
+    '__abp'?: boolean;
 }
 /**
  * 
@@ -3025,6 +3526,31 @@ export interface MultiRemoveMistakeItemsRequest {
 /**
  * 
  * @export
+ * @interface MultiSetTagsRequest
+ */
+export interface MultiSetTagsRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof MultiSetTagsRequest
+     */
+    'bookId'?: number;
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof MultiSetTagsRequest
+     */
+    'itemIds'?: Array<number>;
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof MultiSetTagsRequest
+     */
+    'tagIdList'?: Array<number>;
+}
+/**
+ * 
+ * @export
  * @interface NoQstExam
  */
 export interface NoQstExam {
@@ -3844,6 +4370,80 @@ export interface RecordPicturesRequest {
 /**
  * 
  * @export
+ * @interface RefreshToken200Response
+ */
+export interface RefreshToken200Response {
+    /**
+     * 
+     * @type {RefreshToken200ResponseResult}
+     * @memberof RefreshToken200Response
+     */
+    'result'?: RefreshToken200ResponseResult;
+    /**
+     * 
+     * @type {string}
+     * @memberof RefreshToken200Response
+     */
+    'targetUrl'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof RefreshToken200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {ApiError}
+     * @memberof RefreshToken200Response
+     */
+    'error'?: ApiError;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof RefreshToken200Response
+     */
+    'unAuthorizedRequest'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof RefreshToken200Response
+     */
+    '__abp'?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface RefreshToken200ResponseResult
+ */
+export interface RefreshToken200ResponseResult {
+    /**
+     * 
+     * @type {string}
+     * @memberof RefreshToken200ResponseResult
+     */
+    'accessToken'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof RefreshToken200ResponseResult
+     */
+    'expireInSeconds'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof RefreshToken200ResponseResult
+     */
+    'refreshExpireInSeconds'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof RefreshToken200ResponseResult
+     */
+    'refreshToken'?: string;
+}
+/**
+ * 
+ * @export
  * @enum {string}
  */
 
@@ -4341,6 +4941,25 @@ export interface SetMessageRead200Response {
 /**
  * 
  * @export
+ * @interface SetNoteRequest
+ */
+export interface SetNoteRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof SetNoteRequest
+     */
+    'mistakeItemId'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof SetNoteRequest
+     */
+    'note'?: string;
+}
+/**
+ * 
+ * @export
  * @interface TaskList
  */
 export interface TaskList {
@@ -4538,80 +5157,6 @@ export interface TimeFrame {
      * @memberof TimeFrame
      */
     'start'?: string;
-}
-/**
- * 
- * @export
- * @interface TokenAuthRefreshTokenPost200Response
- */
-export interface TokenAuthRefreshTokenPost200Response {
-    /**
-     * 
-     * @type {TokenAuthRefreshTokenPost200ResponseResult}
-     * @memberof TokenAuthRefreshTokenPost200Response
-     */
-    'result'?: TokenAuthRefreshTokenPost200ResponseResult;
-    /**
-     * 
-     * @type {string}
-     * @memberof TokenAuthRefreshTokenPost200Response
-     */
-    'targetUrl'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof TokenAuthRefreshTokenPost200Response
-     */
-    'success'?: boolean;
-    /**
-     * 
-     * @type {ApiError}
-     * @memberof TokenAuthRefreshTokenPost200Response
-     */
-    'error'?: ApiError;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof TokenAuthRefreshTokenPost200Response
-     */
-    'unAuthorizedRequest'?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof TokenAuthRefreshTokenPost200Response
-     */
-    '__abp'?: boolean;
-}
-/**
- * 
- * @export
- * @interface TokenAuthRefreshTokenPost200ResponseResult
- */
-export interface TokenAuthRefreshTokenPost200ResponseResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof TokenAuthRefreshTokenPost200ResponseResult
-     */
-    'accessToken'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof TokenAuthRefreshTokenPost200ResponseResult
-     */
-    'expireInSeconds'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof TokenAuthRefreshTokenPost200ResponseResult
-     */
-    'refreshExpireInSeconds'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof TokenAuthRefreshTokenPost200ResponseResult
-     */
-    'refreshToken'?: string;
 }
 /**
  * 
@@ -5357,6 +5902,46 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
+         * 刷新token
+         * @param {string} refreshToken refreshToken
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        refreshToken: async (refreshToken: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'refreshToken' is not null or undefined
+            assertParamExists('refreshToken', 'refreshToken', refreshToken)
+            const localVarPath = `/TokenAuth/RefreshToken`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (refreshToken != null) {
+                localVarHeaderParameter['refreshToken'] = String(refreshToken);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 
          * @summary 设置消息已读
          * @param {string} appName 请求api的应用的包名
@@ -5398,46 +5983,6 @@ export const ManageApiAxiosParamCreator = function (configuration?: Configuratio
                 localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
                     ? appVersion
                     : JSON.stringify(appVersion);
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 刷新token
-         * @param {string} refreshToken refreshToken
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        tokenAuthRefreshTokenPost: async (refreshToken: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'refreshToken' is not null or undefined
-            assertParamExists('tokenAuthRefreshTokenPost', 'refreshToken', refreshToken)
-            const localVarPath = `/TokenAuth/RefreshToken`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication token required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
-            if (refreshToken != null) {
-                localVarHeaderParameter['refreshToken'] = String(refreshToken);
             }
 
 
@@ -5658,6 +6203,18 @@ export const ManageApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * 刷新token
+         * @param {string} refreshToken refreshToken
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async refreshToken(refreshToken: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RefreshToken200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.refreshToken(refreshToken, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ManageApi.refreshToken']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary 设置消息已读
          * @param {string} appName 请求api的应用的包名
@@ -5670,18 +6227,6 @@ export const ManageApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.setMessageRead(appName, appVersion, messageId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ManageApi.setMessageRead']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 刷新token
-         * @param {string} refreshToken refreshToken
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async tokenAuthRefreshTokenPost(refreshToken: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TokenAuthRefreshTokenPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.tokenAuthRefreshTokenPost(refreshToken, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ManageApi.tokenAuthRefreshTokenPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -5849,6 +6394,15 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.recordPictures(appName, appVersion, recordPicturesRequest, options).then((request) => request(axios, basePath));
         },
         /**
+         * 刷新token
+         * @param {string} refreshToken refreshToken
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        refreshToken(refreshToken: string, options?: any): AxiosPromise<RefreshToken200Response> {
+            return localVarFp.refreshToken(refreshToken, options).then((request) => request(axios, basePath));
+        },
+        /**
          * 
          * @summary 设置消息已读
          * @param {string} appName 请求api的应用的包名
@@ -5859,15 +6413,6 @@ export const ManageApiFactory = function (configuration?: Configuration, basePat
          */
         setMessageRead(appName: string = "WebClient", appVersion: number = 0, messageId?: number, options?: any): AxiosPromise<SetMessageRead200Response> {
             return localVarFp.setMessageRead(appName, appVersion, messageId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 刷新token
-         * @param {string} refreshToken refreshToken
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        tokenAuthRefreshTokenPost(refreshToken: string, options?: any): AxiosPromise<TokenAuthRefreshTokenPost200Response> {
-            return localVarFp.tokenAuthRefreshTokenPost(refreshToken, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -6062,6 +6607,17 @@ export class ManageApi extends BaseAPI {
     }
 
     /**
+     * 刷新token
+     * @param {string} refreshToken refreshToken
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ManageApi
+     */
+    public refreshToken(refreshToken: string, options?: RawAxiosRequestConfig) {
+        return ManageApiFp(this.configuration).refreshToken(refreshToken, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary 设置消息已读
      * @param {string} appName 请求api的应用的包名
@@ -6073,17 +6629,6 @@ export class ManageApi extends BaseAPI {
      */
     public setMessageRead(appName: string = "WebClient", appVersion: number = 0, messageId?: number, options?: RawAxiosRequestConfig) {
         return ManageApiFp(this.configuration).setMessageRead(appName, appVersion, messageId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 刷新token
-     * @param {string} refreshToken refreshToken
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ManageApi
-     */
-    public tokenAuthRefreshTokenPost(refreshToken: string, options?: RawAxiosRequestConfig) {
-        return ManageApiFp(this.configuration).tokenAuthRefreshTokenPost(refreshToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -6328,6 +6873,221 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
     return {
         /**
          * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {CustomMistakeQstItem} customMistakeQstItem 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        addCustomMistakeQstItem: async (appVersion: number = 0, appName: string = "WebClient", customMistakeQstItem: CustomMistakeQstItem, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('addCustomMistakeQstItem', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('addCustomMistakeQstItem', 'appName', appName)
+            // verify required parameter 'customMistakeQstItem' is not null or undefined
+            assertParamExists('addCustomMistakeQstItem', 'customMistakeQstItem', customMistakeQstItem)
+            const localVarPath = `/services/app/MistakeBook/AddCustomMistakeQstItemAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(customMistakeQstItem, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {AddInMistakeBookRequest} [addInMistakeBookRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        addInMistakeBook: async (appVersion: number = 0, appName: string = "WebClient", addInMistakeBookRequest?: AddInMistakeBookRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('addInMistakeBook', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('addInMistakeBook', 'appName', appName)
+            const localVarPath = `/services/app/MistakeBook/AddInMistakeBookAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(addInMistakeBookRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {AddPictureNoteRequest} [addPictureNoteRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        addPictureNote: async (appVersion: number = 0, appName: string = "WebClient", addPictureNoteRequest?: AddPictureNoteRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('addPictureNote', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('addPictureNote', 'appName', appName)
+            const localVarPath = `/services/app/MistakeBook/AddPictureNoteAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(addPictureNoteRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} [itemId] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCustomMistakeQstItemDetailInfo: async (appVersion: number = 0, appName: string = "WebClient", itemId?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('getCustomMistakeQstItemDetailInfo', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('getCustomMistakeQstItemDetailInfo', 'appName', appName)
+            const localVarPath = `/services/app/MistakeBook/GetCustomMistakeQstItemDetailInfoAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (itemId !== undefined) {
+                localVarQueryParameter['itemId'] = itemId;
+            }
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary 获取错题问题信息
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
@@ -6537,6 +7297,59 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
         },
         /**
          * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {MultiSetTagsRequest} [multiSetTagsRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        multiSetTags: async (appVersion: number = 0, appName: string = "WebClient", multiSetTagsRequest?: MultiSetTagsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('multiSetTags', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('multiSetTags', 'appName', appName)
+            const localVarPath = `/services/app/MistakeBook/MultiSetTagsAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(multiSetTagsRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary 搜索错题问题
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
@@ -6589,6 +7402,59 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {SetNoteRequest} [setNoteRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        setNote: async (appVersion: number = 0, appName: string = "WebClient", setNoteRequest?: SetNoteRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appVersion' is not null or undefined
+            assertParamExists('setNote', 'appVersion', appVersion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('setNote', 'appName', appName)
+            const localVarPath = `/services/app/MistakeBook/SetNoteAsync`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (appVersion != null) {
+                localVarHeaderParameter['AppVersion'] = typeof appVersion === 'string'
+                    ? appVersion
+                    : JSON.stringify(appVersion);
+            }
+
+            if (appName != null) {
+                localVarHeaderParameter['AppName'] = String(appName);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(setNoteRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -6599,6 +7465,62 @@ export const MistakeApiAxiosParamCreator = function (configuration?: Configurati
 export const MistakeApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = MistakeApiAxiosParamCreator(configuration)
     return {
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {CustomMistakeQstItem} customMistakeQstItem 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async addCustomMistakeQstItem(appVersion: number = 0, appName: string = "WebClient", customMistakeQstItem: CustomMistakeQstItem, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddCustomMistakeQstItem200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.addCustomMistakeQstItem(appVersion, appName, customMistakeQstItem, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MistakeApi.addCustomMistakeQstItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {AddInMistakeBookRequest} [addInMistakeBookRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async addInMistakeBook(appVersion: number = 0, appName: string = "WebClient", addInMistakeBookRequest?: AddInMistakeBookRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddInMistakeBook200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.addInMistakeBook(appVersion, appName, addInMistakeBookRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MistakeApi.addInMistakeBook']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {AddPictureNoteRequest} [addPictureNoteRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async addPictureNote(appVersion: number = 0, appName: string = "WebClient", addPictureNoteRequest?: AddPictureNoteRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddPictureNote200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.addPictureNote(appVersion, appName, addPictureNoteRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MistakeApi.addPictureNote']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} [itemId] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getCustomMistakeQstItemDetailInfo(appVersion: number = 0, appName: string = "WebClient", itemId?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCustomMistakeQstItemDetailInfo200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getCustomMistakeQstItemDetailInfo(appVersion, appName, itemId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MistakeApi.getCustomMistakeQstItemDetailInfo']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
         /**
          * 
          * @summary 获取错题问题信息
@@ -6659,6 +7581,20 @@ export const MistakeApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {MultiSetTagsRequest} [multiSetTagsRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async multiSetTags(appVersion: number = 0, appName: string = "WebClient", multiSetTagsRequest?: MultiSetTagsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddPictureNote200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.multiSetTags(appVersion, appName, multiSetTagsRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MistakeApi.multiSetTags']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary 搜索错题问题
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
@@ -6672,6 +7608,20 @@ export const MistakeApiFp = function(configuration?: Configuration) {
             const localVarOperationServerBasePath = operationServerMap['MistakeApi.searchMistakeQstItems']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {SetNoteRequest} [setNoteRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async setNote(appVersion: number = 0, appName: string = "WebClient", setNoteRequest?: SetNoteRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddPictureNote200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.setNote(appVersion, appName, setNoteRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MistakeApi.setNote']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -6682,6 +7632,50 @@ export const MistakeApiFp = function(configuration?: Configuration) {
 export const MistakeApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = MistakeApiFp(configuration)
     return {
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {CustomMistakeQstItem} customMistakeQstItem 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        addCustomMistakeQstItem(appVersion: number = 0, appName: string = "WebClient", customMistakeQstItem: CustomMistakeQstItem, options?: any): AxiosPromise<AddCustomMistakeQstItem200Response> {
+            return localVarFp.addCustomMistakeQstItem(appVersion, appName, customMistakeQstItem, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {AddInMistakeBookRequest} [addInMistakeBookRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        addInMistakeBook(appVersion: number = 0, appName: string = "WebClient", addInMistakeBookRequest?: AddInMistakeBookRequest, options?: any): AxiosPromise<AddInMistakeBook200Response> {
+            return localVarFp.addInMistakeBook(appVersion, appName, addInMistakeBookRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {AddPictureNoteRequest} [addPictureNoteRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        addPictureNote(appVersion: number = 0, appName: string = "WebClient", addPictureNoteRequest?: AddPictureNoteRequest, options?: any): AxiosPromise<AddPictureNote200Response> {
+            return localVarFp.addPictureNote(appVersion, appName, addPictureNoteRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {number} [itemId] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCustomMistakeQstItemDetailInfo(appVersion: number = 0, appName: string = "WebClient", itemId?: number, options?: any): AxiosPromise<GetCustomMistakeQstItemDetailInfo200Response> {
+            return localVarFp.getCustomMistakeQstItemDetailInfo(appVersion, appName, itemId, options).then((request) => request(axios, basePath));
+        },
         /**
          * 
          * @summary 获取错题问题信息
@@ -6730,6 +7724,17 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {MultiSetTagsRequest} [multiSetTagsRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        multiSetTags(appVersion: number = 0, appName: string = "WebClient", multiSetTagsRequest?: MultiSetTagsRequest, options?: any): AxiosPromise<AddPictureNote200Response> {
+            return localVarFp.multiSetTags(appVersion, appName, multiSetTagsRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary 搜索错题问题
          * @param {string} appName 请求api的应用的包名
          * @param {number} appVersion 请求api的应用的版本
@@ -6739,6 +7744,17 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
          */
         searchMistakeQstItems(appName: string = "WebClient", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: any): AxiosPromise<SearchMistakeQstItems200Response> {
             return localVarFp.searchMistakeQstItems(appName, appVersion, searchMistakeQstItemsRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} appVersion 请求api的应用的版本
+         * @param {string} appName 请求api的应用的包名
+         * @param {SetNoteRequest} [setNoteRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        setNote(appVersion: number = 0, appName: string = "WebClient", setNoteRequest?: SetNoteRequest, options?: any): AxiosPromise<AddPictureNote200Response> {
+            return localVarFp.setNote(appVersion, appName, setNoteRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -6750,6 +7766,58 @@ export const MistakeApiFactory = function (configuration?: Configuration, basePa
  * @extends {BaseAPI}
  */
 export class MistakeApi extends BaseAPI {
+    /**
+     * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {CustomMistakeQstItem} customMistakeQstItem 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MistakeApi
+     */
+    public addCustomMistakeQstItem(appVersion: number = 0, appName: string = "WebClient", customMistakeQstItem: CustomMistakeQstItem, options?: RawAxiosRequestConfig) {
+        return MistakeApiFp(this.configuration).addCustomMistakeQstItem(appVersion, appName, customMistakeQstItem, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {AddInMistakeBookRequest} [addInMistakeBookRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MistakeApi
+     */
+    public addInMistakeBook(appVersion: number = 0, appName: string = "WebClient", addInMistakeBookRequest?: AddInMistakeBookRequest, options?: RawAxiosRequestConfig) {
+        return MistakeApiFp(this.configuration).addInMistakeBook(appVersion, appName, addInMistakeBookRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {AddPictureNoteRequest} [addPictureNoteRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MistakeApi
+     */
+    public addPictureNote(appVersion: number = 0, appName: string = "WebClient", addPictureNoteRequest?: AddPictureNoteRequest, options?: RawAxiosRequestConfig) {
+        return MistakeApiFp(this.configuration).addPictureNote(appVersion, appName, addPictureNoteRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {number} [itemId] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MistakeApi
+     */
+    public getCustomMistakeQstItemDetailInfo(appVersion: number = 0, appName: string = "WebClient", itemId?: number, options?: RawAxiosRequestConfig) {
+        return MistakeApiFp(this.configuration).getCustomMistakeQstItemDetailInfo(appVersion, appName, itemId, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary 获取错题问题信息
@@ -6806,6 +7874,19 @@ export class MistakeApi extends BaseAPI {
 
     /**
      * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {MultiSetTagsRequest} [multiSetTagsRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MistakeApi
+     */
+    public multiSetTags(appVersion: number = 0, appName: string = "WebClient", multiSetTagsRequest?: MultiSetTagsRequest, options?: RawAxiosRequestConfig) {
+        return MistakeApiFp(this.configuration).multiSetTags(appVersion, appName, multiSetTagsRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary 搜索错题问题
      * @param {string} appName 请求api的应用的包名
      * @param {number} appVersion 请求api的应用的版本
@@ -6816,6 +7897,19 @@ export class MistakeApi extends BaseAPI {
      */
     public searchMistakeQstItems(appName: string = "WebClient", appVersion: number = 0, searchMistakeQstItemsRequest?: SearchMistakeQstItemsRequest, options?: RawAxiosRequestConfig) {
         return MistakeApiFp(this.configuration).searchMistakeQstItems(appName, appVersion, searchMistakeQstItemsRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} appVersion 请求api的应用的版本
+     * @param {string} appName 请求api的应用的包名
+     * @param {SetNoteRequest} [setNoteRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MistakeApi
+     */
+    public setNote(appVersion: number = 0, appName: string = "WebClient", setNoteRequest?: SetNoteRequest, options?: RawAxiosRequestConfig) {
+        return MistakeApiFp(this.configuration).setNote(appVersion, appName, setNoteRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

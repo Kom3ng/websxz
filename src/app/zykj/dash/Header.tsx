@@ -1,23 +1,38 @@
+"use client"
+
 import AppAvatar from "./AppAvatar";
 import Link from "next/link";
 import OnlineColumn from "./OnlineColumn";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
 
 
 
 export default function AppHeader() {
     return (
-        <nav className="flex justify-between items-center min-h-16 border-b border-zinc-200 dark:border-zinc-800">
-                <div className="flex space-x-4 ml-8">
-                    <div>
-                        <Link href="/zykj/dash/task">Task</Link>
-                    </div>
-                    <div>
-                        <OnlineColumn />
-                    </div>
+        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="container flex h-14 max-w-screen-2xl items-center">
+                <NavigationMenu>
+                    <NavigationMenuList className="space-x-4">
+                        <NavigationMenuItem>
+                            <Link href="/zykj/dash/task" passHref legacyBehavior>
+                                <NavigationMenuLink>Task</NavigationMenuLink>
+                            </Link>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <OnlineColumn></OnlineColumn>
+                        </NavigationMenuItem>
+                    </NavigationMenuList>
+                </NavigationMenu>
+                <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+                    <NavigationMenu>
+                        <NavigationMenuList>
+                            <NavigationMenuItem>
+                                <AppAvatar/>
+                            </NavigationMenuItem>
+                        </NavigationMenuList>
+                    </NavigationMenu>
                 </div>
-                <div className="mr-8">
-                    <AppAvatar />
-                </div>
-            </nav>
+            </div>
+        </header>
     )
 }
