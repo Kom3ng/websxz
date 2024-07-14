@@ -1,6 +1,6 @@
 'use client'
 
-import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import Link from "next/link";
 import { NavigationMenuItem } from "@radix-ui/react-navigation-menu";
