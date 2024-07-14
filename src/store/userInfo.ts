@@ -1,7 +1,6 @@
 "use client"
 import { Login200ResponseResult } from "@/utils/api/zykj";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import Password from "antd/es/input/Password";
 
 class UserInfo implements Login200ResponseResult{}
 

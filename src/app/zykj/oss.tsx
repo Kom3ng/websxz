@@ -1,7 +1,6 @@
 import OSS from 'ali-oss'
 import { GeneratorToken200ResponseResult } from "@/utils/api/zykj";
 import { api } from '@/utils/api/zykj/apiInstance';
-import { Result } from 'antd';
 
 type OssInfo = GeneratorToken200ResponseResult;
 
