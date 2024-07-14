@@ -1,18 +1,20 @@
 "use client"
 
+import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { toast } from "@/components/ui/use-toast";
 import { SearchMistakeQstItems200ResponseResultItemsInner } from "@/utils/api/zykj";
 import { api } from "@/utils/api/zykj/apiInstance";
-import { App, Card, Image, List, Skeleton, Tooltip } from "antd";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import List from 'rc-virtual-list';
 
 export default function Page({ params }: { params: { id: string } }) {
     const id = Number(params.id);
 
     const [totalCount, setTotalCount] = useState(20);
     const [mistakse, setMistakes] = useState<SearchMistakeQstItems200ResponseResultItemsInner[]>([]);
-    const { message } = App.useApp();
     const loading = useRef<boolean>(false);
 
     const loadMore = () => {
@@ -33,7 +35,10 @@ export default function Page({ params }: { params: { id: string } }) {
             .then(resp => resp.data)
             .then(data => {
                 if (!data.success) {
-                    message.error(data.error?.message);
+                    toast({
+                        description: data.error?.message,
+                        variant: 'destructive'
+                    })
                     return;
                 }
 
@@ -54,32 +59,31 @@ export default function Page({ params }: { params: { id: string } }) {
             dataLength={mistakse.length}
             next={loadMore}
             hasMore={mistakse.length < totalCount}
-            loader={<Skeleton active />}
+            loader={
+                <div className="space-y-2">
+                    <Skeleton className="h-4 w-[250px]" />
+                    <Skeleton className="h-4 w-[200px]" />
+                </div>
+            }
         >
             <List
-                grid={{
-                    gutter: 16,
-                    column: 4,
-                    xs: 1,
-                    sm: 1,
-                    md: 2,
-                    lg: 3,
-                    xl: 3,
-                    xxl: 4,
+                className="grid grid-cols-4"
+                data={mistakse}
+                itemKey='id'
+            >
+                {item => {
+                    return (
+                        <Link href={`/zykj/dash/mistake/${id}/${item.id}?hasStem=${item.hasStem}`}>
+                            <Card
+                                className="m-8"
+                                title={item.source}
+                            >
+                                {item.stemShoot && <img src={item.stemShoot} alt="stemShoot" />}
+                            </Card>
+                        </Link>
+                    )
                 }}
-                dataSource={mistakse}
-
-                renderItem={(item: SearchMistakeQstItems200ResponseResultItemsInner) =>
-                    <Link href={`/zykj/dash/mistake/${id}/${item.id}?hasStem=${item.hasStem}`}>
-                        <Card
-                            className="m-8"
-                            title={item.source}
-                        >
-                            {item.stemShoot && <Image src={item.stemShoot} alt="stemShoot" />}
-                        </Card>
-                    </Link>
-                }
-            />
+            </List>
         </InfiniteScroll>
     </Card>
 }

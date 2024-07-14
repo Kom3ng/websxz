@@ -1,21 +1,24 @@
 "use client"
 
+import { Card } from "@/components/ui/card";
+import { toast } from "@/components/ui/use-toast";
 import { GetMyMistakeBooks200ResponseResultInner } from "@/utils/api/zykj";
 import { api } from "@/utils/api/zykj/apiInstance";
-import { App, Card } from "antd";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Page() {
     const [ books, setBooks ] = useState<GetMyMistakeBooks200ResponseResultInner[]>();
-    const { message } = App.useApp();
 
     useEffect(() => {
         api.mistakeApi.getMyMistakeBooks()
             .then(resp => resp.data)
             .then(data => {
                 if (!data.success) {
-                    message.error(data.error?.message);
+                    toast({
+                        description: data.error?.message,
+                        variant: 'destructive'
+                    })
                     return;
                 }
 
