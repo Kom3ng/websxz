@@ -1063,10 +1063,10 @@ export interface CustomMistakeInfo {
     'number'?: number;
     /**
      * 
-     * @type {string}
+     * @type {Array<string>}
      * @memberof CustomMistakeInfo
      */
-    'pictureNote'?: string | null;
+    'pictureNote'?: Array<string> | null;
     /**
      * 
      * @type {Array<string>}

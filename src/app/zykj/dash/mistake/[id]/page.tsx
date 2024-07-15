@@ -1,6 +1,6 @@
 "use client"
 
-import { Card } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "@/components/ui/use-toast";
 import { SearchMistakeQstItems200ResponseResultItemsInner } from "@/utils/api/zykj";
@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import List from 'rc-virtual-list';
+import Image from "next/image";
 
 export default function Page({ params }: { params: { id: string } }) {
     const id = Number(params.id);
@@ -54,7 +55,7 @@ export default function Page({ params }: { params: { id: string } }) {
         loadMore();
     }, [id]);
 
-    return <Card className="m-5">
+    return <div className="p-4">
         <InfiniteScroll
             dataLength={mistakse.length}
             next={loadMore}
@@ -66,24 +67,28 @@ export default function Page({ params }: { params: { id: string } }) {
                 </div>
             }
         >
-            <List
-                className="grid grid-cols-4"
-                data={mistakse}
-                itemKey='id'
-            >
-                {item => {
-                    return (
-                        <Link href={`/zykj/dash/mistake/${id}/${item.id}?hasStem=${item.hasStem}`}>
-                            <Card
-                                className="m-8"
-                                title={item.source}
-                            >
-                                {item.stemShoot && <img src={item.stemShoot} alt="stemShoot" />}
-                            </Card>
-                        </Link>
-                    )
-                }}
-            </List>
+                <List
+                    data={mistakse}
+                    itemKey='id'
+                    innerProps={{
+                        // @ts-ignore
+                        style: {
+                            display: 'grid',
+                        },
+                        className: "grid-cols-3 gap-8"
+                    }}
+                >
+                    {item => {
+                        return (
+                            <Link href={`/zykj/dash/mistake/${id}/${item.id}?hasStem=${item.hasStem}`}>
+                                <Card className="p-8 space-y-4 shadow transition hover:scale-105">
+                                    <CardTitle>{item.source}</CardTitle>
+                                    {item.stemShoot && <Image src={item.stemShoot} alt="stem" width={200} height={200} className="max-w-full max-h-32" />}
+                                </Card>
+                            </Link>
+                        )
+                    }}
+                </List>
         </InfiniteScroll>
-    </Card>
+    </div>
 }

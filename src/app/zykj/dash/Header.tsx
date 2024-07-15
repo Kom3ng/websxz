@@ -3,7 +3,7 @@
 import AppAvatar from "./AppAvatar";
 import Link from "next/link";
 import OnlineColumn from "./OnlineColumn";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 
 
@@ -14,11 +14,16 @@ export default function AppHeader() {
                 <NavigationMenu>
                     <NavigationMenuList className="space-x-4">
                         <NavigationMenuItem>
-                            <Link href="/zykj/dash/task" passHref legacyBehavior>
-                                <NavigationMenuLink>Task</NavigationMenuLink>
+                            <Link href="/zykj/dash/mistake" passHref legacyBehavior>
+                                <NavigationMenuLink  className={navigationMenuTriggerStyle()}>错题本</NavigationMenuLink>
                             </Link>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
+                            <Link href="/zykj/dash/task" passHref legacyBehavior>
+                                <NavigationMenuLink  className={navigationMenuTriggerStyle()}>新测评</NavigationMenuLink>
+                            </Link>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem  className={navigationMenuTriggerStyle()}>
                             <OnlineColumn></OnlineColumn>
                         </NavigationMenuItem>
                     </NavigationMenuList>
@@ -27,7 +32,7 @@ export default function AppHeader() {
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
-                                <AppAvatar/>
+                                <AppAvatar />
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
