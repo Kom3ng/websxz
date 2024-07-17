@@ -104,8 +104,9 @@ export default function LoginPage() {
                 }
             }
         }).catch((err) => {
+            console.log(err)
             toast({
-                description: err || '未知错误',
+                description: err.response.data.error.details || err.message || '未知错误',
                 variant: "destructive",
             });
         })
