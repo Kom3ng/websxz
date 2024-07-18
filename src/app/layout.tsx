@@ -1,11 +1,10 @@
+import '../styles/global.css'
 import type { Metadata } from "next";
 import { Ubuntu_Mono } from "next/font/google";
 import StoreProvider from "./StoreProvider";
-import '../styles/global.css'
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
-
 export const metadata: Metadata = {
   title: "Web Sxz",
   description: "Web apps for sxz",

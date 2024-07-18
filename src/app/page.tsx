@@ -1,13 +1,5 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import AppHeader from "./AppHeader";
-import { JetBrains_Mono, Oswald } from "next/font/google";
-
-const jetBrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-});
-const oswald = Oswald({ subsets: ['latin'] });
-
-
 
 export default function Home() {
   return (
