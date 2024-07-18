@@ -21,7 +21,8 @@ export default function CustomMistakeView({ id }: { id: number }) {
                     setData(resp.data.result || {});
                 }
             });
-    }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [id]);
 
     return <Card className="p-4 flex items-center">
         <div className="w-96">

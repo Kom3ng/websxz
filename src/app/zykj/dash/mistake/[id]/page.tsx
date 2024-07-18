@@ -53,6 +53,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
     useEffect(() => {
         loadMore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
     return <div className="p-4">

@@ -7,7 +7,7 @@ import { loginInfoSlice, userInfoSlice } from '@/store/userInfo';
 import { api } from '@/utils/api/zykj/apiInstance';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from 'react-hook-form';
 import { useImmer } from "use-immer";
@@ -28,7 +28,7 @@ const formSchema = z.object({
     remember: z.boolean()
 });
 
-export default function LoginPage() {
+function FormContent() {
     const dispatch = useStoreDispatch();
     const [isLogining, setIsLogining] = useImmer(false);
     const router = useRouter();
@@ -116,7 +116,8 @@ export default function LoginPage() {
         isPosting.current = false;
     };
 
-    const loginInfo = useStoreSelector(state => state.loginInfo)
+    const loginInfo = useStoreSelector(state => state.loginInfo);
+
     useEffect(() => {
         if (loginInfo.autoLogin) {
             onFinish({
@@ -126,69 +127,77 @@ export default function LoginPage() {
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, []);
+
+    return (
+        <Form {...form}>
+            <form onSubmit={form.handleSubmit(onFinish)} className="space-y-8 mt-2">
+                <FormField
+                    control={form.control}
+                    name='username'
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>用户名</FormLabel>
+                            <FormControl>
+                                <Input placeholder="username" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name='password'
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>密码</FormLabel>
+                            <FormControl>
+                                <Input type='password' placeholder='password' {...field}></Input>
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name='remember'
+                    render={({ field }) => (
+                        <FormItem className="flex flex-row items-start space-x-2 space-y-0">
+                            <FormControl>
+                                <Checkbox
+                                    checked={field.value}
+                                    onCheckedChange={field.onChange}
+                                />
+                            </FormControl>
+                            <div className='space-y-1 leading-none'>
+                                <FormDescription>记住密码</FormDescription>
+                            </div>
+                        </FormItem>
+
+                    )}
+                />
+
+                <Button disabled={isLogining} type="submit" className="w-full">
+                    登入
+                </Button>
+            </form>
+        </Form>
+    );
+}
+
+export default function LoginPage() {
+
 
     return (
         <div className="flex justify-center items-center h-screen">
             <Card className="m-8 w-80">
                 <div className="m-4">
                     <CardTitle>Login</CardTitle>
-                    <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onFinish)} className="space-y-8 mt-2">
-                            <FormField
-                                control={form.control}
-                                name='username'
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>用户名</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="username" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-
-                            <FormField
-                                control={form.control}
-                                name='password'
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>密码</FormLabel>
-                                        <FormControl>
-                                            <Input type='password' placeholder='password' {...field}></Input>
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-
-                                <FormField
-                                    control={form.control}
-                                    name='remember'
-                                    render={({ field }) => (
-                                        <FormItem className="flex flex-row items-start space-x-2 space-y-0">
-                                            <FormControl>
-                                                <Checkbox
-                                                    checked={field.value}
-                                                    onCheckedChange={field.onChange}
-                                                />
-                                            </FormControl>
-                                            <div className='space-y-1 leading-none'>
-                                                <FormDescription>记住密码</FormDescription>
-                                            </div>
-                                        </FormItem>
-                                        
-                                    )}
-                                />
-                                
-      
-
-                            <Button disabled={isLogining} type="submit" className="w-full">
-                                登入
-                            </Button>
-                        </form>
-                    </Form>
+                    <Suspense>
+                        <FormContent />
+                    </Suspense>
                 </div>
             </Card>
         </div >
