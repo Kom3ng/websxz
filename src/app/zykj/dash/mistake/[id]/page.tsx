@@ -68,6 +68,7 @@ export default function Page({ params }: { params: { id: string } }) {
             }
         >
                 <List
+                    className="p-4"
                     data={mistakse}
                     itemKey='id'
                     innerProps={{

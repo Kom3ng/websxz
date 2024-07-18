@@ -48,9 +48,7 @@ export default function Page() {
     }, [])
 
     return <Card>
-        <div className="grid grid-cols-5 sm:grid-cols-3
-        
-    ">
+        <div className="grid grid-cols-5 sm:grid-cols-3">
             {books?.map(book =>
                 <Link key={book.id} href={`/zykj/dash/mistake/${book.id}`} className="m-4">
                     <div className="border border-zinc-200 dark:border-zinc-800 p-4 rounded-lg min-h-24 flex items-center shadow transition hover:scale-105">
