@@ -18,7 +18,7 @@ export default function AppHeader() {
                             <h1 className="text-2xl font-bold">Web Sxz</h1>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <Link href="/zykj" legacyBehavior passHref>
+                            <Link href="/zykj/dash" legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                     中育
                                 </NavigationMenuLink>
