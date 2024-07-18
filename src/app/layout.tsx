@@ -25,7 +25,6 @@ export default function RootLayout({
       <body className={`${jetBrainsMono.className}`}>
         <StoreProvider>
           <ThemeProvider
-            attribute="class"
             defaultTheme="system"
             enableSystem
           >
